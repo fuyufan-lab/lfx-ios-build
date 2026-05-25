@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<link rel="preconnect" href="https://fonts.googleapis.cn"/>
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin/>
+<link rel="preconnect" href="https://cdn.tailwindcss.com"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>老鳳祥 · 发布历史</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.cn/css2?family=Manrope:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.cn/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<script src="shared.js"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{
+'bg':'#1a1714','card':'#242019','card-hi':'#2e2920',
+'gold':'#c4a265','gold-d':'#8a7d65','gold-b':'#d4b275',
+'tx':'#e8e0d4','tx2':'#9a9080','tx3':'#6a6055',
+'bdr':'rgba(196,162,101,0.08)','bdr2':'rgba(196,162,101,0.18)',
+'red':'#c45a42'
+},fontFamily:{"h":["Manrope"],"b":["Manrope"],"l":["Inter"]},borderRadius:{"c":"12px","pill":"9999px","full":"9999px"}}}}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}
+body{background:#1a1714;color:#e8e0d4;min-height:max(884px,100dvh);font-weight:300;overflow-x:hidden;overflow-y:auto;transition:background .5s,color .4s}
+body.light{background:#faf8f4;color:#2a2418}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 40% at 50% 15%,rgba(196,162,101,0.12) 0%,transparent 60%),radial-gradient(ellipse 50% 30% at 80% 60%,rgba(196,162,101,0.06) 0%,transparent 50%);pointer-events:none;z-index:0}
+body.light::before{background:radial-gradient(ellipse 80% 40% at 50% 15%,rgba(196,162,101,0.15) 0%,transparent 60%),radial-gradient(ellipse 50% 30% at 20% 70%,rgba(196,162,101,0.08) 0%,transparent 50%)}
+.glass{background:rgba(26,23,20,0.82);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+body.light .glass{background:rgba(250,248,244,0.92)}
+.cd{background:#242019;border:1px solid rgba(196,162,101,0.06);border-radius:12px;transition:background .4s,border-color .4s}
+body.light .cd{background:#fff;border-color:rgba(196,162,101,0.15)}
+.cd-h{background:#2e2920;border:1px solid rgba(196,162,101,0.12);border-radius:12px}
+body.light .cd-h{background:#f5f0e6;border-color:rgba(196,162,101,0.2)}
+.sec-label{font-family:'Inter',sans-serif;font-size:.6875rem;letter-spacing:.15em;text-transform:uppercase;color:#c4a265;font-weight:500}
+body.light .sec-label{color:#a08040}
+.tab-pill{cursor:pointer;transition:all .2s;border:1px solid rgba(196,162,101,0.18);padding:6px 16px;font-size:0.6875rem;border-radius:9999px}
+.tab-pill.active{background:#c4a265;color:#1a1714;border-color:#c4a265}
+body.light .tab-pill.active{background:#a08040;color:#fff;border-color:#a08040}
+.panel{display:none}
+.panel.active{display:block;animation:fu .3s ease-out}
+@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+main{animation:fu .5s cubic-bezier(.23,1,.32,1)}
+::-webkit-scrollbar{display:none}*{scrollbar-width:none;-ms-overflow-style:none}
+
+/* 亮色主题下 inline 暗色渐变 → 浅金渐变 */
+body.light [style*="linear-gradient(135deg,#2a2418 0%,#3a3020 50%,#4a3828 100%)"]{
+  background:linear-gradient(135deg,#e8d8b0 0%,#f0e4c8 50%,#f5eed8 100%) !important;
+  color:#3a2818 !important;
+}
+body.light [style*="linear-gradient(135deg,#2a2418 0%,#3a3020 50%,#4a3828 100%)"] *{
+  color:#3a2818 !important;
+}
+</style>
+</head>
+<body class="font-b">
+
+<header class="fixed top-0 w-full z-50 glass">
+  <div class="flex justify-between items-center w-full px-5 py-4">
+    <a href="店员我的.html" class="material-symbols-outlined text-gold text-xl">arrow_back</a>
+    <span class="text-base font-light tracking-[0.15em]" style="font-family:Georgia,serif">老鳳祥</span>
+    <a href="通知中心.html?from=店员首页" class="relative w-6 flex justify-end">
+      <span class="material-symbols-outlined text-tx2" style="font-size:20px">notifications</span>
+      <span data-lfx-badge="notif" class="absolute top-0 right-0 w-1.5 h-1.5 rounded-full bg-gold"></span>
+    </a>
+  </div>
+</header>
+
+<main class="pt-24 pb-32 px-5 max-w-md mx-auto relative z-10">
+
+  <section class="mb-6">
+    <h1 class="font-h text-2xl font-extralight tracking-tight">发布历史</h1>
+    <p class="text-xs text-tx2 mt-1">共发布 <span id="lfxHistTotal">...</span> 条内容</p>
+  </section>
+
+  <div class="flex gap-2 mb-5 overflow-x-auto">
+    <button class="tab-pill active" onclick="switchTab('all',this)">全部 <span class="ml-1 opacity-70">9</span></button>
+    <button class="tab-pill" onclick="switchTab('xhs',this)">小红书 <span class="ml-1 opacity-70">3</span></button>
+    <button class="tab-pill" onclick="switchTab('dy',this)">抖音 <span class="ml-1 opacity-70">3</span></button>
+  </div>
+
+  <!-- 全部 -->
+  <section class="panel active" data-panel="all">
+    <div class="space-y-3" id="lfxHistList"></div>
+  </section>
+
+</main>
+
+<script>
+// Theme
+var LC={'bg':'#faf8f4','card':'#ffffff','card-hi':'#f5f0e6','gold':'#a08040','gold-d':'#8a7040','gold-b':'#b09050','tx':'#2a2418','tx2':'#5a5040','tx3':'#8a7d65','bdr':'rgba(196,162,101,0.12)','bdr2':'rgba(196,162,101,0.25)','red':'#c45a42'};
+var DC={'bg':'#1a1714','card':'#242019','card-hi':'#2e2920','gold':'#c4a265','gold-d':'#8a7d65','gold-b':'#d4b275','tx':'#e8e0d4','tx2':'#9a9080','tx3':'#6a6055','bdr':'rgba(196,162,101,0.08)','bdr2':'rgba(196,162,101,0.18)','red':'#c45a42'};
+function setTheme(t){document.body.classList.toggle('light',t==='light');localStorage.setItem('lfx-theme',t);var c=t==='light'?LC:DC;Object.keys(c).forEach(k=>{document.documentElement.style.setProperty('--'+k,c[k])})}
+var tp=new URLSearchParams(location.search).get('theme');
+var _t=tp||localStorage.getItem('lfx-theme')||'dark';
+if(_t==='light')setTheme('light');
+window.addEventListener('message',function(e){if(e.data&&e.data.type==='theme')setTheme(e.data.theme)});
+/* ── 内容池：发布历史 ── */
+(function loadPoolHistory() {
+  var u = LFX && LFX.Store ? LFX.Store.getUser() : null;
+  var phone = u && u.phone ? u.phone : '';
+  var listEl = document.getElementById('lfxHistList');
+  var totalEl = document.getElementById('lfxHistTotal');
+  var currentTab = 'all';
+
+  function tFmt(ts) {
+    if (!ts) return '';
+    var d = new Date(ts);
+    var n = Date.now();
+    var diff = (n - d.getTime()) / 1000;
+    if (diff < 3600) return Math.floor(diff / 60) + '分钟前';
+    if (diff < 86400) return '今天 ' + d.getHours().toString().padStart(2, '0') + ':' + d.getMinutes().toString().padStart(2, '0');
+    if (diff < 172800) return '昨天';
+    return (d.getMonth() + 1) + '月' + d.getDate() + '日';
+  }
+
+  function esc2(s) {
+    return String(s || '').replace(/[&<>"']/g, function(c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function platformLabel(p) {
+    return p === 'xhs' ? '小红书' : p === 'dy' ? '抖音' : p;
+  }
+
+  function platformColor(p) {
+    return p === 'xhs' ? 'background:#fff5f3;color:#ff2442' : p === 'dy' ? 'background:#0a0a0a;color:#fe2c55' : '';
+  }
+
+  function filterByTab(items, tab) {
+    if (tab === 'all') return items;
+    return items.filter(function(it) {
+      var plats = it.platforms || [];
+      return plats.indexOf(tab) !== -1;
+    });
+  }
+
+  function render(items) {
+    var filtered = filterByTab(items, currentTab);
+    if (totalEl) totalEl.textContent = filtered.length || 0;
+    if (!filtered.length) {
+      listEl.innerHTML = '<p class="text-[.625rem] text-tx3 py-8 text-center">暂无发布记录</p>';
+      return;
+    }
+    listEl.innerHTML = filtered.map(function(it) {
+      var plats = (it.platforms || []).map(function(p) {
+        return '<span class="px-1.5 py-0.5 text-[.5625rem] font-l rounded-pill" style="' + platformColor(p) + ';font-size:0.5rem">' + platformLabel(p) + '</span>';
+      }).join(' ');
+      return '<div class="cd p-4">' +
+        '<div class="flex items-start gap-3">' +
+          '<div class="w-12 h-12 flex items-center justify-center shrink-0 rounded-c" style="background:linear-gradient(135deg,#2a2418 0%,#3a3020 50%,#4a3828 100%)"><span class="material-symbols-outlined text-gold-b" style="font-size:24px">auto_awesome</span></div>' +
+          '<div class="flex-1 min-w-0">' +
+            '<div class="flex items-center gap-2 mb-0.5">' +
+              '<p class="text-sm font-medium">' + esc2(it.title || '未命名') + '</p>' +
+              plats +
+            '</div>' +
+            '<p class="text-[.625rem] text-tx2">' + tFmt(it.published_at) + ' · ' + esc2(it.claimed_by_name || '店员') + '</p>' +
+            '<p class="text-[.5625rem] text-tx3 mt-1 line-clamp-2">' + esc2((it.body || '').substring(0, 80)) + '</p>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function loadFromPool() {
+    fetch('/pool-api/my-published?phone=' + encodeURIComponent(phone))
+      .then(function(r) { return r.json(); })
+      .then(function(items) {
+        if (items && items.length && !items.error) {
+          window._poolHistoryItems = items;
+          render(items);
+        } else {
+          fallbackToLocal();
+        }
+      })
+      .catch(function() { fallbackToLocal(); });
+  }
+
+  function fallbackToLocal() {
+    if (!window.LFX || !LFX.Store) {
+      listEl.innerHTML = '<p class="text-[.625rem] text-tx3 py-8 text-center">暂无数据</p>';
+      return;
+    }
+    var localItems = LFX.Store.getMyContents('approved');
+    if (!localItems.length) {
+      listEl.innerHTML = '<p class="text-[.625rem] text-tx3 py-8 text-center">暂无发布记录</p>';
+      if (totalEl) totalEl.textContent = '0';
+      return;
+    }
+    var mapped = localItems.map(function(it) {
+      return {
+        title: it.title || '',
+        body: it.body || '',
+        platforms: it.platforms || ['xhs'],
+        published_at: new Date(it.createdAt).toISOString(),
+        claimed_by_name: u && u.name || '店员'
+      };
+    });
+    window._poolHistoryItems = mapped;
+    render(mapped);
+  }
+
+  // Tab切换
+  window.switchTab = function(tab, btn) {
+    currentTab = tab;
+    document.querySelectorAll('.tab-pill').forEach(function(b) { b.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+    if (window._poolHistoryItems) render(window._poolHistoryItems);
+  };
+
+  loadFromPool();
+})();
+</script>
+</body></html>

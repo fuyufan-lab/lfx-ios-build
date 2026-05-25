@@ -1,0 +1,1517 @@
+{
+  "timestamp": "2026-05-23T03:10:00.749201",
+  "results": [
+    {
+      "device": "iphone-se",
+      "page": "entry",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E5%85%A5%E5%8F%A3%E9%A1%B5.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 375,
+        "viewportWidth": 375,
+        "scrollHeight": 1015,
+        "viewportHeight": 667,
+        "dpr": 2,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 375,
+            "h": 80,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-se\\entry.png"
+    },
+    {
+      "device": "iphone-se",
+      "page": "login",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%99%BB%E5%BD%95%E9%A1%B5.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 375,
+        "viewportWidth": 375,
+        "scrollHeight": 884,
+        "viewportHeight": 667,
+        "dpr": 2,
+        "fixedElements": [],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "A",
+            "w": 60,
+            "h": 28,
+            "text": "立即注册"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-se\\login.png"
+    },
+    {
+      "device": "iphone-se",
+      "page": "dealer",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%BB%8F%E9%94%80%E5%95%86%E8%80%81%E6%9D%BF.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 375,
+        "viewportWidth": 375,
+        "scrollHeight": 997,
+        "viewportHeight": 667,
+        "dpr": 2,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 375,
+            "h": 72,
+            "z": "50"
+          },
+          {
+            "tag": "NAV",
+            "cls": "fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-",
+            "top": 563,
+            "left": 0,
+            "w": 375,
+            "h": 104,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 55,
+            "h": 36,
+            "text": "+备货"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 55,
+            "h": 36,
+            "text": "+加购"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-se\\dealer.png"
+    },
+    {
+      "device": "iphone-se",
+      "page": "hq",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%9C%81%E4%BB%A3%E6%80%BB%E9%83%A8.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 375,
+        "viewportWidth": 375,
+        "scrollHeight": 1229,
+        "viewportHeight": 667,
+        "dpr": 2,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 375,
+            "h": 72,
+            "z": "50"
+          },
+          {
+            "tag": "NAV",
+            "cls": "fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-",
+            "top": 563,
+            "left": 0,
+            "w": 375,
+            "h": 104,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 36,
+            "h": 36,
+            "text": "周"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 36,
+            "h": 36,
+            "text": "月"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 82,
+            "h": 36,
+            "text": "单品数据"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 82,
+            "h": 36,
+            "text": "系列数据"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 58,
+            "h": 36,
+            "text": "总榜"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-se\\hq.png"
+    },
+    {
+      "device": "iphone-se",
+      "page": "notice",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E9%80%9A%E7%9F%A5%E4%B8%AD%E5%BF%83.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 375,
+        "viewportWidth": 375,
+        "scrollHeight": 884,
+        "viewportHeight": 667,
+        "dpr": 2,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 375,
+            "h": 72,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-se\\notice.png"
+    },
+    {
+      "device": "iphone-se",
+      "page": "history",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E5%8F%91%E5%B8%83%E5%8E%86%E5%8F%B2.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 375,
+        "viewportWidth": 375,
+        "scrollHeight": 980,
+        "viewportHeight": 667,
+        "dpr": 2,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 375,
+            "h": 72,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 69,
+            "h": 31,
+            "text": "全部 9"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 79,
+            "h": 31,
+            "text": "小红书 3"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 68,
+            "h": 31,
+            "text": "抖音 3"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-se\\history.png"
+    },
+    {
+      "device": "iphone-13-mini",
+      "page": "entry",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E5%85%A5%E5%8F%A3%E9%A1%B5.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 375,
+        "viewportWidth": 375,
+        "scrollHeight": 1015,
+        "viewportHeight": 812,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 375,
+            "h": 80,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-13-mini\\entry.png"
+    },
+    {
+      "device": "iphone-13-mini",
+      "page": "login",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%99%BB%E5%BD%95%E9%A1%B5.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 375,
+        "viewportWidth": 375,
+        "scrollHeight": 884,
+        "viewportHeight": 812,
+        "dpr": 3,
+        "fixedElements": [],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "A",
+            "w": 60,
+            "h": 28,
+            "text": "立即注册"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-13-mini\\login.png"
+    },
+    {
+      "device": "iphone-13-mini",
+      "page": "dealer",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%BB%8F%E9%94%80%E5%95%86%E8%80%81%E6%9D%BF.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 375,
+        "viewportWidth": 375,
+        "scrollHeight": 997,
+        "viewportHeight": 812,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 375,
+            "h": 72,
+            "z": "50"
+          },
+          {
+            "tag": "NAV",
+            "cls": "fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-",
+            "top": 708,
+            "left": 0,
+            "w": 375,
+            "h": 104,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 55,
+            "h": 36,
+            "text": "+备货"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 55,
+            "h": 36,
+            "text": "+加购"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-13-mini\\dealer.png"
+    },
+    {
+      "device": "iphone-13-mini",
+      "page": "hq",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%9C%81%E4%BB%A3%E6%80%BB%E9%83%A8.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 375,
+        "viewportWidth": 375,
+        "scrollHeight": 1229,
+        "viewportHeight": 812,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 375,
+            "h": 72,
+            "z": "50"
+          },
+          {
+            "tag": "NAV",
+            "cls": "fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-",
+            "top": 708,
+            "left": 0,
+            "w": 375,
+            "h": 104,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 36,
+            "h": 36,
+            "text": "周"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 36,
+            "h": 36,
+            "text": "月"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 82,
+            "h": 36,
+            "text": "单品数据"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 82,
+            "h": 36,
+            "text": "系列数据"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 58,
+            "h": 36,
+            "text": "总榜"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-13-mini\\hq.png"
+    },
+    {
+      "device": "iphone-13-mini",
+      "page": "notice",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E9%80%9A%E7%9F%A5%E4%B8%AD%E5%BF%83.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 375,
+        "viewportWidth": 375,
+        "scrollHeight": 884,
+        "viewportHeight": 812,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 375,
+            "h": 72,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-13-mini\\notice.png"
+    },
+    {
+      "device": "iphone-13-mini",
+      "page": "history",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E5%8F%91%E5%B8%83%E5%8E%86%E5%8F%B2.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 375,
+        "viewportWidth": 375,
+        "scrollHeight": 980,
+        "viewportHeight": 812,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 375,
+            "h": 72,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 69,
+            "h": 31,
+            "text": "全部 9"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 79,
+            "h": 31,
+            "text": "小红书 3"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 68,
+            "h": 31,
+            "text": "抖音 3"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-13-mini\\history.png"
+    },
+    {
+      "device": "iphone-14",
+      "page": "entry",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E5%85%A5%E5%8F%A3%E9%A1%B5.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 390,
+        "viewportWidth": 390,
+        "scrollHeight": 1015,
+        "viewportHeight": 844,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 390,
+            "h": 80,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-14\\entry.png"
+    },
+    {
+      "device": "iphone-14",
+      "page": "login",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%99%BB%E5%BD%95%E9%A1%B5.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 390,
+        "viewportWidth": 390,
+        "scrollHeight": 884,
+        "viewportHeight": 844,
+        "dpr": 3,
+        "fixedElements": [],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "A",
+            "w": 60,
+            "h": 28,
+            "text": "立即注册"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-14\\login.png"
+    },
+    {
+      "device": "iphone-14",
+      "page": "dealer",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%BB%8F%E9%94%80%E5%95%86%E8%80%81%E6%9D%BF.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 390,
+        "viewportWidth": 390,
+        "scrollHeight": 997,
+        "viewportHeight": 844,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 390,
+            "h": 72,
+            "z": "50"
+          },
+          {
+            "tag": "NAV",
+            "cls": "fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-",
+            "top": 740,
+            "left": 0,
+            "w": 390,
+            "h": 104,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 55,
+            "h": 36,
+            "text": "+备货"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 55,
+            "h": 36,
+            "text": "+加购"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-14\\dealer.png"
+    },
+    {
+      "device": "iphone-14",
+      "page": "hq",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%9C%81%E4%BB%A3%E6%80%BB%E9%83%A8.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 390,
+        "viewportWidth": 390,
+        "scrollHeight": 1213,
+        "viewportHeight": 844,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 390,
+            "h": 72,
+            "z": "50"
+          },
+          {
+            "tag": "NAV",
+            "cls": "fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-",
+            "top": 740,
+            "left": 0,
+            "w": 390,
+            "h": 104,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 36,
+            "h": 36,
+            "text": "周"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 36,
+            "h": 36,
+            "text": "月"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 82,
+            "h": 36,
+            "text": "单品数据"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 82,
+            "h": 36,
+            "text": "系列数据"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 58,
+            "h": 36,
+            "text": "总榜"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-14\\hq.png"
+    },
+    {
+      "device": "iphone-14",
+      "page": "notice",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E9%80%9A%E7%9F%A5%E4%B8%AD%E5%BF%83.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 390,
+        "viewportWidth": 390,
+        "scrollHeight": 884,
+        "viewportHeight": 844,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 390,
+            "h": 72,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-14\\notice.png"
+    },
+    {
+      "device": "iphone-14",
+      "page": "history",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E5%8F%91%E5%B8%83%E5%8E%86%E5%8F%B2.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 390,
+        "viewportWidth": 390,
+        "scrollHeight": 980,
+        "viewportHeight": 844,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 390,
+            "h": 72,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 69,
+            "h": 31,
+            "text": "全部 9"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 79,
+            "h": 31,
+            "text": "小红书 3"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 68,
+            "h": 31,
+            "text": "抖音 3"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-14\\history.png"
+    },
+    {
+      "device": "iphone-14-pro-max",
+      "page": "entry",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E5%85%A5%E5%8F%A3%E9%A1%B5.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 430,
+        "viewportWidth": 430,
+        "scrollHeight": 999,
+        "viewportHeight": 932,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 430,
+            "h": 80,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-14-pro-max\\entry.png"
+    },
+    {
+      "device": "iphone-14-pro-max",
+      "page": "login",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%99%BB%E5%BD%95%E9%A1%B5.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 430,
+        "viewportWidth": 430,
+        "scrollHeight": 932,
+        "viewportHeight": 932,
+        "dpr": 3,
+        "fixedElements": [],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "A",
+            "w": 60,
+            "h": 28,
+            "text": "立即注册"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-14-pro-max\\login.png"
+    },
+    {
+      "device": "iphone-14-pro-max",
+      "page": "dealer",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%BB%8F%E9%94%80%E5%95%86%E8%80%81%E6%9D%BF.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 430,
+        "viewportWidth": 430,
+        "scrollHeight": 997,
+        "viewportHeight": 932,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 430,
+            "h": 72,
+            "z": "50"
+          },
+          {
+            "tag": "NAV",
+            "cls": "fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-",
+            "top": 828,
+            "left": 0,
+            "w": 430,
+            "h": 104,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 55,
+            "h": 36,
+            "text": "+备货"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 55,
+            "h": 36,
+            "text": "+加购"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-14-pro-max\\dealer.png"
+    },
+    {
+      "device": "iphone-14-pro-max",
+      "page": "hq",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%9C%81%E4%BB%A3%E6%80%BB%E9%83%A8.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 430,
+        "viewportWidth": 430,
+        "scrollHeight": 1213,
+        "viewportHeight": 932,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 430,
+            "h": 72,
+            "z": "50"
+          },
+          {
+            "tag": "NAV",
+            "cls": "fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-",
+            "top": 828,
+            "left": 0,
+            "w": 430,
+            "h": 104,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 36,
+            "h": 36,
+            "text": "周"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 36,
+            "h": 36,
+            "text": "月"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 82,
+            "h": 36,
+            "text": "单品数据"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 82,
+            "h": 36,
+            "text": "系列数据"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 58,
+            "h": 36,
+            "text": "总榜"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-14-pro-max\\hq.png"
+    },
+    {
+      "device": "iphone-14-pro-max",
+      "page": "notice",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E9%80%9A%E7%9F%A5%E4%B8%AD%E5%BF%83.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 430,
+        "viewportWidth": 430,
+        "scrollHeight": 932,
+        "viewportHeight": 932,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 430,
+            "h": 72,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-14-pro-max\\notice.png"
+    },
+    {
+      "device": "iphone-14-pro-max",
+      "page": "history",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E5%8F%91%E5%B8%83%E5%8E%86%E5%8F%B2.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 430,
+        "viewportWidth": 430,
+        "scrollHeight": 980,
+        "viewportHeight": 932,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 430,
+            "h": 72,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 69,
+            "h": 31,
+            "text": "全部 9"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 79,
+            "h": 31,
+            "text": "小红书 3"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 68,
+            "h": 31,
+            "text": "抖音 3"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\iphone-14-pro-max\\history.png"
+    },
+    {
+      "device": "galaxy-s20",
+      "page": "entry",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E5%85%A5%E5%8F%A3%E9%A1%B5.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 360,
+        "viewportWidth": 360,
+        "scrollHeight": 1015,
+        "viewportHeight": 800,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 360,
+            "h": 80,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\galaxy-s20\\entry.png"
+    },
+    {
+      "device": "galaxy-s20",
+      "page": "login",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%99%BB%E5%BD%95%E9%A1%B5.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 360,
+        "viewportWidth": 360,
+        "scrollHeight": 884,
+        "viewportHeight": 800,
+        "dpr": 3,
+        "fixedElements": [],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "A",
+            "w": 60,
+            "h": 28,
+            "text": "立即注册"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\galaxy-s20\\login.png"
+    },
+    {
+      "device": "galaxy-s20",
+      "page": "dealer",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%BB%8F%E9%94%80%E5%95%86%E8%80%81%E6%9D%BF.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 360,
+        "viewportWidth": 360,
+        "scrollHeight": 997,
+        "viewportHeight": 800,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 360,
+            "h": 72,
+            "z": "50"
+          },
+          {
+            "tag": "NAV",
+            "cls": "fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-",
+            "top": 696,
+            "left": 0,
+            "w": 360,
+            "h": 104,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 55,
+            "h": 36,
+            "text": "+备货"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 55,
+            "h": 36,
+            "text": "+加购"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\galaxy-s20\\dealer.png"
+    },
+    {
+      "device": "galaxy-s20",
+      "page": "hq",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%9C%81%E4%BB%A3%E6%80%BB%E9%83%A8.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 360,
+        "viewportWidth": 360,
+        "scrollHeight": 1229,
+        "viewportHeight": 800,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 360,
+            "h": 72,
+            "z": "50"
+          },
+          {
+            "tag": "NAV",
+            "cls": "fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-",
+            "top": 696,
+            "left": 0,
+            "w": 360,
+            "h": 104,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 36,
+            "h": 36,
+            "text": "周"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 36,
+            "h": 36,
+            "text": "月"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 82,
+            "h": 36,
+            "text": "单品数据"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 82,
+            "h": 36,
+            "text": "系列数据"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 58,
+            "h": 36,
+            "text": "总榜"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\galaxy-s20\\hq.png"
+    },
+    {
+      "device": "galaxy-s20",
+      "page": "notice",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E9%80%9A%E7%9F%A5%E4%B8%AD%E5%BF%83.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 360,
+        "viewportWidth": 360,
+        "scrollHeight": 884,
+        "viewportHeight": 800,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 360,
+            "h": 72,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\galaxy-s20\\notice.png"
+    },
+    {
+      "device": "galaxy-s20",
+      "page": "history",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E5%8F%91%E5%B8%83%E5%8E%86%E5%8F%B2.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 360,
+        "viewportWidth": 360,
+        "scrollHeight": 980,
+        "viewportHeight": 800,
+        "dpr": 3,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 360,
+            "h": 72,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 69,
+            "h": 31,
+            "text": "全部 9"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 79,
+            "h": 31,
+            "text": "小红书 3"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 68,
+            "h": 31,
+            "text": "抖音 3"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\galaxy-s20\\history.png"
+    },
+    {
+      "device": "pixel-7",
+      "page": "entry",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E5%85%A5%E5%8F%A3%E9%A1%B5.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 412,
+        "viewportWidth": 412,
+        "scrollHeight": 999,
+        "viewportHeight": 915,
+        "dpr": 2.625,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 412,
+            "h": 80,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\pixel-7\\entry.png"
+    },
+    {
+      "device": "pixel-7",
+      "page": "login",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%99%BB%E5%BD%95%E9%A1%B5.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 412,
+        "viewportWidth": 412,
+        "scrollHeight": 915,
+        "viewportHeight": 915,
+        "dpr": 2.625,
+        "fixedElements": [],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "A",
+            "w": 60,
+            "h": 28,
+            "text": "立即注册"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\pixel-7\\login.png"
+    },
+    {
+      "device": "pixel-7",
+      "page": "dealer",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%BB%8F%E9%94%80%E5%95%86%E8%80%81%E6%9D%BF.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 412,
+        "viewportWidth": 412,
+        "scrollHeight": 997,
+        "viewportHeight": 915,
+        "dpr": 2.625,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 412,
+            "h": 72,
+            "z": "50"
+          },
+          {
+            "tag": "NAV",
+            "cls": "fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-",
+            "top": 811,
+            "left": 0,
+            "w": 412,
+            "h": 104,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 55,
+            "h": 36,
+            "text": "+备货"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 55,
+            "h": 36,
+            "text": "+加购"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\pixel-7\\dealer.png"
+    },
+    {
+      "device": "pixel-7",
+      "page": "hq",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E7%9C%81%E4%BB%A3%E6%80%BB%E9%83%A8.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 412,
+        "viewportWidth": 412,
+        "scrollHeight": 1213,
+        "viewportHeight": 915,
+        "dpr": 2.625,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 412,
+            "h": 72,
+            "z": "50"
+          },
+          {
+            "tag": "NAV",
+            "cls": "fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-",
+            "top": 811,
+            "left": 0,
+            "w": 412,
+            "h": 104,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 36,
+            "h": 36,
+            "text": "周"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 36,
+            "h": 36,
+            "text": "月"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 82,
+            "h": 36,
+            "text": "单品数据"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 82,
+            "h": 36,
+            "text": "系列数据"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 58,
+            "h": 36,
+            "text": "总榜"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\pixel-7\\hq.png"
+    },
+    {
+      "device": "pixel-7",
+      "page": "notice",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E9%80%9A%E7%9F%A5%E4%B8%AD%E5%BF%83.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 412,
+        "viewportWidth": 412,
+        "scrollHeight": 915,
+        "viewportHeight": 915,
+        "dpr": 2.625,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 412,
+            "h": 72,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\pixel-7\\notice.png"
+    },
+    {
+      "device": "pixel-7",
+      "page": "history",
+      "url": "https://yh.xiaofenhe.com/lfx-preview/%E5%8F%91%E5%B8%83%E5%8E%86%E5%8F%B2.html?v=1.5.2",
+      "status": "ok",
+      "errors": [],
+      "ui": {
+        "scrollWidth": 412,
+        "viewportWidth": 412,
+        "scrollHeight": 980,
+        "viewportHeight": 915,
+        "dpr": 2.625,
+        "fixedElements": [
+          {
+            "tag": "HEADER",
+            "cls": "fixed top-0 w-full z-50 glass",
+            "top": 0,
+            "left": 0,
+            "w": 412,
+            "h": 72,
+            "z": "50"
+          }
+        ],
+        "smallFontNodes": [],
+        "smallTouchTargets": [
+          {
+            "tag": "BUTTON",
+            "w": 69,
+            "h": 31,
+            "text": "全部 9"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 79,
+            "h": 31,
+            "text": "小红书 3"
+          },
+          {
+            "tag": "BUTTON",
+            "w": 68,
+            "h": 31,
+            "text": "抖音 3"
+          }
+        ],
+        "overflowingElements": []
+      },
+      "screenshot": "c:\\Users\\WZ\\Desktop\\珠宝内容系统\\modified\\screenshots\\pixel-7\\history.png"
+    }
+  ]
+}

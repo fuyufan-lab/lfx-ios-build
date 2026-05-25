@@ -1,0 +1,103 @@
+﻿total=36 ok=36 fail=0
+
+=== 妯悜婧㈠嚭 ===
+  NONE
+
+=== 澶辫触缁勫悎 ===
+  NONE
+
+=== 鎸夐〉闈㈣仛鍚堬紙鍙?iphone-14 浠ｈ〃锛屽洜 6 鏈哄瀷娴嬬殑鏄悓鏍?HTML锛?===
+page       smallFont  smallTouch fixed   
+entry      5          0          1       
+login      0          1          0       
+dealer     30         5          2       
+hq         30         8          2       
+notice     9          0          1       
+history    24         3          1       
+
+=== iphone-14 灏忓瓧鏍锋湰锛堟瘡椤靛墠 10锛?===
+
+  -- entry --
+    10px [SPAN] 'Province Agent'
+    10px [SPAN] 'Headquarters'
+    10px [SPAN] 'Dealer'
+    10px [SPAN] 'Manager'
+    10px [SPAN] 'Staff'
+
+  -- dealer --
+    10px [SPAN] '鏂板搧棰勫憡 路 6鏈?鏃ヤ笂甯?
+    10px [P] '绔归煹娓呴路閲戦暥鐜夋寕浠?5/15涓婂競'
+    9px [BUTTON] '+澶囪揣'
+    10px [P] '妯辫姳瀛Ｂ烽粍閲戞墜閾?5/20涓婂競'
+    10px [P] '鐑害 9.8 路 3.2涓囨洕鍏?
+    9px [BUTTON] '+鍔犺喘'
+    10px [P] '鐑害 9.2 路 1.2涓囨洕鍏?
+    10px [P] '鐑害 8.7 路 9.8K鏇濆厜'
+    9px [SPAN] '浜掑姩鎸囨暟 9.6 路 閿€鍞?32.6涓?
+    9px [SPAN] '瀹屾垚鐜?92%'
+
+  -- hq --
+    9px [P] '鏈湀鍙戝竷'
+    9px [P] '绉佷俊杞寲鐜?
+    9px [P] '绉佷俊鏁伴噺'
+    9px [P] '鎬绘洕鍏夐噺'
+    9px [BUTTON] '鍛?
+    9px [BUTTON] '鏈?
+    10px [P] '浜掑姩鎸囨暟 9.8 路 閿€鍞?156 浠?
+    10px [P] '浜掑姩鎸囨暟 9.2 路 閿€鍞?128 浠?
+    10px [P] '浜掑姩鎸囨暟 8.5 路 閿€鍞?89 浠?
+    9px [P] '浜掑姩鎸囨暟 9.6 路 閿€鍞欢鏁?423'
+
+  -- notice --
+    10px [SPAN] '绯荤粺閫氱煡'
+    10px [SPAN] '2灏忔椂鍓?
+    10px [SPAN] '浜掑姩鎻愰啋'
+    10px [SPAN] '14:32'
+    10px [SPAN] '瀹℃牳閫氱煡'
+    10px [SPAN] '鏄ㄥぉ'
+    10px [SPAN] '鏇存棭鐨勯€氱煡'
+    10px [SPAN] '浠诲姟瀹屾垚'
+    10px [SPAN] '5鏈?鏃?
+
+  -- history --
+    9px [SPAN] '灏忕孩涔?
+    10px [P] '浠婂ぉ 14:32'
+    9px [SPAN] '鎶栭煶'
+    10px [P] '鏄ㄥぉ 10:15'
+    10px [P] '5鏈?鏃?
+    10px [P] '4鏈?8鏃?
+    10px [P] '4鏈?0鏃?
+    10px [P] '4鏈?5鏃?
+
+=== iphone-14 灏忚Е鎺ф牱鏈紙姣忛〉鍏ㄩ儴锛?===
+
+  -- login --
+    44x17 [A] '绔嬪嵆娉ㄥ唽'
+
+  -- dealer --
+    50x32 [BUTTON] '+澶囪揣'
+    50x32 [BUTTON] '+鍔犺喘'
+    25x45 [BUTTON] 'trending_up
+    鍟嗘満'
+    25x45 [BUTTON] 'bar_chart
+    鏁版嵁'
+    25x45 [BUTTON] 'person
+    鎴戠殑'
+
+  -- hq --
+    25x32 [BUTTON] '鍛?
+    27x32 [BUTTON] '鏈?
+    82x36 [BUTTON] '鍗曞搧鏁版嵁'
+    82x36 [BUTTON] '绯诲垪鏁版嵁'
+    58x36 [BUTTON] '鎬绘'
+    25x45 [BUTTON] 'bar_chart
+    鏁版嵁'
+    25x45 [BUTTON] 'trending_up
+    鍟嗘満'
+    25x45 [BUTTON] 'person
+    鎴戠殑'
+
+  -- history --
+    69x31 [BUTTON] '鍏ㄩ儴 9'
+    79x31 [BUTTON] '灏忕孩涔?3'
+    68x31 [BUTTON] '鎶栭煶 3'

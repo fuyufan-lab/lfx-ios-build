@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<link rel="preconnect" href="https://fonts.googleapis.cn"/>
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin/>
+<link rel="preconnect" href="https://cdn.tailwindcss.com"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>老鳳祥 · 省代总部</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.cn/css2?family=Manrope:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.cn/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<script src="shared.js"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{
+'bg':'#1a1714','card':'#242019','card-hi':'#2e2920',
+'gold':'#c4a265','gold-d':'#8a7d65','gold-b':'#d4b275',
+'tx':'#e8e0d4','tx2':'#9a9080','tx3':'#6a6055',
+'bdr':'rgba(196,162,101,0.08)','bdr2':'rgba(196,162,101,0.18)',
+'red':'#c45a42'
+},fontFamily:{"h":["Manrope"],"b":["Manrope"],"l":["Inter"]},borderRadius:{"c":"12px","pill":"9999px","full":"9999px"}}}}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}
+body{background:#1a1714;color:#e8e0d4;min-height:max(884px,100dvh);font-weight:300;overflow-x:hidden;overflow-y:auto;transition:background .5s,color .4s}
+body.light{background:#faf8f4;color:#2a2418}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 40% at 50% 15%,rgba(196,162,101,0.12) 0%,transparent 60%),radial-gradient(ellipse 50% 30% at 80% 60%,rgba(196,162,101,0.06) 0%,transparent 50%);pointer-events:none;z-index:0}
+body.light::before{background:radial-gradient(ellipse 80% 40% at 50% 15%,rgba(196,162,101,0.15) 0%,transparent 60%),radial-gradient(ellipse 50% 30% at 20% 70%,rgba(196,162,101,0.08) 0%,transparent 50%)}
+.glass{background:rgba(26,23,20,0.82);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+body.light .glass{background:rgba(250,248,244,0.92)}
+.cd{background:#242019;border:1px solid rgba(196,162,101,0.06);border-radius:12px;transition:background .4s,border-color .4s}
+body.light .cd{background:#fff;border-color:rgba(196,162,101,0.15)}
+.cd-h{background:#2e2920;border:1px solid rgba(196,162,101,0.12);border-radius:12px}
+body.light .cd-h{background:#f5f0e6;border-color:rgba(196,162,101,0.2)}
+.kpi-card{background:linear-gradient(135deg,#2a2418 0%,#3a3020 60%,#4a3828 100%);border-radius:12px;color:#e8e0d4;transition:all .4s}
+body.light .kpi-card{background:linear-gradient(135deg,#e8d8b0 0%,#f5eed8 100%);color:#2a2418}
+.kpi-val{font-family:'Inter',monospace;font-weight:300;font-size:1.25rem;letter-spacing:-0.02em}
+.sec-label{font-family:'Inter',sans-serif;font-size:.6875rem;letter-spacing:.15em;text-transform:uppercase;color:#c4a265;font-weight:500}
+body.light .sec-label{color:#a08040}
+.pk-bar{height:6px;border-radius:3px;transition:width .6s ease}
+.pk-bar.on{background:linear-gradient(90deg,#c4a265,#8a7d65)}
+.pk-bar.off{background:#2e2920}
+body.light .pk-bar.off{background:#e0d8c8}
+.tab-panel{display:none}
+.tab-panel.active{display:block;animation:fu .3s ease-out}
+.subtab-btn{cursor:pointer;transition:all .2s;padding:8px 16px;font-size:.75rem;border:1px solid rgba(196,162,101,0.15);border-radius:9999px}
+.subtab-btn.active{background:#c4a265;color:#1a1714;border-color:#c4a265}
+body.light .subtab-btn{border-color:rgba(160,128,64,0.25)}
+body.light .subtab-btn.active{background:#a08040;color:#fff;border-color:#a08040}
+.subtab-panel{display:none}
+.subtab-panel.active{display:block;animation:fu .3s ease-out}
+[data-nav]{transition:color .2s}
+[data-nav] .material-symbols-outlined{transition:font-variation-settings .2s}
+@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+main{animation:fu .5s cubic-bezier(.23,1,.32,1)}
+::-webkit-scrollbar{display:none}*{scrollbar-width:none;-ms-overflow-style:none}
+
+/* 亮色主题下 inline 暗色渐变 → 浅金渐变 */
+body.light [style*="linear-gradient(135deg,#2a2418 0%,#3a3020 50%,#4a3828 100%)"]{
+  background:linear-gradient(135deg,#e8d8b0 0%,#f0e4c8 50%,#f5eed8 100%) !important;
+  color:#3a2818 !important;
+}
+body.light [style*="linear-gradient(135deg,#2a2418 0%,#3a3020 50%,#4a3828 100%)"] *{
+  color:#3a2818 !important;
+}
+</style>
+<script defer src="mobile-preview-frame.js"></script>
+</head>
+<body class="font-b">
+
+<header class="fixed top-0 w-full z-50 glass">
+  <div class="flex justify-between items-center w-full px-5 py-4">
+    <a href="入口页.html" class="material-symbols-outlined text-gold text-xl">arrow_back</a>
+    <span class="text-base font-light tracking-[0.15em]" style="font-family:Georgia,serif">老鳳祥</span>
+    <a href="通知中心.html?from=省代总部" class="relative w-6 flex justify-end">
+      <span class="material-symbols-outlined text-tx2" style="font-size:20px">notifications</span>
+      <span data-lfx-badge="notif" class="absolute top-0 right-0 w-1.5 h-1.5 rounded-full bg-gold"></span>
+    </a>
+  </div>
+</header>
+
+<main class="pt-24 pb-32 px-5 max-w-md mx-auto relative z-10">
+
+  <section class="mb-8">
+    <p class="sec-label mb-2" data-role-eyebrow>Province Agent Dashboard</p>
+    <h1 class="font-h text-2xl font-extralight tracking-tight" data-role-title>华东大区 · 省代</h1>
+    <p class="text-xs text-tx2 mt-2" data-role-summary>管理 3 省 · 12 家门店 · 86 名店员</p>
+  </section>
+
+  <!-- TAB 1: 数据 -->
+  <section class="tab-panel active" data-panel="data">
+
+    <!-- 数据中心 KPI -->
+    <div class="mb-8">
+      <p class="sec-label mb-4">数据中心</p>
+      <div class="grid grid-cols-4 gap-2">
+        <div class="kpi-card p-3 text-center">
+          <p class="kpi-val">3,847</p>
+          <p class="text-[.5625rem] opacity-80 mt-0.5">本月发布</p>
+        </div>
+        <div class="kpi-card p-3 text-center">
+          <p class="kpi-val">12.5<span class="text-sm">%</span></p>
+          <p class="text-[.5625rem] opacity-80 mt-0.5">私信转化率</p>
+        </div>
+        <div class="kpi-card p-3 text-center">
+          <p class="kpi-val">626</p>
+          <p class="text-[.5625rem] opacity-80 mt-0.5">私信数量</p>
+        </div>
+        <div class="kpi-card p-3 text-center">
+          <p class="kpi-val">1.2<span class="text-sm">万</span></p>
+          <p class="text-[.5625rem] opacity-80 mt-0.5">总曝光量</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 数据监测中心 -->
+    <div class="mb-8">
+      <div class="flex justify-between items-center mb-4">
+        <p class="sec-label">数据监测中心</p>
+        <div class="flex gap-1">
+          <button class="text-[.5625rem] px-2 py-0.5 bg-gold text-bg font-l rounded-pill" data-period="week" onclick="switchPeriod('week',this)">周</button>
+          <button class="text-[.5625rem] px-2 py-0.5 border border-gold/20 text-gold font-l rounded-pill" data-period="month" onclick="switchPeriod('month',this)">月</button>
+        </div>
+      </div>
+      <!-- Sub-tabs -->
+      <div class="flex gap-2 mb-4">
+        <button class="subtab-btn active" data-subtab="single" onclick="switchSubTab('single',this)">单品数据</button>
+        <button class="subtab-btn" data-subtab="series" onclick="switchSubTab('series',this)">系列数据</button>
+        <button class="subtab-btn" data-subtab="total" onclick="switchSubTab('total',this)">总榜</button>
+      </div>
+      <!-- Sub-panel: 单品 -->
+      <div class="subtab-panel active" data-subpanel="single">
+        <div class="space-y-3">
+          <div class="cd p-4 flex items-center gap-3">
+            <span class="font-h text-base text-gold w-6 text-center font-light">1</span>
+            <div class="flex-1"><p class="text-sm font-medium">古法金镶玉吊坠</p><p class="text-[.625rem] text-tx2 mt-0.5">互动指数 9.8 · 销售 156 件</p></div>
+            <span class="text-xs text-gold font-l">↑12%</span>
+          </div>
+          <div class="cd p-4 flex items-center gap-3">
+            <span class="font-h text-base text-gold w-6 text-center font-light">2</span>
+            <div class="flex-1"><p class="text-sm font-medium">婚嫁套装「红妆」</p><p class="text-[.625rem] text-tx2 mt-0.5">互动指数 9.2 · 销售 128 件</p></div>
+            <span class="text-xs text-gold font-l">↑8%</span>
+          </div>
+          <div class="cd p-4 flex items-center gap-3">
+            <span class="font-h text-base text-tx2 w-6 text-center font-light">3</span>
+            <div class="flex-1"><p class="text-sm font-medium">凤舞九天限量手镯</p><p class="text-[.625rem] text-tx2 mt-0.5">互动指数 8.5 · 销售 89 件</p></div>
+            <span class="text-xs text-tx3 font-l">—</span>
+          </div>
+        </div>
+      </div>
+      <!-- Sub-panel: 系列 -->
+      <div class="subtab-panel" data-subpanel="series">
+        <div class="space-y-3">
+          <div class="cd p-4"><div class="flex justify-between"><span class="text-sm font-medium">传承系列</span><span class="text-xs text-gold">总发布 1,247</span></div><div class="w-full h-1.5 bg-card-hi mt-2 rounded-full overflow-hidden"><div class="h-full rounded-full" style="width:92%;background:linear-gradient(90deg,#c4a265,#8a7d65)"></div></div><p class="text-[.5625rem] text-tx2 mt-1">互动指数 9.6 · 销售件数 423</p></div>
+          <div class="cd p-4"><div class="flex justify-between"><span class="text-sm font-medium">婚嫁系列</span><span class="text-xs text-gold">总发布 986</span></div><div class="w-full h-1.5 bg-card-hi mt-2 rounded-full overflow-hidden"><div class="h-full rounded-full" style="width:78%;background:linear-gradient(90deg,#c4a265,#8a7d65)"></div></div><p class="text-[.5625rem] text-tx2 mt-1">互动指数 8.9 · 销售件数 312</p></div>
+          <div class="cd p-4"><div class="flex justify-between"><span class="text-sm font-medium">日常系列</span><span class="text-xs text-gold">总发布 2,103</span></div><div class="w-full h-1.5 bg-card-hi mt-2 rounded-full overflow-hidden"><div class="h-full rounded-full" style="width:65%;background:linear-gradient(90deg,#c4a265,#8a7d65)"></div></div><p class="text-[.5625rem] text-tx2 mt-1">互动指数 7.4 · 销售件数 567</p></div>
+        </div>
+      </div>
+      <!-- Sub-panel: 总榜 -->
+      <div class="subtab-panel" data-subpanel="total">
+        <div class="cd p-5 text-center">
+          <p class="font-h text-3xl text-gold font-extralight" data-count="5240" data-count-sep="true" data-count-duration="1400">5,240</p>
+          <p class="text-xs text-tx2 mt-1">总发布数量</p>
+          <div class="grid grid-cols-2 gap-3 mt-4">
+            <div><p class="font-h text-lg text-gold" data-count="8.6" data-count-decimals="1">8.6</p><p class="text-[.5625rem] text-tx2">互动指数</p></div>
+            <div><p class="font-h text-lg text-gold" data-count="1546" data-count-sep="true">1,546</p><p class="text-[.5625rem] text-tx2">销售件数</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 经销商 PK -->
+    <div class="mb-8">
+      <p class="sec-label mb-4">经销商 PK</p>
+      <div class="space-y-3">
+        <div class="cd p-4" style="border-color:#c4a265;border-width:1.5px;">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-medium flex items-center gap-2"><span class="material-symbols-outlined text-gold" style="font-size:16px">military_tech</span>王志远 · 华东区</span>
+            <span class="text-xs text-gold font-l">4 店 · 3,579 篇</span>
+          </div>
+          <div class="w-full h-1.5 bg-card-hi rounded-full overflow-hidden">
+            <div class="h-full rounded-full" style="width:95%;background:linear-gradient(90deg,#c4a265,#8a7d65)"></div>
+          </div>
+          <div class="flex justify-between mt-2">
+            <span class="text-[.5625rem] text-tx2">总销售 86.5万 · 完成率 95%</span>
+            <span class="text-[.5625rem] text-gold font-medium">TOP 1</span>
+          </div>
+        </div>
+        <div class="cd p-4">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-medium">李明华 · 华南区</span>
+            <span class="text-xs text-tx2 font-l">5 店 · 3,102 篇</span>
+          </div>
+          <div class="w-full h-1.5 bg-card-hi rounded-full overflow-hidden">
+            <div class="h-full rounded-full" style="width:82%;background:linear-gradient(90deg,#c4a265,#8a7d65)"></div>
+          </div>
+          <div class="flex justify-between mt-2">
+            <span class="text-[.5625rem] text-tx2">总销售 72.3万 · 完成率 82%</span>
+            <span class="text-[.5625rem] text-tx2">TOP 2</span>
+          </div>
+        </div>
+        <div class="cd p-4">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-medium">张伟 · 华北区</span>
+            <span class="text-xs text-tx2 font-l">3 店 · 2,456 篇</span>
+          </div>
+          <div class="w-full h-1.5 bg-card-hi rounded-full overflow-hidden">
+            <div class="h-full rounded-full" style="width:68%;background:linear-gradient(90deg,#c4a265,#8a7d65)"></div>
+          </div>
+          <div class="flex justify-between mt-2">
+            <span class="text-[.5625rem] text-tx2">总销售 58.1万 · 完成率 68%</span>
+            <span class="text-[.5625rem] text-tx2">TOP 3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- TAB 2: 商机 -->
+  <section class="tab-panel" data-panel="opportunity">
+
+    <!-- 待审清单（LFX.Store 注入） -->
+    <div class="mb-8" id="lfxPendingWrap" style="display:none">
+      <div class="flex justify-between items-center mb-4">
+        <p class="sec-label">待审清单</p>
+        <span class="text-[.5625rem] text-gold" id="lfxPendingCount">0 条待审</span>
+      </div>
+      <div class="space-y-3" id="lfxPendingList"></div>
+    </div>
+
+    <!-- 新品预告 -->
+    <div class="mb-8">
+      <p class="sec-label mb-4">新品预告</p>
+      <div class="cd-h p-5 mb-3" style="background:linear-gradient(135deg,#2a2418 0%,#3a3020 50%,#4a3828 100%);border:none;">
+        <span class="text-[.625rem] uppercase tracking-[.3em] opacity-70 font-l">新品预告 · 即将上市</span>
+        <p class="font-h text-xl font-extralight mt-2 leading-snug">「凤舞九天」限量传承系列</p>
+        <p class="text-xs opacity-70 mt-2">全国限量300套 · 6月1日上市</p>
+        <button onclick="location.href='爆款内容.html'" class="mt-4 px-4 py-2 border border-white/30 text-[.625rem] font-l tracking-wider hover:bg-white/10 transition-colors active:scale-95 rounded-c">查看详情</button>
+      </div>
+      <div class="space-y-3">
+        <div class="cd p-4 flex items-center gap-3">
+          <span class="material-symbols-outlined text-gold" style="font-size:20px">storefront</span>
+          <div class="flex-1"><p class="text-sm font-medium">上海南店旗舰店</p><p class="text-[.625rem] text-tx2 mt-0.5">竹韵清风·金镶玉挂件 5/15上市 ¥6,800</p></div>
+          <span class="text-[.625rem] text-gold font-l">预约234</span>
+        </div>
+        <div class="cd p-4 flex items-center gap-3">
+          <span class="material-symbols-outlined text-gold" style="font-size:20px">storefront</span>
+          <div class="flex-1"><p class="text-sm font-medium">杭州西城店</p><p class="text-[.625rem] text-tx2 mt-0.5">樱花季·黄金手链 5/20上市 ¥2,880</p></div>
+          <span class="text-[.625rem] text-gold font-l">预约512</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 爆款排行 -->
+    <div class="mb-8">
+      <p class="sec-label mb-4">爆款排行</p>
+      <div class="space-y-3">
+        <div class="cd p-4 flex items-center gap-3">
+          <span class="font-h text-lg text-gold w-6 text-center font-light">1</span>
+          <div class="flex-1"><p class="text-sm font-medium">古法金镶玉吊坠</p><p class="text-[.625rem] text-tx2 mt-0.5">曝光 1.2万 · 互动 856</p></div>
+          <span class="px-2 py-1 bg-gold/10 text-gold text-[.5625rem] font-l rounded-pill flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>热</span>
+        </div>
+        <div class="cd p-4 flex items-center gap-3">
+          <span class="font-h text-lg text-gold w-6 text-center font-light">2</span>
+          <div class="flex-1"><p class="text-sm font-medium">婚嫁套装「红妆」</p><p class="text-[.625rem] text-tx2 mt-0.5">曝光 9.8K · 互动 623</p></div>
+          <span class="px-2 py-1 bg-gold/10 text-gold text-[.5625rem] font-l rounded-pill">↑12%</span>
+        </div>
+        <div class="cd p-4 flex items-center gap-3">
+          <span class="font-h text-lg text-tx2 w-6 text-center font-light">3</span>
+          <div class="flex-1"><p class="text-sm font-medium">凤舞九天限量手镯</p><p class="text-[.625rem] text-tx2 mt-0.5">曝光 6.2K · 互动 398</p></div>
+          <span class="px-2 py-1 bg-gold/10 text-gold text-[.5625rem] font-l rounded-pill">新品</span>
+        </div>
+      </div>
+      <p class="text-[.5625rem] text-tx2 text-center mt-3 hover:text-gold transition-colors cursor-pointer">(点击展开更多内容↓)</p>
+    </div>
+
+    <!-- 门店商机排名 -->
+    <div class="mb-8">
+      <p class="sec-label mb-4">门店商机排名</p>
+      <div class="space-y-3">
+        <div class="cd p-4 flex items-center gap-3">
+          <span class="text-sm font-l text-gold w-5">01</span>
+          <div class="flex-1">
+            <p class="text-sm font-medium">上海南京路旗舰店</p>
+            <div class="w-full h-1.5 bg-card-hi mt-1.5 rounded-full overflow-hidden"><div class="h-full rounded-full" style="width:95%;background:linear-gradient(90deg,#c4a265,#8a7d65)"></div></div>
+          </div>
+          <span class="text-xs text-gold font-l">1,247</span>
+        </div>
+        <div class="cd p-4 flex items-center gap-3">
+          <span class="text-sm font-l text-gold w-5">02</span>
+          <div class="flex-1">
+            <p class="text-sm font-medium">上海淮海路店</p>
+            <div class="w-full h-1.5 bg-card-hi mt-1.5 rounded-full overflow-hidden"><div class="h-full rounded-full" style="width:78%;background:linear-gradient(90deg,#c4a265,#8a7d65)"></div></div>
+          </div>
+          <span class="text-xs text-gold font-l">986</span>
+        </div>
+        <div class="cd p-4 flex items-center gap-3">
+          <span class="text-sm font-l text-gold w-5">03</span>
+          <div class="flex-1">
+            <p class="text-sm font-medium">上海徐家汇店</p>
+            <div class="w-full h-1.5 bg-card-hi mt-1.5 rounded-full overflow-hidden"><div class="h-full rounded-full" style="width:62%;background:linear-gradient(90deg,#c4a265,#8a7d65)"></div></div>
+          </div>
+          <span class="text-xs text-gold font-l">734</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- TAB 3: 我的 -->
+  <section class="tab-panel" data-panel="mine">
+    <div class="text-center mb-8">
+      <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center border border-bdr2" style="background:linear-gradient(135deg,#3a3020 0%,#4a3828 100%)">
+        <span class="font-h text-2xl font-extralight text-gold tracking-wider" data-role-monogram>华东</span>
+      </div>
+      <h2 class="font-h text-xl font-extralight" data-role-name>华东大区</h2>
+      <p class="text-[.6875rem] text-gold font-l mt-1.5" data-role-job>省代 / 分公司管理者</p>
+      <p class="text-[.625rem] text-tx2 mt-1" data-role-scale>管理 3 省 · 12 家门店 · 86 名店员</p>
+    </div>
+
+    <!-- 管理概览 -->
+    <p class="sec-label mb-4">管理概览</p>
+    <div class="grid grid-cols-3 gap-3 mb-8">
+      <div class="cd p-4 text-center">
+        <p class="font-h text-2xl text-gold font-extralight" data-role-kpi1 data-count="12">12</p>
+        <p class="text-[.5625rem] text-tx2 mt-1" data-role-kpi1-l>管理门店</p>
+      </div>
+      <div class="cd p-4 text-center">
+        <p class="font-h text-2xl text-gold font-extralight" data-role-kpi2 data-count="86">86</p>
+        <p class="text-[.5625rem] text-tx2 mt-1" data-role-kpi2-l>辖区店员</p>
+      </div>
+      <div class="cd p-4 text-center">
+        <p class="font-h text-2xl text-gold font-extralight" data-role-kpi3 data-count="72">72</p>
+        <p class="text-[.5625rem] text-tx2 mt-1" data-role-kpi3-l>活跃店员</p>
+      </div>
+    </div>
+
+    <!-- 本月数据 -->
+    <p class="sec-label mb-4">本月数据</p>
+    <div class="grid grid-cols-2 gap-3 mb-8">
+      <div class="cd p-4 text-center">
+        <p class="font-h text-xl text-gold font-extralight" data-role-pub data-count="3847" data-count-sep="true">3,847</p>
+        <p class="text-[.5625rem] text-tx2 mt-1" data-role-pub-l>全区发布量</p>
+      </div>
+      <div class="cd p-4 text-center">
+        <p class="font-h text-xl text-gold font-extralight">89<span class="text-sm">%</span></p>
+        <p class="text-[.5625rem] text-tx2 mt-1">完成率</p>
+      </div>
+    </div>
+
+    <!-- 门店排名 -->
+    <p class="sec-label mb-4" data-role-rank-label>门店排名</p>
+    <div class="space-y-3 mb-8">
+      <div class="cd p-4 flex items-center gap-3">
+        <span class="font-h text-base text-gold w-6 text-center font-light">1</span>
+        <div class="flex-1"><p class="text-sm font-medium" data-role-rank1>上海南京路旗舰店</p><p class="text-[.625rem] text-tx2 mt-0.5">发布 1,247 · 完成率 92%</p></div>
+        <span class="text-xs text-gold font-l">TOP 1</span>
+      </div>
+      <div class="cd p-4 flex items-center gap-3">
+        <span class="font-h text-base text-gold w-6 text-center font-light">2</span>
+        <div class="flex-1"><p class="text-sm font-medium" data-role-rank2>上海淮海路店</p><p class="text-[.625rem] text-tx2 mt-0.5">发布 986 · 完成率 78%</p></div>
+        <span class="text-xs text-gold font-l">TOP 2</span>
+      </div>
+      <div class="cd p-4 flex items-center gap-3">
+        <span class="font-h text-base text-tx2 w-6 text-center font-light">3</span>
+        <div class="flex-1"><p class="text-sm font-medium" data-role-rank3>上海徐家汇店</p><p class="text-[.625rem] text-tx2 mt-0.5">发布 734 · 完成率 65%</p></div>
+        <span class="text-xs text-tx2 font-l">TOP 3</span>
+      </div>
+    </div>
+
+    <!-- 设置菜单 -->
+    <div class="cd">
+      <a href="#" class="flex items-center justify-between p-5 border-b border-bdr hover:bg-card-hi transition-colors" onclick="event.preventDefault();LFX.toast('我的门店 · 敬请期待')">
+        <span class="text-sm">我的门店</span>
+        <span class="material-symbols-outlined text-tx2 text-xl">chevron_right</span>
+      </a>
+      <a href="#" class="flex items-center justify-between p-5 border-b border-bdr hover:bg-card-hi transition-colors" onclick="event.preventDefault();LFX.toast('我的团队 · 敬请期待')">
+        <span class="text-sm">我的团队</span>
+        <span class="material-symbols-outlined text-tx2 text-xl">chevron_right</span>
+      </a>
+      <a href="#" class="flex items-center justify-between p-5 border-b border-bdr hover:bg-card-hi transition-colors" onclick="event.preventDefault();LFX.toast('发布报表 · 敬请期待')">
+        <span class="text-sm">发布报表</span>
+        <span class="material-symbols-outlined text-tx2 text-xl">chevron_right</span>
+      </a>
+      <a href="#" class="flex items-center justify-between p-5 border-b border-bdr hover:bg-card-hi transition-colors" onclick="event.preventDefault();LFX.toast('数据导出 · 敬请期待')">
+        <span class="text-sm">数据导出</span>
+        <span class="material-symbols-outlined text-tx2 text-xl">chevron_right</span>
+      </a>
+      <a href="#" class="flex items-center justify-between p-5 border-b border-bdr hover:bg-card-hi transition-colors" onclick="event.preventDefault();LFX.toast('账号管理 · 敬请期待')">
+        <span class="text-sm">账号管理</span>
+        <span class="material-symbols-outlined text-tx2 text-xl">chevron_right</span>
+      </a>
+      <a href="入口页.html" class="flex items-center justify-between p-5 hover:bg-card-hi transition-colors">
+        <span class="text-sm text-red">退出登录</span>
+        <span class="material-symbols-outlined text-red text-xl">logout</span>
+      </a>
+    </div>
+  </section>
+
+    <!-- 批量推送内容池 -->
+    <div class="mb-8 cd p-4" id="hqPushSection">
+      <div class="flex justify-between items-center mb-3">
+        <p class="sec-label">推送到内容池</p>
+        <label class="flex items-center gap-1 text-[0.5625rem] text-tx2 cursor-pointer">
+          <input type="checkbox" id="hqContinuousPush"> 连续推送（推送后不清空表单）
+        </label>
+      </div>
+      <input id="hqPushTitle" class="w-full bg-card-hi border border-bdr rounded-c px-3 py-2.5 text-sm text-tx mb-2 font-light" placeholder="标题（必填）" style="outline:none">
+      <textarea id="hqPushBody" class="w-full bg-card-hi border border-bdr rounded-c px-3 py-2.5 text-sm text-tx mb-2 font-light" rows="3" placeholder="正文（必填）" style="outline:none;resize:none"></textarea>
+      <input id="hqPushImages" class="w-full bg-card-hi border border-bdr rounded-c px-3 py-2.5 text-sm text-tx mb-2 font-light" placeholder="图片URL（可选，多个用逗号分隔）" style="outline:none">
+      <div class="flex gap-2 mb-3">
+        <label class="flex items-center gap-1 text-[0.625rem] text-tx2 cursor-pointer"><input type="checkbox" id="hqPushXhs" checked> 小红书</label>
+        <label class="flex items-center gap-1 text-[0.625rem] text-tx2 cursor-pointer"><input type="checkbox" id="hqPushDy"> 抖音</label>
+      </div>
+      <button id="hqPushBtn" class="w-full py-2.5 rounded-pill text-[0.625rem] font-l tracking-wider" style="background:#c4a265;color:#1a1714" onclick="hqPushToPool()">推送到内容池</button>
+      <p class="text-[0.5625rem] text-tx3 mt-2 text-center hidden" id="hqPushFeedback"></p>
+    </div>
+
+    <!-- 池数据监控 -->
+    <div class="mb-8" id="hqPoolMonitor">
+      <div class="flex justify-between items-center mb-4">
+        <p class="sec-label">内容池监控</p>
+        <span class="text-[0.5625rem] text-gold font-l tracking-wider" id="hqPoolLastRefresh" style="cursor:pointer" onclick="hqRefreshPoolMonitor()">刷新</span>
+      </div>
+      <div class="space-y-3" id="hqPoolMonitorBars">
+        <p class="text-[.625rem] text-tx3">加载中…</p>
+      </div>
+    </div>
+
+</main>
+
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-4 glass">
+  <button class="flex flex-col items-center text-gold" data-nav="data" onclick="switchMainTab('data')">
+    <span class="material-symbols-outlined mb-1" style="font-variation-settings:'FILL'1">bar_chart</span>
+    <span class="font-l text-[.6875rem] tracking-[.15em] uppercase">数据</span>
+  </button>
+  <button class="flex flex-col items-center text-tx3" data-nav="opportunity" onclick="switchMainTab('opportunity')">
+    <span class="material-symbols-outlined mb-1">trending_up</span>
+    <span class="font-l text-[.6875rem] tracking-[.15em] uppercase">商机</span>
+  </button>
+  <button class="flex flex-col items-center text-tx3" data-nav="mine" onclick="switchMainTab('mine')">
+    <span class="material-symbols-outlined mb-1">person</span>
+    <span class="font-l text-[.6875rem] tracking-[.15em] uppercase">我的</span>
+  </button>
+</nav>
+
+<script>
+function switchMainTab(tabName) {
+  document.querySelectorAll('[data-panel]').forEach(p => p.classList.remove('active'));
+  document.querySelector('[data-panel="' + tabName + '"]').classList.add('active');
+  document.querySelectorAll('[data-nav]').forEach(b => {
+    const isActive = b.dataset.nav === tabName;
+    b.className = 'flex flex-col items-center ' + (isActive ? 'text-gold' : 'text-tx3');
+    const icon = b.querySelector('.material-symbols-outlined');
+    if (icon) icon.style.fontVariationSettings = isActive ? "'FILL' 1" : "'FILL' 0";
+  });
+}
+
+function switchPeriod(period, btn) {
+  document.querySelectorAll('[data-period]').forEach(b => {
+    b.className = 'text-[.5625rem] px-2 py-0.5 border border-gold/20 text-gold font-l rounded-pill';
+  });
+  btn.className = 'text-[.5625rem] px-2 py-0.5 bg-gold text-bg font-l rounded-pill';
+}
+
+function switchSubTab(name, btn) {
+  document.querySelectorAll('[data-subpanel]').forEach(p => p.classList.remove('active'));
+  document.querySelector('[data-subpanel="' + name + '"]').classList.add('active');
+  document.querySelectorAll('.subtab-btn').forEach(b => {
+    b.className = 'subtab-btn ' + (b.dataset.subtab === name ? 'active' : '');
+  });
+}
+
+// Theme
+var LC={'bg':'#faf8f4','card':'#ffffff','card-hi':'#f5f0e6','gold':'#a08040','gold-d':'#8a7040','gold-b':'#b09050','tx':'#2a2418','tx2':'#5a5040','tx3':'#8a7d65','bdr':'rgba(196,162,101,0.12)','bdr2':'rgba(196,162,101,0.25)','red':'#c45a42'};
+var DC={'bg':'#1a1714','card':'#242019','card-hi':'#2e2920','gold':'#c4a265','gold-d':'#8a7d65','gold-b':'#d4b275','tx':'#e8e0d4','tx2':'#9a9080','tx3':'#6a6055','bdr':'rgba(196,162,101,0.08)','bdr2':'rgba(196,162,101,0.18)','red':'#c45a42'};
+function setTheme(t){document.body.classList.toggle('light',t==='light');localStorage.setItem('lfx-theme',t);var c=t==='light'?LC:DC;Object.keys(c).forEach(k=>{document.documentElement.style.setProperty('--'+k,c[k])})}
+var tp=new URLSearchParams(location.search).get('theme');
+var _t=tp||localStorage.getItem('lfx-theme')||'dark';
+if(_t==='light')setTheme('light');
+window.addEventListener('message',function(e){if(e.data&&e.data.type==='theme')setTheme(e.data.theme)});
+
+// Hash-based routing
+(function(){
+  var hash = window.location.hash.replace('#','');
+  if (hash && (hash === 'data' || hash === 'opportunity' || hash === 'mine')) {
+    switchMainTab(hash);
+  }
+})();
+
+// Role-based content swap (headquarters vs province)
+(function(){
+  var role = new URLSearchParams(location.search).get('role') || 'province';
+  if (role !== 'headquarters') return;
+  var s = function(sel, val){var el=document.querySelector(sel); if(el) el.textContent = val;};
+  s('[data-role-eyebrow]', 'Headquarters Dashboard');
+  s('[data-role-title]', '老凤祥总部');
+  s('[data-role-summary]', '全国 28 省 · 312 家门店 · 2,140 名店员');
+  s('[data-role-monogram]', '总部');
+  s('[data-role-name]', '老凤祥总部');
+  s('[data-role-job]', '集团 / 品牌中心');
+  s('[data-role-scale]', '管理 28 省 · 312 家门店 · 2,140 名店员');
+  s('[data-role-kpi1]', '28'); s('[data-role-kpi1-l]', '覆盖省份');
+  s('[data-role-kpi2]', '312'); s('[data-role-kpi2-l]', '全国门店');
+  s('[data-role-kpi3]', '2,140'); s('[data-role-kpi3-l]', '在职店员');
+  s('[data-role-pub]', '38,470'); s('[data-role-pub-l]', '全国发布量');
+  s('[data-role-rank-label]', '各省排名');
+  s('[data-role-rank1]', '华东大区');
+  s('[data-role-rank2]', '华南大区');
+  s('[data-role-rank3]', '华北大区');
+  // 顶部数据卡放大
+  var kpi = document.querySelectorAll('.kpi-val');
+  if (kpi[0]) kpi[0].innerHTML = '38,470';
+  if (kpi[2]) kpi[2].innerHTML = '6,240';
+  if (kpi[3]) kpi[3].innerHTML = '12.5<span class="text-sm">万</span>';
+})();
+/* ── 待审清单：从 LFX.Store 拉 agent 角色 pending → 通过/驳回 ── */
+(function(){
+  if (!window.LFX || !LFX.Store) return;
+  function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function tFmt(ts){var n=Date.now();var diff=(n-ts)/1000;if(diff<60)return Math.floor(diff)+'秒前';if(diff<3600)return Math.floor(diff/60)+'分钟前';if(diff<86400)return Math.floor(diff/3600)+'小时前';var d=new Date(ts);return d.getMonth()+1+'/'+d.getDate();}
+  var wrap = document.getElementById('lfxPendingWrap');
+  var list = document.getElementById('lfxPendingList');
+  var cnt  = document.getElementById('lfxPendingCount');
+  if (!wrap || !list) return;
+  function render(){
+    var u = LFX.Store.getUser();
+    var role = (u && u.role) || 'agent';
+    var items = LFX.Store.getPendingForRole(role === 'hq' ? 'agent' : role);
+    if (!items.length){ wrap.style.display = 'none'; return; }
+    wrap.style.display = '';
+    cnt.textContent = items.length + ' 条待审';
+    list.innerHTML = items.map(function(c){
+      return '<div class="cd p-4" data-cid="'+c.id+'">'
+        + '<div class="flex items-center gap-2 mb-2">'
+        +   '<span class="px-2 py-0.5 bg-gold/10 text-gold text-[.5625rem] font-l rounded-pill">待审</span>'
+        +   '<span class="text-[.625rem] text-tx2">'+esc(c.author||'店长')+' · '+esc(c.store||'')+'</span>'
+        +   '<span class="text-[.625rem] text-tx3 ml-auto">'+tFmt(c.createdAt)+'</span>'
+        + '</div>'
+        + '<p class="text-sm font-medium mb-1">'+esc(c.title)+'</p>'
+        + '<p class="text-xs text-tx2 line-clamp-2 mb-3">'+esc(c.body)+'</p>'
+        + '<div class="flex gap-2">'
+        +   '<button class="lfx-rej flex-1 py-2 text-[.625rem] border border-tx3/20 text-tx2 font-l rounded-c active:scale-95 transition-transform">驳回</button>'
+        +   '<button class="lfx-app flex-1 py-2 text-[.625rem] font-l rounded-c active:scale-95 transition-transform" style="background:#c4a265;color:#1a1714">通过</button>'
+        + '</div>'
+      + '</div>';
+    }).join('');
+    list.querySelectorAll('[data-cid]').forEach(function(card){
+      var id = parseInt(card.dataset.cid, 10);
+      card.querySelector('.lfx-app').addEventListener('click', function(){
+        LFX.Store.approve(id);
+        if (window.LFX && LFX.toast) LFX.toast('已通过审核');
+      });
+      card.querySelector('.lfx-rej').addEventListener('click', function(){
+        LFX.Store.reject(id, '内容需调整');
+        if (window.LFX && LFX.toast) LFX.toast('已驳回');
+      });
+    });
+  }
+  render();
+  LFX.Store.on(function(evt){
+    if (evt==='publish'||evt==='approve'||evt==='reject'||evt==='sync'||evt==='login'||evt==='setRole') render();
+  });
+})();
+/* ── 内容池：省代总部推内容 + 监控 ── */
+(function initHQPool(){
+  // 推送到内容池
+  window.hqPushToPool=function(){
+    var title=(document.getElementById('hqPushTitle').value||'').trim();
+    var body=(document.getElementById('hqPushBody').value||'').trim();
+    if(!title&&!body){alert('标题和正文至少填一项');return}
+    var xhs=document.getElementById('hqPushXhs');
+    var dy=document.getElementById('hqPushDy');
+    var plats=[];
+    if(xhs&&xhs.checked)plats.push('xhs');
+    if(dy&&dy.checked)plats.push('dy');
+    if(!plats.length){alert('请至少选择一个目标平台');return}
+    var imgRaw=(document.getElementById('hqPushImages').value||'').trim();
+    var imgUrls=imgRaw?imgRaw.split(',').map(function(s){return s.trim()}).filter(function(s){return s}):[];
+    var u=LFX&&LFX.Store?LFX.Store.getUser():null;
+    var btn=document.getElementById('hqPushBtn');
+    var fb=document.getElementById('hqPushFeedback');
+    btn.textContent='推送中...';btn.disabled=true;
+    fetch('/pool-api/push',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({title:title,body:body,image_urls:imgUrls,platforms:plats,created_by:'省代总部-'+(u&&u.name||'')})})
+      .then(function(r){return r.json()})
+      .then(function(d){
+        if(d&&d.ok){
+          fb.textContent='✓ 推送成功 (ID:'+d.id+')';fb.classList.remove('hidden');
+          var cont=document.getElementById('hqContinuousPush');
+          if(!cont||!cont.checked){
+            document.getElementById('hqPushTitle').value='';document.getElementById('hqPushBody').value='';document.getElementById('hqPushImages').value='';
+          }
+          hqRefreshPoolMonitor();
+        }else{fb.textContent='推送失败: '+(d&&d.error||'未知错误');fb.classList.remove('hidden')}
+        btn.textContent='推送到内容池';btn.disabled=false;
+        setTimeout(function(){fb.classList.add('hidden')},3000);
+      }).catch(function(){fb.textContent='网络错误，请重试';fb.classList.remove('hidden');btn.textContent='推送到内容池';btn.disabled=false});
+  };
+
+  // 池监控柱状图
+  function hqRefreshPoolMonitor(){
+    var el=document.getElementById('hqPoolMonitorBars');
+    var tEl=document.getElementById('hqPoolLastRefresh');
+    if(!el)return;
+    fetch('/pool-api/stats').then(function(r){return r.json()}).then(function(d){
+      if(!d||d.error){el.innerHTML='<p class="text-[.625rem] text-tx3">加载失败</p>';return}
+      var max=Math.max(d.available||0,d.claimed||0,d.published||0,1);
+      function bar(label,val,color){
+        var pct=Math.round(val*100/max);
+        return'<div class="flex items-center gap-3">'+
+          '<span class="text-[0.625rem] text-tx2 font-l w-16 shrink-0">'+label+'</span>'+
+          '<div class="flex-1 h-5 rounded-full overflow-hidden" style="background:#2e2920">'+
+            '<div class="h-full rounded-full transition-all duration-700" style="width:'+pct+'%;'+color+'"></div>'+
+          '</div>'+
+          '<span class="text-[0.625rem] text-gold font-l w-8 text-right">'+val+'</span>'+
+        '</div>';
+      }
+      el.innerHTML=
+        bar('可领取',d.available||0,'background:linear-gradient(90deg,#c4a265,#d4b275)')+
+        bar('已领取',d.claimed||0,'background:linear-gradient(90deg,#8a7d65,#c4a265)')+
+        bar('已发布',d.published||0,'background:linear-gradient(90deg,#6a6055,#8a7d65)');
+      if(tEl){
+        var now=new Date();
+        tEl.textContent='更新于 '+now.getHours().toString().padStart(2,'0')+':'+now.getMinutes().toString().padStart(2,'0');
+      }
+    }).catch(function(){el.innerHTML='<p class="text-[.625rem] text-tx3">加载失败</p>'});
+  }
+  window.hqRefreshPoolMonitor=hqRefreshPoolMonitor;
+  hqRefreshPoolMonitor();
+})();
+</script>
+</body></html>

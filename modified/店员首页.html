@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<link rel="preconnect" href="https://fonts.googleapis.cn"/>
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin/>
+<link rel="preconnect" href="https://cdn.tailwindcss.com"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>老鳳祥 | 发布</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.cn/css2?family=Manrope:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.cn/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<script src="shared.js"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{
+'bg':'#1a1714','card':'#242019','card-hi':'#2e2920',
+'gold':'#c4a265','gold-d':'#8a7d65','gold-b':'#d4b275',
+'tx':'#e8e0d4','tx2':'#9a9080','tx3':'#6a6055',
+'bdr':'rgba(196,162,101,0.08)','bdr2':'rgba(196,162,101,0.18)',
+'red':'#c45a42'
+},fontFamily:{"h":["Manrope"],"b":["Manrope"],"l":["Inter"]},borderRadius:{"c":"12px","pill":"9999px","full":"9999px"}}}}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}
+body{background:#1a1714;color:#e8e0d4;min-height:max(884px,100dvh);font-weight:300;overflow-x:hidden;overflow-y:auto;transition:background .5s,color .4s}
+body.light{background:#faf8f4;color:#2a2418}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 35% at 50% 12%,rgba(196,162,101,0.1) 0%,transparent 55%),radial-gradient(ellipse 40% 25% at 20% 70%,rgba(196,162,101,0.05) 0%,transparent 50%);pointer-events:none;z-index:0}
+body.light::before{background:radial-gradient(ellipse 70% 35% at 50% 12%,rgba(196,162,101,0.15) 0%,transparent 55%),radial-gradient(ellipse 40% 25% at 80% 70%,rgba(196,162,101,0.08) 0%,transparent 50%)}
+.glass{background:rgba(26,23,20,0.82);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+body.light .glass{background:rgba(250,248,244,0.92)}
+.cd{background:#242019;border:1px solid rgba(196,162,101,0.06);border-radius:12px;transition:background .4s,border-color .4s}
+body.light .cd{background:#fff;border-color:rgba(196,162,101,0.15)}
+.cd-h{background:#2e2920;border:1px solid rgba(196,162,101,0.12);border-radius:12px}
+body.light .cd-h{background:#f5f0e6;border-color:rgba(196,162,101,0.2)}
+.hero-img{background:linear-gradient(135deg,#2a2418 0%,#3a3020 30%,#c4a265 60%,#8a7d65 80%,#2a2418 100%);background-size:200% 200%;animation:shimmer 4s ease infinite}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.gold-shimmer{background:linear-gradient(135deg,#2e2920,#3a3020,#4a4030,#2e2920);background-size:300% 300%;animation:shimmer 5s ease infinite}
+.step-dot{width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:12px;border-radius:50%}
+.step-a{background:#c4a265;color:#1a1714}
+body.light .step-a{background:#a08040;color:#fff}
+.step-done{background:#3a3528;color:#c4a265}
+body.light .step-done{background:#e8dcc0;color:#8a7040}
+.step-p{background:#2e2920;color:#6a6055}
+body.light .step-p{background:#ede6d8;color:#b0a890}
+.step-line{flex:1;height:1px}
+.step-la{background:#c4a265}
+.step-lp{background:#2e2920}
+.cc{transition:all .25s;cursor:pointer}
+.cc.sel{border-color:#c4a265 !important;border-width:2px;background:#2e2920}
+.pc{transition:all .25s;cursor:pointer}
+.pc.sel{border-color:#c4a265 !important;background:#2e2920}
+.panel{display:none}.panel.active{display:block;animation:fu .35s ease-out}
+.tag-chip{display:inline-block;padding:2px 8px;font-size:0.5625rem;color:#6a6055;margin-right:4px;margin-bottom:3px;font-weight:300}
+.thumb{background:#2e2920}
+.thumb-hero{background:linear-gradient(135deg,#2a2418,#3a3020 40%,#c4a265 70%,#2a2418);background-size:200% 200%;animation:shimmer 4s ease infinite}
+@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+main{animation:fu .6s cubic-bezier(.23,1,.32,1)}
+::-webkit-scrollbar{display:none}*{scrollbar-width:none;-ms-overflow-style:none}
+/* ── 内容保护：水印 + 禁止复制 ── */
+.wm-wrap{position:relative;overflow:hidden}
+.wm-wrap::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:10;
+  background-image:repeating-linear-gradient(-30deg,
+    transparent,transparent 36px,
+    rgba(196,162,101,0.05) 36px,rgba(196,162,101,0.05) 38px),
+    repeating-linear-gradient(-30deg,
+    transparent,transparent 72px,
+    rgba(196,162,101,0.03) 72px,rgba(196,162,101,0.03) 73px);
+}
+.wm-text{position:absolute;inset:0;pointer-events:none;z-index:11;
+  display:flex;flex-wrap:wrap;align-content:center;justify-content:center;
+  opacity:0.07;transform:rotate(-22deg) scale(1.4);
+  font-size:13px;font-weight:700;font-family:Manrope,sans-serif;
+  color:#c4a265;letter-spacing:0.4em;white-space:pre-wrap;
+  line-height:2.8;user-select:none;-webkit-user-select:none;
+  text-align:center;padding:20px;
+}
+.protected{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;
+  -webkit-user-drag:none;position:relative;z-index:1}
+.protected img{pointer-events:none;-webkit-user-drag:none}
+body.light .wm-text{color:#8a7040}body.light .wm-wrap::after{background-image:repeating-linear-gradient(-30deg,transparent,transparent 36px,rgba(160,128,64,0.06) 36px,rgba(160,128,64,0.06) 38px),repeating-linear-gradient(-30deg,transparent,transparent 72px,rgba(160,128,64,0.04) 72px,rgba(160,128,64,0.04) 73px)}
+/* 手动发布备用按钮 */
+.fallback-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 8px;border-radius:12px;font-size:0.625rem;font-family:Inter,sans-serif;letter-spacing:0.1em;color:#c4a265;background:rgba(196,162,101,0.08);border:1px solid rgba(196,162,101,0.15);cursor:pointer;transition:all .2s}
+.fallback-btn:hover{background:rgba(196,162,101,0.16);border-color:rgba(196,162,101,0.3)}
+.fallback-btn:disabled{opacity:0.35;cursor:not-allowed;pointer-events:none}
+.fallback-btn:active{background:rgba(196,162,101,0.22)}
+body.light .fallback-btn{color:#8a7040;background:rgba(160,128,64,0.06);border-color:rgba(160,128,64,0.15)}
+body.light .fallback-btn:hover{background:rgba(160,128,64,0.14)}
+#manualToggleIcon{transition:transform .25s}
+#manualToggleIcon.open{transform:rotate(180deg)}
+/* 水印仅 Step2 显示 */
+.panel:not(.active) .wm-wrap::after,.panel:not(.active) .wm-text{display:none}
+
+/* 亮色主题下 hero 暗色遮罩 → 浅色遮罩 */
+body.light [style*="rgba(26,23,20,0.97) 0%,rgba(26,23,20,0.4) 50%,rgba(26,23,20,0.1)"]{
+  background:linear-gradient(to top,rgba(250,248,244,0.95) 0%,rgba(250,248,244,0.4) 50%,rgba(250,248,244,0.1) 100%) !important;
+}
+</style>
+</head>
+<body class="font-b">
+
+<header class="fixed top-0 w-full z-50 glass">
+  <div class="flex justify-between items-center w-full px-5 py-4">
+    <a href="爆款内容.html" class="material-symbols-outlined text-gold text-xl">arrow_back</a>
+    <span class="text-base font-light tracking-[0.15em]" style="font-family:Georgia,serif">老鳳祥</span>
+    <a href="通知中心.html?from=店员首页" class="relative">
+      <span class="material-symbols-outlined text-tx2 text-xl">notifications</span>
+      <span data-lfx-badge="notif" class="absolute top-0 right-0 w-1.5 h-1.5 rounded-full bg-gold"></span>
+    </a>
+  </div>
+  <div class="px-5 pb-3.5 flex items-center gap-2">
+    <div class="step-dot step-a" data-step="1">1</div>
+    <span class="text-[0.625rem] text-gold font-l ml-1 mr-2">选款</span>
+    <div class="step-line step-lp" id="line12"></div>
+    <div class="step-dot step-p" data-step="2">2</div>
+    <span class="text-[0.625rem] text-tx3 font-l ml-1">发布</span>
+  </div>
+</header>
+
+<main class="pt-28 pb-28 px-4 max-w-md mx-auto" style="position:relative;z-index:1">
+  <!-- Hero -->
+  <section class="mb-5 -mx-4 overflow-hidden" style="border-radius:0 0 20px 20px">
+    <div class="relative h-44" style="background:url('20260522-165124.jpg') center/cover no-repeat">
+      <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(26,23,20,0.97) 0%,rgba(26,23,20,0.4) 50%,rgba(26,23,20,0.1) 100%)"></div>
+      <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(196,162,101,0.06) 0%,transparent 50%)"></div>
+      <div class="relative z-10 h-full flex flex-col justify-end p-5">
+        <span class="material-symbols-outlined text-gold-b text-3xl mb-1.5" style="font-variation-settings:'FILL'1">auto_awesome</span>
+        <h1 class="font-h text-xl font-extralight tracking-tight text-tx">今日AI推荐</h1>
+        <p class="text-[0.625rem] text-tx2 mt-1 font-light">从6条AI生成内容中，选出最好的那一条</p>
+      </div>
+    </div>
+  </section>
+  <!-- STEP 1 -->
+  <section class="panel active" id="step1">
+    <div class="mb-5">
+      <p class="text-[0.625rem] text-tx3 font-light">产品与策略已由总部精心策划，您只需选出最具审美感的一条</p>
+    </div>
+
+    <div class="mb-8">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-[0.5625rem] font-l tracking-[0.25em] uppercase text-tx3 font-light">AI 推荐</h3>
+        <span class="text-[0.5625rem] text-tx3 font-light">精选 4 条</span>
+      </div>
+      <div class="grid grid-cols-2 gap-2.5">
+        <div class="cd p-3.5 cursor-pointer hover:border-gold/20 transition-colors" onclick="selectCardByIndex(0)">
+          <div class="thumb h-10 rounded-lg flex items-center justify-center mb-2"><span class="material-symbols-outlined text-gold text-xl">local_fire_department</span></div>
+          <p class="text-xs font-light leading-tight">古法金镶玉吊坠</p>
+          <p class="text-[0.5625rem] text-tx3 mt-0.5">热度 9.8 · 高转化</p>
+          <span class="inline-block mt-1.5 text-[0.5625rem] text-gold font-l tracking-wider">今日推荐</span>
+          <p class="text-[0.5rem] text-tx3 mt-0.5 opacity-60">AI 生成 · 总部审核</p>
+        </div>
+        <div class="cd p-3.5 cursor-pointer hover:border-gold/20 transition-colors" onclick="selectCardByIndex(1)">
+          <div class="thumb h-10 rounded-lg flex items-center justify-center mb-2"><span class="material-symbols-outlined text-gold text-xl">favorite</span></div>
+          <p class="text-xs font-light leading-tight">婚嫁套装「红妆」</p>
+          <p class="text-[0.5625rem] text-tx3 mt-0.5">热度 9.5 · 稳定上升</p>
+          <span class="inline-block mt-1.5 text-[0.5625rem] text-gold font-l tracking-wider">上升趋势</span>
+          <p class="text-[0.5rem] text-tx3 mt-0.5 opacity-60">AI 生成 · 总部审核</p>
+        </div>
+        <div class="cd p-3.5 cursor-pointer hover:border-gold/20 transition-colors" onclick="selectCardByIndex(2)">
+          <div class="thumb h-10 rounded-lg flex items-center justify-center mb-2"><span class="material-symbols-outlined text-gold text-xl">spa</span></div>
+          <p class="text-xs font-light leading-tight">暗香疏影·耳饰套组</p>
+          <p class="text-[0.5625rem] text-tx3 mt-0.5">热度 8.6 · 东方美学</p>
+          <span class="inline-block mt-1.5 text-[0.5625rem] text-tx3 font-l tracking-wider">新品推荐</span>
+          <p class="text-[0.5rem] text-tx3 mt-0.5 opacity-60">AI 生成 · 东方美学</p>
+        </div>
+        <div class="cd p-3.5 cursor-pointer hover:border-gold/20 transition-colors" onclick="selectCardByIndex(3)">
+          <div class="thumb h-10 rounded-lg flex items-center justify-center mb-2"><span class="material-symbols-outlined text-gold text-xl">cloud</span></div>
+          <p class="text-xs font-light leading-tight">足金祥云手镯</p>
+          <p class="text-[0.5625rem] text-tx3 mt-0.5">热度 8.3 · 传统工艺</p>
+          <span class="inline-block mt-1.5 text-[0.5625rem] text-tx3 font-l tracking-wider">经典推荐</span>
+          <p class="text-[0.5rem] text-tx3 mt-0.5 opacity-60">AI 生成 · 传统工艺</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 内容卡片（动态加载自内容池，池空则回退硬编码） -->
+    <div id="poolCards" class="grid grid-cols-2 gap-3">
+      <p class="text-[.625rem] text-tx3 col-span-2 text-center py-8">加载中…</p>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="panel" id="step2">
+    <h2 class="font-h text-lg font-light tracking-tight mb-1">一键分发</h2>
+    <p class="text-xs text-tx3 mb-5">选择目标平台，确认发布</p>
+    <div class="space-y-3 mb-5">
+      <div class="cd p-4 cursor-pointer pc flex items-center gap-3" data-platform="xhs">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background:#fff5f3"><span style="color:#ff2442;font-weight:700;font-family:'PingFang SC','Hiragino Sans GB',sans-serif;font-size:13px;letter-spacing:-0.5px">小红书</span></span>
+        <div class="flex-1 min-w-0"><p class="text-sm font-medium">小红书</p><p class="text-[0.625rem] text-tx3">图文笔记 · 自动排版</p></div>
+        <span class="material-symbols-outlined text-tx3 pr text-xl shrink-0">radio_button_unchecked</span>
+      </div>
+      <div class="cd p-4 cursor-pointer pc flex items-center gap-3" data-platform="dy">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background:#0a0a0a"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.97a8.16 8.16 0 0 0 4.77 1.52V7.1a4.85 4.85 0 0 1-1.84-.41Z" fill="#fe2c55"/></svg></span>
+        <div class="flex-1 min-w-0"><p class="text-sm font-medium">抖音</p><p class="text-[0.625rem] text-tx3">短视频图文 · 自动生成</p></div>
+        <span class="material-symbols-outlined text-tx3 pr text-xl shrink-0">radio_button_unchecked</span>
+      </div>
+    </div>
+    <div class="cd p-4 mb-5" id="previewCard">
+      <div class="flex justify-between items-center mb-3">
+        <span class="text-[0.5625rem] text-gold font-l tracking-[0.2em] uppercase">发布预览</span>
+        <span class="text-[0.5rem] text-red font-l tracking-wider">⚠ 发布前严禁外传</span>
+      </div>
+      <div class="wm-wrap rounded-c" style="border:1px solid rgba(196,162,101,0.1)">
+        <div class="bg-card-hi p-4 text-sm leading-relaxed protected" id="previewContent">
+          <p class="font-medium mb-2" id="previewTitle">古法金镶玉吊坠</p>
+          <p class="text-tx3" id="previewBody">非遗花丝镶嵌工艺，传承古法匠心。老凤祥年度典藏之作</p>
+          <p class="text-gold text-xs mt-2" id="previewTags">#古法金 #非遗工艺</p>
+        </div>
+        <div class="wm-text" id="wmText">老鳳祥 · 待发布</div>
+      </div>
+    </div>
+    <!-- 手动发布（备用） -->
+    <div class="cd p-4 mb-5" id="manualFallback">
+      <div class="flex justify-between items-center cursor-pointer" onclick="toggleManualFallback()">
+        <span class="text-[0.5625rem] text-tx3 font-l tracking-[0.2em] uppercase">手动发布（备用）</span>
+        <span class="material-symbols-outlined text-tx3 text-sm transition-transform" id="manualToggleIcon">expand_more</span>
+      </div>
+      <div id="manualFallbackBody" style="display:none">
+        <p class="text-[0.5rem] text-tx3 mt-2 mb-3">一键转发失败时，可手动复制后在对应 App 中粘贴发布</p>
+        <div class="grid grid-cols-3 gap-2">
+          <button class="fallback-btn" onclick="copyTitle()">
+            <span class="material-symbols-outlined text-sm block mb-0.5">title</span>复制标题
+          </button>
+          <button class="fallback-btn" onclick="copyBodyText()">
+            <span class="material-symbols-outlined text-sm block mb-0.5">content_copy</span>复制正文
+          </button>
+          <button class="fallback-btn" id="downloadImgBtn" onclick="downloadImages()" disabled>
+            <span class="material-symbols-outlined text-sm block mb-0.5">download</span>下载图片
+          </button>
+        </div>
+        <p class="text-[0.5rem] text-gold mt-2 text-right hidden" id="copyFeedback"></p>
+      </div>
+    </div>
+    <!-- 往期数据速览 -->
+    <div class="cd p-4 mb-4" id="histPreviewSection">
+      <div class="flex justify-between items-center mb-3">
+        <span class="text-[0.5625rem] text-gold font-l tracking-[0.2em] uppercase">往期数据</span>
+        <a href="发布历史.html" class="text-[0.5625rem] text-tx3 font-l" style="text-decoration:underline;text-underline-offset:3px">查看全部</a>
+      </div>
+      <div id="histPreviewList" class="space-y-2">
+        <p class="text-[.625rem] text-tx3">加载中…</p>
+      </div>
+    </div>
+    <button class="w-full py-4 rounded-pill text-sm font-l tracking-[0.15em] uppercase" style="background:#c4a265;color:#1a1714" id="publishBtn">确认发布</button>
+  </section>
+
+  <div class="flex gap-3 mt-6" id="navButtons">
+    <button class="flex-1 py-3 rounded-pill border text-xs font-l tracking-wider transition-all" style="border-color:rgba(196,162,101,0.25);color:#9a9080" id="prevBtn" disabled>上一步</button>
+    <button class="flex-1 py-3 rounded-pill text-xs font-l tracking-wider" style="background:#c4a265;color:#1a1714" id="nextBtn">下一步</button>
+  </div>
+</main>
+
+<nav class="fixed bottom-0 w-full z-50 glass">
+  <div class="flex justify-around items-center px-6 pb-7 pt-3">
+    <a class="flex flex-col items-center text-tx3" href="爆款内容.html">
+      <span class="material-symbols-outlined mb-0.5">trending_up</span>
+      <span class="font-l text-[0.5625rem] tracking-[0.15em] uppercase font-light">商机</span>
+    </a>
+    <a class="flex flex-col items-center text-gold" href="店员首页.html">
+      <span class="material-symbols-outlined mb-0.5" style="font-variation-settings:'FILL'1">send</span>
+      <span class="font-l text-[0.5625rem] tracking-[0.15em] uppercase font-light">发布</span>
+    </a>
+    <a class="flex flex-col items-center text-tx3" href="店员我的.html">
+      <span class="material-symbols-outlined mb-0.5">person</span>
+      <span class="font-l text-[0.5625rem] tracking-[0.15em] uppercase font-light">我的</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+let cs=1,ts=2,panels=[document.getElementById('step1'),document.getElementById('step2')],nb=document.getElementById('nextBtn'),pb=document.getElementById('prevBtn'),pub=document.getElementById('publishBtn'),navB=document.getElementById('navButtons'),sid=null;
+function updateUI(){panels.forEach((p,i)=>p.classList.toggle('active',i===cs-1));document.querySelectorAll('[data-step]').forEach(d=>{let s=+d.dataset.step;d.className='step-dot '+(s<cs?'step-done':s===cs?'step-a':'step-p');d.textContent=(s<cs?'✓':s)});let l=document.getElementById('line12');l.className='step-line '+(cs>1?'step-la':'step-lp');document.querySelectorAll('[data-step] + span').forEach((x,i)=>{x.className='text-[0.625rem] ml-1 mr-2 font-l '+(i<cs?'text-gold':i===cs?'text-gold':'text-tx3')});pb.disabled=cs===1;if(cs===1){pb.style.opacity='0.5';pb.style.cursor='not-allowed'}else{pb.style.opacity='1';pb.style.cursor='pointer'}if(cs===ts){nb.classList.add('hidden')}else{nb.classList.remove('hidden');nb.textContent='下一步'}}
+nb.addEventListener('click',async function(){
+if(cs===1&&!sid){LFX.toast('请先选择一条内容',{kind:'error'});return}
+if(cs===1&&sid){
+  // 如果选中的是内容池条目，尝试领取（原子锁定）
+  var pid=getPoolItemId(sid);
+  if(pid){
+    nb.textContent='领取中...';nb.disabled=true;
+    var u=LFX&&LFX.Store?LFX.Store.getUser():null;
+    try{
+      var r=await fetch('/pool-api/claim',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:pid,phone:u&&u.phone||'',name:u&&u.name||''})});
+      var d=await r.json();
+      if(!d.ok){LFX.toast(d.error||'已被领取',{kind:'error'});nb.textContent='下一步';nb.disabled=false;await loadPoolItems();return}
+      window._poolItemId=pid;
+    }catch(e){LFX.toast('网络异常，请重试',{kind:'error'});nb.textContent='下一步';nb.disabled=false;return}
+    nb.textContent='下一步';nb.disabled=false;
+  }
+}
+if(cs<ts){cs++;updateUI()}});
+pb.addEventListener('click',()=>{if(cs>1){cs--;updateUI()}});
+/* ── 内容保护：水印 + 禁止下载 ── */
+function genWatermarkText(){
+  var u=LFX&&LFX.Store?LFX.Store.getUser():null;
+  var name=(u&&u.name)||'',phone=(u&&u.phone)||'';
+  var wm='老鳳祥 · 发布前严禁外传\n';
+  if(name||phone)wm+=name+' '+phone+'\n';
+  wm+='老鳳祥 · 内容保护\n老鳳祥 · LFX';
+  var el=document.getElementById('wmText');
+  if(el)el.textContent=wm;
+}
+function protectStep2(){
+  genWatermarkText();
+  // 禁止右键 & 长按
+  var pc=document.getElementById('previewContent');
+  if(!pc)return;
+  pc.oncontextmenu=function(e){e.preventDefault();LFX.toast('发布前禁止下载复制',{kind:'warn'});return false};
+  pc.onselectstart=function(e){e.preventDefault();return false};
+  pc.ondragstart=function(e){e.preventDefault();return false};
+}
+// 进入 Step2 时激活保护
+var origUpdateUI=updateUI;
+updateUI=function(){
+  origUpdateUI();
+  if(cs===2)protectStep2();
+};
+function selectCardById(id){var c=document.querySelector('.cc[data-id="'+id+'"]');if(c)handleCardClick(c)}
+/* 统一卡片点击处理 */
+function handleCardClick(c){
+  document.querySelectorAll('.cc').forEach(function(x){x.classList.remove('sel');var ci=x.querySelector('.ci');if(ci)ci.textContent='radio_button_unchecked'});
+  c.classList.add('sel');var ci=c.querySelector('.ci');if(ci)ci.textContent='radio_button_checked';
+  sid=c.dataset.id;
+  var t=c.querySelector('.cc-title'),b=c.querySelector('.cc-body'),tg=c.querySelector('.cc-tags');
+  document.getElementById('previewTitle').textContent=t?t.textContent:'';
+  document.getElementById('previewBody').textContent=b?b.textContent:'';
+  document.getElementById('previewTags').textContent=tg?tg.textContent:'';
+}
+/* 绑定卡片点击（包括动态渲染的） */
+function bindCardClicks(){
+  document.querySelectorAll('.cc').forEach(function(c){c.removeEventListener('click',onCardClick);c.addEventListener('click',onCardClick)})
+}
+function onCardClick(){handleCardClick(this)}
+
+/* ── 内容池 ── */
+function getPoolItemId(s){if(!s)return null;var m=String(s).match(/^pool-(\d+)$/);return m?parseInt(m[1]):null}
+var FALLBACK_ICONS=['diamond','favorite','auto_awesome','spa','cloud','star'];
+var FALLBACK_CARDS=[
+  {id:'1',title:'古法金镶玉吊坠',body:'非遗花丝镶嵌工艺，传承古法匠心。老凤祥年度典藏之作',tags:'#古法金 #非遗工艺'},
+  {id:'2',title:'婚嫁套装「红妆」',body:'十里红妆，一生挚爱。全套黄金婚嫁首饰',tags:'#婚嫁首饰 #备婚攻略'},
+  {id:'3',title:'黄金戒指·极简主义',body:'极简设计，日常百搭。素金圈戒，低调中尽显质感',tags:'#日常穿搭 #极简风'},
+  {id:'4',title:'凤舞九天限量手镯',body:'大师手作，全球限量300套。龙凤图腾浮雕',tags:'#限量珍藏 #国潮'},
+  {id:'5',title:'暗香疏影·耳饰套组',body:'暗香浮动月黄昏，意境东方美学耳饰',tags:'#东方美学 #耳饰'},
+  {id:'6',title:'足金祥云手镯',body:'祥云纹传统錾刻工艺，足金锻造',tags:'#祥云纹 #传统工艺'}
+];
+function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function extractTags(body){var m=body.match(/#[\u4e00-\u9fa5\w]+/g);return m?m.slice(0,4).join(' '):''}
+function renderCards(items,fromPool){
+  var h='';items.forEach(function(item,i){
+    var icon=fromPool?'auto_awesome':(FALLBACK_ICONS[i]||'diamond');
+    var title=item.title||'';
+    var body=item.body||'';
+    var tags=item.tags||'';
+    var dataId=fromPool?('pool-'+item.id):item.id;
+    h+='<div class="cd cc" data-id="'+dataId+'">'+
+      '<div class="thumb-hero h-20 rounded-t-c flex items-center justify-center"><span class="material-symbols-outlined text-gold text-3xl">'+icon+'</span></div>'+
+      '<div class="p-3">'+
+        '<p class="text-xs font-light truncate cc-title">'+esc(title)+'</p>'+
+        '<p class="text-[0.625rem] text-tx3 mt-1 leading-relaxed line-clamp-2 cc-body">'+esc(body)+'</p>'+
+        '<div class="mt-2 flex flex-wrap cc-tags">'+(tags?tags.split(' ').map(function(t){return'<span class="tag-chip">'+esc(t)+'</span>'}).join(''):'')+'</div>'+
+        '<div class="flex justify-end mt-2"><span class="material-symbols-outlined text-tx3 ci text-lg">radio_button_unchecked</span></div>'+
+      '</div></div>';
+  });
+  document.getElementById('poolCards').innerHTML=h;
+  bindCardClicks();
+}
+function selectCardByIndex(idx){var cards=document.querySelectorAll('#poolCards .cc');if(cards[idx])handleCardClick(cards[idx])}
+async function loadPoolItems(){
+  var ctr=document.getElementById('poolCards');
+  try{
+    var r=await fetch('/pool-api/available');var items=await r.json();
+    if(items&&items.length){
+      window._poolRawData=items; // 保存原始数据供手动下载
+      items.forEach(function(it){it.tags=extractTags(it.body)});
+      renderCards(items,true);return;
+    }
+  }catch(e){}
+  // 池空或网络异常 → 回退硬编码
+  window._poolRawData=null;
+  renderCards(FALLBACK_CARDS,false);
+}
+/* ── 手动发布备用 ── */
+function toggleManualFallback(){
+  var b=document.getElementById('manualFallbackBody');
+  var i=document.getElementById('manualToggleIcon');
+  var show=b.style.display==='none';
+  b.style.display=show?'block':'none';
+  i.classList.toggle('open',show);
+}
+function getCurrentContent(){
+  var t=document.getElementById('previewTitle').textContent.trim();
+  var b=document.getElementById('previewBody').textContent.trim();
+  return {title:t,body:b};
+}
+function showCopyOK(label){
+  var fb=document.getElementById('copyFeedback');
+  fb.textContent='✓ '+label+' 已复制';
+  fb.classList.remove('hidden');
+  setTimeout(function(){fb.classList.add('hidden')},2000);
+}
+function copyTitle(){
+  var c=getCurrentContent();
+  if(!c.title){LFX.toast('暂无可复制标题',{kind:'warn'});return}
+  navigator.clipboard.writeText(c.title).then(function(){showCopyOK('标题');LFX.toast('标题已复制',{kind:'success'})}).catch(function(){LFX.toast('复制失败，请长按手动复制',{kind:'error'})});
+}
+function copyBodyText(){
+  var c=getCurrentContent();
+  if(!c.body){LFX.toast('暂无可复制内容',{kind:'warn'});return}
+  navigator.clipboard.writeText(c.body).then(function(){showCopyOK('正文');LFX.toast('正文已复制',{kind:'success'})}).catch(function(){LFX.toast('复制失败，请长按手动复制',{kind:'error'})});
+}
+function downloadImages(){
+  var raw=window._poolRawData;
+  if(!raw||!raw.length){LFX.toast('暂无图片可下载',{kind:'warn'});return}
+  // 找到当前选中的条目
+  var pid=window._poolItemId;
+  var item=null;
+  for(var i=0;i<raw.length;i++){if(raw[i].id===pid){item=raw[i];break}}
+  if(!item||!item.image_urls||!item.image_urls.length){LFX.toast('该内容暂无图片',{kind:'warn'});return}
+  var urls=item.image_urls;
+  var done=0;
+  function dl(url,idx){
+    var a=document.createElement('a');a.href=url;a.download='发布素材_'+(idx+1)+'.jpg';
+    a.style.display='none';document.body.appendChild(a);a.click();
+    document.body.removeChild(a);done++;
+    if(done===urls.length)LFX.toast(done+' 张图片已触发下载',{kind:'success'});
+  }
+  urls.forEach(function(u,i){setTimeout(function(){dl(u,i)},i*300)});
+}
+// 进入 Step2 时更新图片下载按钮状态
+function updateFallbackImgBtn(){
+  var btn=document.getElementById('downloadImgBtn');
+  var raw=window._poolRawData;
+  if(!raw){btn.disabled=true;return}
+  var pid=window._poolItemId;
+  if(!pid){btn.disabled=true;return}
+  for(var i=0;i<raw.length;i++){if(raw[i].id===pid){btn.disabled=!raw[i].image_urls||!raw[i].image_urls.length;return}}
+  btn.disabled=true;
+}
+// 扩展 protectStep2 以更新备用面板
+var origProtect=protectStep2;
+protectStep2=function(){
+  origProtect();
+  updateFallbackImgBtn();
+};
+document.querySelectorAll('.pc').forEach(c=>{c.addEventListener('click',()=>{c.classList.toggle('sel');let r=c.querySelector('.pr');r.textContent=c.classList.contains('sel')?'radio_button_checked':'radio_button_unchecked'})});
+pub.addEventListener('click',function(){
+if(!document.querySelectorAll('.pc.sel').length){LFX.toast('请至少选择一个平台',{kind:'error'});return}
+var t=document.getElementById('previewTitle').textContent.trim();
+var b=document.getElementById('previewBody').textContent.trim();
+var pls=Array.from(document.querySelectorAll('.pc.sel')).map(function(x){return x.dataset.platform||'xhs'});
+var tags=Array.from(document.querySelectorAll('.tag-chip')).map(function(x){return x.textContent.replace('#','')});
+var hasXhs=pls.indexOf('xhs')!==-1;
+pub.textContent=hasXhs?'正在唤起小红书...':'发布中...';pub.disabled=true;
+
+var poolPublishDone=false;
+function done(msg,delay,viaSuffix){
+  pub.textContent=msg;pub.style.background='#d4b275';pub.style.color='#1a1714';
+  try{if(window.LFX&&LFX.Store){LFX.Store.publish({title:t,body:b,platforms:pls});}}catch(e){}
+  // 标记内容池条目为已发布
+  if(window._poolItemId&&!poolPublishDone){
+    poolPublishDone=true;
+    var u2=LFX&&LFX.Store?LFX.Store.getUser():null;
+    fetch('/pool-api/publish',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:window._poolItemId,phone:u2&&u2.phone||''})}).catch(function(){});
+  }
+  var u='发布成功.html'+viaSuffix;
+  setTimeout(function(){window.location.href=u},delay||800);
+}
+
+function intentXHS(){
+  var tagLine=tags.map(function(x){return'#'+x}).join(' ');
+  var intentText=tagLine?t+'\n\n'+b+'\n\n'+tagLine:t+'\n\n'+b;
+  var u='intent:#Intent;action=android.intent.action.SEND;type=text/plain;'+
+    'S.android.intent.extra.SUBJECT='+encodeURIComponent(t)+';'+
+    'S.android.intent.extra.TEXT='+encodeURIComponent(intentText)+';'+
+    'package=com.xingin.xhs;end';
+  try{window.location.href=u;}catch(ie){}
+}
+
+if(hasXhs){
+  var fullText=t+'\n\n'+b+'\n\n'+tags.map(function(x){return'#'+x}).join(' ');
+  try{navigator.clipboard.writeText(fullText);}catch(cc){}
+  try{localStorage.setItem('lfx_xhs_text',fullText);}catch(ls){}
+
+  if(navigator.share){
+    navigator.share({title:t,text:b+'\n\n'+tags.map(function(x){return'#'+x}).join(' ')}).then(function(){
+      done('已唤起小红书 ✓',800,'?via=xhs&title='+encodeURIComponent(t));
+    }).catch(function(){
+      intentXHS();
+      done('已唤起小红书 ✓',800,'?via=xhs&title='+encodeURIComponent(t));
+    });
+  }else{
+    intentXHS();
+    done('文案已复制，请在新打开的小红书中粘贴发布 ✓',1200,'?via=xhs&title='+encodeURIComponent(t));
+  }
+}else{
+  setTimeout(function(){
+    done('发布成功 ✓',600,'');
+  },1500);
+}
+});
+updateUI();
+loadPoolItems();
+/* ── ?pool=ID 直跳：从店员我的"待转发"跳过来直接进 Step2 ── */
+(function poolDirectJump(){
+  var poolId=new URLSearchParams(location.search).get('pool');
+  if(!poolId)return;
+  var numId=parseInt(poolId,10);
+  if(!numId||numId<=0)return;
+  var previewTitle=document.getElementById('previewTitle');
+  var previewBody=document.getElementById('previewBody');
+  var previewTags=document.getElementById('previewTags');
+  fetch('/pool-api/item/'+numId).then(function(r){return r.json()}).then(function(item){
+    if(!item||item.error){LFX.toast(item&&item.error||'内容不存在或已过期',{kind:'warn'});return}
+    window._poolItemId=numId;
+    if(previewTitle)previewTitle.textContent=item.title||'';
+    if(previewBody)previewBody.textContent=item.body||'';
+    if(previewTags)previewTags.textContent=extractTags(item.body);
+    // 跳过 Step1，直接进 Step2
+    cs=2;updateUI();
+    // 保存原始数据到全局
+    window._poolRawData=[item];
+    updateFallbackImgBtn();
+  }).catch(function(){LFX.toast('加载内容失败，请检查网络',{kind:'error'})});
+})();
+(function renderHistPreview(){
+var listEl=document.getElementById('histPreviewList');
+if(!listEl)return;
+function render(){
+if(!window.LFX||!LFX.Store){listEl.innerHTML='<p class="text-[.625rem] text-tx3">暂无数据</p>';return}
+var contents=LFX.Store.getMyContents('approved');
+if(!contents.length){listEl.innerHTML='<p class="text-[.625rem] text-tx3">暂无已发布内容，首次发布后将显示数据</p>';return}
+var sorted=contents.slice().sort(function(a,b){return(b.interaction||0)-(a.interaction||0)});
+var top3=sorted.slice(0,3);
+var best=top3[0];
+function tFmt(ts){var n=Date.now();var diff=(n-ts)/1000;if(diff<60)return'刚刚';if(diff<3600)return Math.floor(diff/60)+'分钟前';if(diff<86400)return'今天';if(diff<172800)return'昨天';var d=new Date(ts);return(d.getMonth()+1)+'月'+d.getDate()+'日'}
+function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+var total=contents.length;
+listEl.innerHTML=
+'<div class="flex items-center gap-2 mb-2.5 text-[.625rem]">'+
+  '<span class="text-tx3">共 <b class="text-gold font-medium">'+total+'</b> 条已发布</span>'+
+  (best?'<span class="text-tx3">· 最佳: <b class="text-gold font-medium">'+esc(best.title)+'</b> ('+(best.interaction||0)+' 互动)</span>':'')+
+'</div>'+
+top3.map(function(c,i){
+  var isBest=i===0;
+  return'<div class="flex items-center gap-2 text-[.625rem] py-1.5 px-2 rounded-lg" style="background:'+(isBest?'rgba(196,162,101,0.08)':'transparent')+'">'+
+    '<span class="text-tx3 w-14 shrink-0">'+tFmt(c.createdAt)+'</span>'+
+    '<span class="flex-1 truncate '+(isBest?'text-gold font-medium':'text-tx2')+'">'+esc(c.title)+'</span>'+
+    '<span class="text-tx3 shrink-0">'+(c.interaction||0)+' 互动</span>'+
+  '</div>';
+}).join('');
+}
+render();
+if(window.LFX&&LFX.Store)LFX.Store.on(function(evt){if(evt==='publish'||evt==='approve'||evt==='login'||evt==='sync')render()});
+})();
+// Theme support
+var LC={'bg':'#faf8f4','card':'#ffffff','card-hi':'#f5f0e6','gold':'#a08040','gold-d':'#8a7040','gold-b':'#b09050','tx':'#2a2418','tx2':'#5a5040','tx3':'#8a7d65','bdr':'rgba(196,162,101,0.12)','bdr2':'rgba(196,162,101,0.25)','red':'#c45a42'};
+var DC={'bg':'#1a1714','card':'#242019','card-hi':'#2e2920','gold':'#c4a265','gold-d':'#8a7d65','gold-b':'#d4b275','tx':'#e8e0d4','tx2':'#9a9080','tx3':'#6a6055','bdr':'rgba(196,162,101,0.08)','bdr2':'rgba(196,162,101,0.18)','red':'#c45a42'};
+function setTheme(t){document.body.classList.toggle('light',t==='light');localStorage.setItem('lfx-theme',t)}
+var tp=new URLSearchParams(location.search).get('theme');
+var _t=tp||localStorage.getItem('lfx-theme')||'dark';
+if(_t==='light')setTheme('light');
+window.addEventListener('message',function(e){if(e.data&&e.data.type==='theme')setTheme(e.data.theme)});
+</script>
+</body></html>

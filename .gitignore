@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs  
+out/
+*.apk
+*.ipa
+*.hap
+*.zip
+*.tar.gz
+LFX-*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+content_max_data/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp / logs
+*.log
+*.tmp
+/tmp/
+
+# Large upload data
+data/upload/
+
+# Screenshots & media
+screenshot_*.png
+202605*.png
+202605*.jpg
+*.mp4
+
+# Conversation cache
+.qoder/
+.agent-tools/
+
+# Misc generated
+*.jsonl
+= 

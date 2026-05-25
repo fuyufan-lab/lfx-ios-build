@@ -1,0 +1,39 @@
+﻿total=36 ok=36 fail=0
+
+=== 妯悜婧㈠嚭 ===
+  NONE
+
+=== 澶辫触缁勫悎 ===
+  NONE
+
+=== 鎸夐〉闈㈣仛鍚堬紙鍙?iphone-14 浠ｈ〃锛屽洜 6 鏈哄瀷娴嬬殑鏄悓鏍?HTML锛?===
+page       smallFont  smallTouch fixed   
+entry      0          0          1       
+login      0          1          0       
+dealer     0          2          2       
+hq         0          5          2       
+notice     0          0          1       
+history    0          3          1       
+
+=== iphone-14 灏忓瓧鏍锋湰锛堟瘡椤靛墠 10锛?===
+
+=== iphone-14 灏忚Е鎺ф牱鏈紙姣忛〉鍏ㄩ儴锛?===
+
+  -- login --
+    60x28 [A] '绔嬪嵆娉ㄥ唽'
+
+  -- dealer --
+    55x32 [BUTTON] '+澶囪揣'
+    55x32 [BUTTON] '+鍔犺喘'
+
+  -- hq --
+    36x32 [BUTTON] '鍛?
+    36x32 [BUTTON] '鏈?
+    82x36 [BUTTON] '鍗曞搧鏁版嵁'
+    82x36 [BUTTON] '绯诲垪鏁版嵁'
+    58x36 [BUTTON] '鎬绘'
+
+  -- history --
+    69x31 [BUTTON] '鍏ㄩ儴 9'
+    79x31 [BUTTON] '灏忕孩涔?3'
+    68x31 [BUTTON] '鎶栭煶 3'

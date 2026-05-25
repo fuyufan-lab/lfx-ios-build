@@ -1,0 +1,27 @@
+{
+  "name": "lfx-ios-shell",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LFX 珠宝内容系统 iOS WebView 壳 (Capacitor)",
+  "scripts": {
+    "sync": "node ../scripts/sync-web.js ios",
+    "cap:add": "cap add ios",
+    "cap:sync": "cap sync ios",
+    "cap:open": "cap open ios",
+    "cap:run": "cap run ios",
+    "build:dev": "npm run sync && cap sync ios",
+    "build:archive": "npm run sync && cap sync ios && cd ios/App && xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -archivePath build/App.xcarchive archive"
+  },
+  "dependencies": {
+    "@capacitor/app": "^6.0.1",
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/ios": "^6.1.2",
+    "@capacitor/preferences": "^6.0.2",
+    "@capacitor/splash-screen": "^6.0.2",
+    "@capacitor/status-bar": "^6.0.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.2",
+    "typescript": "^6.0.3"
+  }
+}

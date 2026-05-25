@@ -1,0 +1,54 @@
+{
+  "name": "老鳳祥 · 内容分发运营平台",
+  "short_name": "老鳳祥LFX",
+  "description": "老鳳祥珠宝内容分发运营平台 - 选款·编辑·发布·数据监测",
+  "start_url": "/lfx-preview/入口页.html",
+  "scope": "/lfx-preview/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#1a1714",
+  "background_color": "#1a1714",
+  "categories": ["business", "productivity"],
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "/lfx-preview/icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/lfx-preview/icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/lfx-preview/icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/lfx-preview/icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/lfx-preview/icons/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/lfx-preview/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lfx-preview/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "prefer_related_applications": false
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<link rel="preconnect" href="https://fonts.googleapis.cn"/>
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin/>
+<link rel="preconnect" href="https://cdn.tailwindcss.com"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>老鳳祥 | 我的</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.cn/css2?family=Manrope:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.cn/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<script src="shared.js"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{
+'bg':'#1a1714','card':'#242019','card-hi':'#2e2920',
+'gold':'#c4a265','gold-d':'#8a7d65','gold-b':'#d4b275',
+'tx':'#e8e0d4','tx2':'#9a9080','tx3':'#6a6055',
+'bdr':'rgba(196,162,101,0.08)','bdr2':'rgba(196,162,101,0.18)',
+'red':'#c45a42'
+},fontFamily:{"h":["Manrope"],"b":["Manrope"],"l":["Inter"]},borderRadius:{"c":"12px","pill":"9999px","full":"9999px"}}}}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}
+body{background:#1a1714;color:#e8e0d4;min-height:max(884px,100dvh);font-weight:300;overflow-x:hidden;overflow-y:auto;transition:background .5s,color .4s}
+body.light{background:#faf8f4;color:#2a2418}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 35% at 50% 20%,rgba(196,162,101,0.1) 0%,transparent 55%),radial-gradient(ellipse 45% 25% at 70% 65%,rgba(196,162,101,0.05) 0%,transparent 50%);pointer-events:none;z-index:0}
+body.light::before{background:radial-gradient(ellipse 60% 35% at 50% 20%,rgba(196,162,101,0.15) 0%,transparent 55%),radial-gradient(ellipse 45% 25% at 30% 70%,rgba(196,162,101,0.08) 0%,transparent 50%)}
+.glass{background:rgba(26,23,20,0.82);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+body.light .glass{background:rgba(250,248,244,0.92)}
+.cd{background:#242019;border:1px solid rgba(196,162,101,0.06);border-radius:12px;transition:background .4s,border-color .4s}
+body.light .cd{background:#fff;border-color:rgba(196,162,101,0.15)}
+.avatar-ring{background:linear-gradient(135deg,#c4a265,#8a7d65,#c4a265);padding:2px;border-radius:50%;display:inline-flex}
+.avatar-inner{background:#1a1714;border-radius:50%;width:64px;height:64px;display:flex;align-items:center;justify-content:center;transition:background .4s}
+body.light .avatar-inner{background:#faf8f4}
+@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+main{animation:fu .6s cubic-bezier(.23,1,.32,1)}
+@keyframes cu{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.cn{animation:cu .4s ease-out both}
+.pf{transition:width .8s ease-out}
+::-webkit-scrollbar{display:none}*{scrollbar-width:none;-ms-overflow-style:none}
+
+/* 亮色主题下 hero 暗色遮罩 → 浅色遮罩 */
+body.light [style*="rgba(26,23,20,0.7) 0%,rgba(26,23,20,0.85) 50%,rgba(26,23,20,0.98)"]{
+  background:linear-gradient(to bottom,rgba(250,248,244,0.5) 0%,rgba(250,248,244,0.85) 50%,rgba(250,248,244,0.98) 100%) !important;
+}
+/* 亮色主题下进度条空槽暗色 → 浅米色 */
+body.light [style="background:#2e2920"]{
+  background:#ede4d2 !important;
+}
+</style>
+</head>
+<body class="font-b">
+
+<header class="fixed top-0 w-full z-50 glass">
+  <div class="flex justify-between items-center w-full px-5 py-4">
+    <a href="店员首页.html" class="material-symbols-outlined text-gold text-xl">arrow_back</a>
+    <span class="text-base font-light tracking-[0.15em]" style="font-family:Georgia,serif">老鳳祥</span>
+    <a href="通知中心.html?from=店员我的" class="relative text-gold" aria-label="通知">
+      <span class="material-symbols-outlined text-xl">notifications</span>
+      <span data-lfx-badge="notif" class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full" style="background:#c45a42"></span>
+    </a>
+  </div>
+</header>
+
+<main class="pt-20 pb-28 px-4 max-w-md mx-auto" style="position:relative;z-index:1">
+  <!-- Profile Hero -->
+  <section class="text-center mb-10 -mx-4 overflow-hidden" style="border-radius:0 0 20px 20px">
+    <div class="relative py-8 px-5" style="background:url('20260522-165116.png') center 30%/cover no-repeat">
+      <div class="absolute inset-0" style="background:linear-gradient(to bottom,rgba(26,23,20,0.7) 0%,rgba(26,23,20,0.85) 50%,rgba(26,23,20,0.98) 100%)"></div>
+      <div class="absolute inset-0" style="background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(196,162,101,0.08) 0%,transparent 60%)"></div>
+      <div class="relative z-10">
+        <div class="avatar-ring mx-auto mb-4"><div class="avatar-inner"><span class="font-h text-gold text-2xl font-extralight tracking-wider">张丽</span></div></div>
+        <h1 class="font-h text-lg font-extralight tracking-wide">张丽华</h1>
+        <p class="text-[0.5625rem] text-tx3 uppercase tracking-[0.25em] mt-2 font-light">店员 · 工号 GZ20240056</p>
+        <p class="text-[0.5625rem] text-tx3 mt-1 font-light">上海南京路旗舰店</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="grid grid-cols-2 gap-3 mb-8">
+    <div class="cd p-4 text-center">
+      <p class="font-h text-xl text-gold cn font-extralight" id="lfxPubCount">48</p>
+      <p class="text-[0.625rem] text-tx3 font-light">已发数量</p>
+      <p class="text-[0.5625rem] text-tx3 mt-0.5 font-light">目标 60 条/月</p>
+      <div class="w-full h-1 rounded-full overflow-hidden mt-2.5" style="background:#2e2920">
+        <div class="h-full rounded-full pf" id="lfxPubBar" style="width:80%;background:linear-gradient(90deg,#c4a265,#8a7d65)"></div>
+      </div>
+      <p class="text-[0.5625rem] text-gold mt-1.5 font-light" id="lfxPubPct">完成 80%</p>
+    </div>
+    <div class="cd p-4 text-center">
+      <p class="font-h text-xl text-gold cn font-extralight" style="animation-delay:0.1s">3,847</p>
+      <p class="text-[0.625rem] text-tx3 font-light">热力值</p>
+      <p class="text-[0.5625rem] text-tx3 mt-0.5 font-light">门店排名 Top 3</p>
+      <div class="w-full h-1 rounded-full overflow-hidden mt-2.5" style="background:#2e2920">
+        <div class="h-full rounded-full pf" style="width:92%;background:linear-gradient(90deg,#d4b275,#c4a265)"></div>
+      </div>
+      <p class="text-[0.5625rem] text-gold mt-1.5 font-light">超越 92% 店员</p>
+    </div>
+  </section>
+
+  <!-- 我的清单（LFX.Store 注入） -->
+  <section class="mb-8" id="lfxCartSection" style="display:none">
+    <div class="cd p-4">
+      <div class="flex justify-between items-center mb-3">
+        <span class="text-[0.5625rem] font-l tracking-[0.2em] uppercase text-tx3 font-light">我的清单</span>
+        <span class="text-[0.5625rem] text-gold font-l tracking-wider" id="lfxCartTotal">0 条</span>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="text-center">
+          <p class="font-h text-lg text-gold font-extralight" id="lfxCartCnt">0</p>
+          <p class="text-[0.5625rem] text-tx3 font-light">加购</p>
+        </div>
+        <div class="text-center">
+          <p class="font-h text-lg text-gold font-extralight" id="lfxStockCnt">0</p>
+          <p class="text-[0.5625rem] text-tx3 font-light">备货</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 待转发（来自内容池） -->
+  <section class="mb-8" id="poolClaimedSection">
+    <div class="cd p-4">
+      <div class="flex justify-between items-center mb-4">
+        <span class="text-[0.5625rem] font-l tracking-[0.2em] uppercase text-tx3 font-light">待转发</span>
+        <span class="text-[0.5625rem] text-gold font-l tracking-wider" id="poolClaimedCount">加载中…</span>
+      </div>
+      <div id="poolClaimedList" class="space-y-3.5">
+        <p class="text-[.625rem] text-tx3">加载中…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 发布历史 -->
+  <section class="mb-8">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-[0.5625rem] font-l tracking-[0.2em] uppercase text-tx3 font-light">发布历史</h2>
+      <a href="发布历史.html" class="text-[0.5625rem] text-gold font-l tracking-wider">查看全部</a>
+    </div>
+    <div class="space-y-2.5">
+      <div class="cd p-3.5">
+        <div class="flex justify-between items-start">
+          <div class="flex-1"><p class="text-sm font-light">古法金镶玉吊坠文案</p><p class="text-[0.625rem] text-tx3">小红书 · 今天 14:32</p></div>
+          <div class="flex gap-3 text-xs text-tx3 font-light"><span>23</span><span>5</span><span>12</span></div>
+        </div>
+      </div>
+      <div class="cd p-3.5">
+        <div class="flex justify-between items-start">
+          <div class="flex-1"><p class="text-sm font-light">婚嫁套装「红妆」推广</p><p class="text-[0.625rem] text-tx3">抖音 · 昨天 10:15</p></div>
+          <div class="flex gap-3 text-xs text-tx3 font-light"><span>67</span><span>12</span><span>34</span></div>
+        </div>
+      </div>
+      <div class="cd p-3.5">
+        <div class="flex justify-between items-start">
+          <div class="flex-1"><p class="text-sm font-light">黄金戒指穿搭分享</p><p class="text-[0.625rem] text-tx3">小红书 · 5月3日</p></div>
+          <div class="flex gap-3 text-xs text-tx3 font-light"><span>45</span><span>8</span><span>21</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 设置菜单 -->
+  <section>
+    <div class="cd overflow-hidden">
+      <a href="#" class="flex items-center justify-between p-4 hover:bg-card-hi transition-colors" onclick="event.preventDefault();showToast('个人信息编辑页面开发中')"><span class="text-sm font-light">个人信息</span><span class="material-symbols-outlined text-tx3 text-lg">chevron_right</span></a>
+      <div class="mx-4 h-px" style="background:rgba(196,162,101,0.06)"></div>
+      <a href="#" class="flex items-center justify-between p-4 hover:bg-card-hi transition-colors" onclick="event.preventDefault();showToast('字号大小设置开发中')"><span class="text-sm font-light">字号大小</span><span class="material-symbols-outlined text-tx3 text-lg">chevron_right</span></a>
+      <div class="mx-4 h-px" style="background:rgba(196,162,101,0.06)"></div>
+      <a href="#" class="flex items-center justify-between p-4 hover:bg-card-hi transition-colors" onclick="event.preventDefault();showToast('账号管理功能开发中')"><span class="text-sm font-light">账号管理</span><span class="material-symbols-outlined text-tx3 text-lg">chevron_right</span></a>
+      <div class="mx-4 h-px" style="background:rgba(196,162,101,0.06)"></div>
+      <a href="#" class="flex items-center justify-between p-4 hover:bg-card-hi transition-colors" onclick="event.preventDefault();showToast('客服中心开发中，请拨打 400-820-6028')"><span class="text-sm font-light">客服中心</span><span class="material-symbols-outlined text-tx3 text-lg">chevron_right</span></a>
+      <div class="mx-4 h-px" style="background:rgba(196,162,101,0.06)"></div>
+      <a href="#" class="flex items-center justify-between p-4 hover:bg-card-hi transition-colors" onclick="event.preventDefault();showToast('感谢你的反馈，功能改进建议已记录')"><span class="text-sm font-light">功能建议</span><span class="material-symbols-outlined text-tx3 text-lg">chevron_right</span></a>
+      <div class="mx-4 h-px" style="background:rgba(196,162,101,0.06)"></div>
+      <a href="入口页.html" class="flex items-center justify-between p-4 hover:bg-card-hi transition-colors"><span class="text-sm font-light text-red">退出登录</span><span class="material-symbols-outlined text-red text-lg">logout</span></a>
+    </div>
+  </section>
+</main>
+
+<nav class="fixed bottom-0 w-full z-50 glass">
+  <div class="flex justify-around items-center px-6 pb-7 pt-3">
+    <a class="flex flex-col items-center text-tx3" href="爆款内容.html"><span class="material-symbols-outlined mb-0.5">trending_up</span><span class="font-l text-[0.5625rem] tracking-[0.15em] uppercase font-light">商机</span></a>
+    <a class="flex flex-col items-center text-tx3" href="店员首页.html"><span class="material-symbols-outlined mb-0.5">send</span><span class="font-l text-[0.5625rem] tracking-[0.15em] uppercase font-light">发布</span></a>
+    <a class="flex flex-col items-center text-gold" href="店员我的.html"><span class="material-symbols-outlined mb-0.5" style="font-variation-settings:'FILL'1">person</span><span class="font-l text-[0.5625rem] tracking-[0.15em] uppercase font-light">我的</span></a>
+  </div>
+</nav>
+
+<script>
+function showToast(m){var t=document.createElement('div');t.className='fixed top-20 left-1/2 -translate-x-1/2 px-6 py-3 text-xs font-l tracking-wider z-[100]';t.style.cssText='background:#c4a265;color:#1a1714;border-radius:9999px;animation:fu .3s ease-out';t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},2000)}
+// Theme support
+var LC={'bg':'#faf8f4','card':'#ffffff','card-hi':'#f5f0e6','gold':'#a08040','gold-d':'#8a7040','gold-b':'#b09050','tx':'#2a2418','tx2':'#5a5040','tx3':'#8a7d65','bdr':'rgba(196,162,101,0.12)','bdr2':'rgba(196,162,101,0.25)','red':'#c45a42'};
+var DC={'bg':'#1a1714','card':'#242019','card-hi':'#2e2920','gold':'#c4a265','gold-d':'#8a7d65','gold-b':'#d4b275','tx':'#e8e0d4','tx2':'#9a9080','tx3':'#6a6055','bdr':'rgba(196,162,101,0.08)','bdr2':'rgba(196,162,101,0.18)','red':'#c45a42'};
+function setTheme(t){document.body.classList.toggle('light',t==='light');localStorage.setItem('lfx-theme',t)}
+var tp=new URLSearchParams(location.search).get('theme');
+var _t=tp||localStorage.getItem('lfx-theme')||'dark';
+if(_t==='light')setTheme('light');
+window.addEventListener('message',function(e){if(e.data&&e.data.type==='theme')setTheme(e.data.theme)});
+/* ── LFX.Store: 已发数量 + 我的清单 ── */
+(function(){
+  if (!window.LFX || !LFX.Store) return;
+  var BASE = 48; // 历史基数
+  var GOAL = 60;
+  function render(){
+    var pubCnt = LFX.Store.getMyContents().length;
+    var total = BASE + pubCnt;
+    var pubEl = document.getElementById('lfxPubCount');
+    var barEl = document.getElementById('lfxPubBar');
+    var pctEl = document.getElementById('lfxPubPct');
+    if (pubEl) pubEl.textContent = total;
+    var pct = Math.min(100, Math.round(total * 100 / GOAL));
+    if (barEl) barEl.style.width = pct + '%';
+    if (pctEl) pctEl.textContent = '完成 ' + pct + '%';
+    var cartCnt = LFX.Store.cartCount('cart');
+    var stockCnt = LFX.Store.cartCount('stock');
+    var sec = document.getElementById('lfxCartSection');
+    if (cartCnt + stockCnt > 0){
+      if (sec) sec.style.display = '';
+      var c = document.getElementById('lfxCartCnt');
+      var s = document.getElementById('lfxStockCnt');
+      var t = document.getElementById('lfxCartTotal');
+      if (c) c.textContent = cartCnt;
+      if (s) s.textContent = stockCnt;
+      if (t) t.textContent = (cartCnt + stockCnt) + ' 条';
+    }
+  }
+  render();
+  LFX.Store.on(function(evt){
+    if (evt==='publish'||evt==='approve'||evt==='reject'||evt==='cart-add'||evt==='sync'||evt==='login') render();
+  });
+})();
+/* ── 内容池：待转发 ── */
+(function loadPoolClaimed(){
+  var u=LFX&&LFX.Store?LFX.Store.getUser():null;
+  if(!u||!u.phone){document.getElementById('poolClaimedList').innerHTML='<p class="text-[.625rem] text-tx3">请先登录</p>';return}
+  fetch('/pool-api/my-claimed?phone='+encodeURIComponent(u.phone)).then(function(r){return r.json()}).then(function(items){
+    var el=document.getElementById('poolClaimedList');
+    var cntEl=document.getElementById('poolClaimedCount');
+    if(!items||!items.length){
+      el.innerHTML='<p class="text-[.625rem] text-tx3">暂无待转发内容，去<a href="店员首页.html" class="text-gold underline">发布页</a>领取</p>';
+      if(cntEl)cntEl.textContent='0 条';
+      return;
+    }
+    var claimed=items.filter(function(x){return x.status==='claimed'});
+    var pubed=items.filter(function(x){return x.status==='published'});
+    if(cntEl)cntEl.textContent=claimed.length+' 条待转发';
+    function esc2(s){return String(s||'').replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+    var tFmt=function(ts){if(!ts)return'';var d=new Date(ts);var n=Date.now();var diff=(n-d.getTime())/1000;if(diff<3600)return Math.floor(diff/60)+'分钟前';if(diff<86400)return'今天';return(d.getMonth()+1)+'月'+d.getDate()+'日'};
+    el.innerHTML=claimed.map(function(it){
+      return'<div class="flex items-center justify-between">'+
+        '<div class="flex items-center gap-2.5">'+
+          '<span class="px-2 py-0.5 text-[0.5rem] bg-gold/10 text-gold rounded-pill font-l">已领</span>'+
+          '<span class="text-xs text-tx2 font-light truncate" style="max-width:180px">'+esc2(it.title||'未命名')+'</span>'+
+        '</div>'+
+        '<div class="flex items-center gap-2">'+
+          '<span class="text-[0.5625rem] text-tx3 font-l">'+tFmt(it.claimed_at)+'</span>'+
+          '<a href="店员首页.html?pool='+it.id+'" class="text-[0.5625rem] text-gold font-l tracking-wider">去发布</a>'+
+        '</div>'+
+      '</div>';
+    }).join('');
+    if(!claimed.length)el.innerHTML='<p class="text-[.625rem] text-tx3">全部已发布完成</p>';
+  }).catch(function(){
+    document.getElementById('poolClaimedList').innerHTML='<p class="text-[.625rem] text-tx3">加载失败，请检查网络</p>';
+  });
+})();
+</script>
+</body></html>

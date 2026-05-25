@@ -1,0 +1,691 @@
+/* 老凤祥内容平台 · 共享样式 v1
+ * Toast / Confirm / Skeleton / EmptyState / PlatformTag / FocusRing
+ * 引入：<link rel="stylesheet" href="shared.css"/>
+ */
+
+/* ── 0. CSS 变量（双主题） ──────────────────────────── */
+:root {
+  --lfx-toast-bg: rgba(36,32,25,0.96);
+  --lfx-toast-ok: rgba(106,154,90,0.96);
+  --lfx-toast-err: rgba(196,90,66,0.96);
+  --lfx-toast-fg: #e8e0d4;
+  --lfx-mask: rgba(10,8,5,0.62);
+  --lfx-modal-bg: #242019;
+  --lfx-modal-bdr: rgba(196,162,101,0.18);
+  --lfx-modal-fg: #e8e0d4;
+  --lfx-modal-fg2: #9a9080;
+  --lfx-input-ring: rgba(196,162,101,0.18);
+  --lfx-skeleton-1: #2a2418;
+  --lfx-skeleton-2: #3a3020;
+}
+body.light {
+  --lfx-toast-bg: rgba(46,40,32,0.94);
+  --lfx-toast-ok: rgba(78,128,68,0.96);
+  --lfx-toast-err: rgba(176,68,46,0.96);
+  --lfx-toast-fg: #faf8f4;
+  --lfx-mask: rgba(46,40,32,0.42);
+  --lfx-modal-bg: #ffffff;
+  --lfx-modal-bdr: rgba(160,128,64,0.28);
+  --lfx-modal-fg: #2e2820;
+  --lfx-modal-fg2: #6a6055;
+  --lfx-input-ring: rgba(160,128,64,0.22);
+  --lfx-skeleton-1: #efe9df;
+  --lfx-skeleton-2: #e5dccd;
+}
+
+/* ── 1. Toast ───────────────────────────────────────── */
+.lfx-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 96px);
+  transform: translate(-50%, 8px);
+  padding: 11px 20px;
+  border-radius: 9999px;
+  color: var(--lfx-toast-fg);
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.04em;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity .2s ease, transform .25s cubic-bezier(.23,1,.32,1);
+  pointer-events: none;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.32), 0 0 0 1px rgba(196,162,101,0.1) inset;
+  max-width: calc(100vw - 48px);
+  text-align: center;
+}
+.lfx-toast.on { opacity: 1; transform: translate(-50%, 0); }
+
+/* ── 2. Modal Confirm ───────────────────────────────── */
+.lfx-modal-mask {
+  position: fixed; inset: 0;
+  background: var(--lfx-mask);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity .18s ease;
+}
+.lfx-modal-mask.on { opacity: 1; }
+.lfx-modal {
+  background: var(--lfx-modal-bg);
+  border: 1px solid var(--lfx-modal-bdr);
+  border-radius: 14px;
+  padding: 24px 22px 18px;
+  max-width: 320px;
+  width: 100%;
+  color: var(--lfx-modal-fg);
+  transform: translateY(8px) scale(.98);
+  transition: transform .22s cubic-bezier(.23,1,.32,1);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.32);
+}
+.lfx-modal-mask.on .lfx-modal { transform: translateY(0) scale(1); }
+.lfx-modal-t {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 200;
+  font-size: 17px;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+.lfx-modal-m {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--lfx-modal-fg2);
+  line-height: 1.6;
+  margin: 0 0 22px;
+}
+.lfx-modal-a { display: flex; gap: 10px; }
+.lfx-btn {
+  flex: 1;
+  padding: 11px 14px;
+  border: none;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.lfx-btn:active { transform: scale(.96); }
+.lfx-btn-p { background: #c4a265; color: #1a1714; }
+.lfx-btn-p:hover { background: #d4b275; }
+body.light .lfx-btn-p { background: #a08040; color: #fff; }
+body.light .lfx-btn-p:hover { background: #b09050; }
+.lfx-btn-g {
+  background: transparent;
+  color: var(--lfx-modal-fg2);
+  border: 1px solid var(--lfx-modal-bdr);
+}
+.lfx-btn-g:hover { color: var(--lfx-modal-fg); }
+.lfx-btn-d { background: #c45a42; color: #fff; }
+.lfx-btn-d:hover { background: #d46a52; }
+
+/* ── 3. Input focus ring（全局） ────────────────────── */
+.lfx-input,
+input.lfx-input,
+input[type="text"].lfx-input,
+input[type="password"].lfx-input,
+input[type="tel"].lfx-input,
+input[type="email"].lfx-input,
+textarea.lfx-input {
+  transition: box-shadow .18s ease, border-color .18s ease;
+}
+.lfx-input:focus,
+input.lfx-input:focus,
+textarea.lfx-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--lfx-input-ring);
+}
+
+/* ── 4. tabular-nums 数字对齐 ───────────────────────── */
+.lfx-num, .numeric { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' 1; }
+
+/* ── 5. 骨架屏 ──────────────────────────────────────── */
+@keyframes lfx-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.lfx-skel {
+  background: linear-gradient(90deg, var(--lfx-skeleton-1) 0%, var(--lfx-skeleton-2) 50%, var(--lfx-skeleton-1) 100%);
+  background-size: 200% 100%;
+  animation: lfx-shimmer 1.6s ease-in-out infinite;
+  border-radius: 6px;
+  display: block;
+}
+.lfx-skel-text { height: 12px; margin: 6px 0; }
+.lfx-skel-title { height: 18px; width: 60%; }
+.lfx-skel-thumb { width: 48px; height: 48px; border-radius: 12px; }
+.lfx-skel-card { height: 92px; border-radius: 12px; margin-bottom: 12px; }
+
+/* ── 6. 空状态 ──────────────────────────────────────── */
+.lfx-empty {
+  text-align: center;
+  padding: 64px 24px;
+  color: var(--lfx-modal-fg2);
+}
+.lfx-empty-icon {
+  width: 72px; height: 72px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--lfx-skeleton-1) 0%, var(--lfx-skeleton-2) 100%);
+  border: 1px solid var(--lfx-modal-bdr);
+}
+.lfx-empty-icon .material-symbols-outlined { font-size: 32px; color: #c4a265; }
+.lfx-empty-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  margin: 0 0 6px;
+  color: var(--lfx-modal-fg);
+  letter-spacing: 0.01em;
+}
+.lfx-empty-sub {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+.lfx-empty-cta {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid var(--lfx-modal-bdr);
+  border-radius: 9999px;
+  color: #c4a265;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .2s;
+}
+.lfx-empty-cta:hover { border-color: #c4a265; }
+
+/* ── 7. 平台标签 PlatformTag ─────────────────────── */
+.lfx-pt {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  font-size: 9px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+.lfx-pt-sm { width: 14px; height: 14px; font-size: 8px; }
+.lfx-pt-xhs { background: #ff2442; }
+.lfx-pt-dy { background: #0a0a0a; }
+.lfx-pt-wx { background: #07c160; }
+
+/* ── 8. 亮色卡片边框对比度提升 ──────────────────── */
+body.light .cd,
+body.light .lfx-card-light-bdr {
+  border-color: rgba(160,128,64,0.22) !important;
+}
+
+/* ── 9. Logo 字体（避免 Georgia 不可用） ──────────── */
+.lfx-logo {
+  font-family: 'Manrope', 'Songti SC', 'STSong', 'SimSun', Georgia, serif;
+  font-weight: 200;
+  letter-spacing: 0.15em;
+}
+
+/* ── 10. Reduced motion ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── 11. 全局 input/textarea focus 弱金 ring（无需 .lfx-input） ── */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+input:not([type="checkbox"]):not([type="radio"]):not(.code-box):focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 0 3px var(--lfx-input-ring);
+  transition: box-shadow .18s ease;
+}
+.code-box:focus { box-shadow: 0 0 0 2px var(--lfx-input-ring); }
+
+/* ── 12. 底导 FILL 用 :has() 统一（active 项填充） ─────── */
+nav a.active .material-symbols-outlined,
+nav .nav-item.active .material-symbols-outlined,
+.bottom-nav a.active .material-symbols-outlined,
+.bottom-nav .active .material-symbols-outlined,
+nav a:has(.active) .material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24 !important;
+}
+
+/* ── 13. 数字默认 tabular（销售/百分比/计数） ─────── */
+.nm, [data-num], .lfx-num { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' 1; }
+
+/* ── 14. 链接降级：登录/注册次链接 ─────────────────── */
+.lfx-link-sub {
+  color: var(--lfx-modal-fg2);
+  text-decoration: underline;
+  text-decoration-color: rgba(160,128,64,0.32);
+  text-underline-offset: 3px;
+  transition: color .2s;
+}
+.lfx-link-sub:hover { color: #c4a265; }
+body.light .lfx-link-sub { color: #6a6055; text-decoration-color: rgba(160,128,64,0.5); }
+body.light .lfx-link-sub:hover { color: #a08040; }
+
+/* ════════════════════════════════════════════════════════════
+   §15-§22  奢侈品级动效系统（Luxury Motion）
+   原则：慢、稳、贵气；不弹跳；transform/opacity 不触发 layout
+   时长档：180 / 240 / 400ms
+   曲线：ease-out-quart cubic-bezier(0.22, 0.61, 0.36, 1)
+   ════════════════════════════════════════════════════════════ */
+
+/* §15. 动效基础变量（骨架屏色用 §1 中已定义的 --lfx-skeleton-1/2） */
+:root {
+  --lfx-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --lfx-ease-in: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  --lfx-d-fast: 180ms;
+  --lfx-d-base: 240ms;
+  --lfx-d-slow: 400ms;
+}
+
+/* §16. 尊重 prefers-reduced-motion（晕动症用户/省电模式） */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* §17. 页面进入 / 滚动揭示 */
+@keyframes lfx-fadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes lfx-riseIn {
+  from { opacity: 0; transform: translateY(10px) }
+  to   { opacity: 1; transform: none }
+}
+@keyframes lfx-scaleIn {
+  from { opacity: 0; transform: scale(0.96) }
+  to   { opacity: 1; transform: none }
+}
+
+main, body > main { animation: lfx-fadeIn var(--lfx-d-slow) var(--lfx-ease) both; }
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity var(--lfx-d-base) var(--lfx-ease),
+              transform var(--lfx-d-base) var(--lfx-ease);
+  will-change: opacity, transform;
+}
+[data-reveal].is-in { opacity: 1; transform: none; }
+
+/* stagger 自动错落 */
+.lfx-stagger > * { animation: lfx-riseIn var(--lfx-d-base) var(--lfx-ease) both; }
+.lfx-stagger > *:nth-child(1)  { animation-delay: 0ms; }
+.lfx-stagger > *:nth-child(2)  { animation-delay: 40ms; }
+.lfx-stagger > *:nth-child(3)  { animation-delay: 80ms; }
+.lfx-stagger > *:nth-child(4)  { animation-delay: 120ms; }
+.lfx-stagger > *:nth-child(5)  { animation-delay: 160ms; }
+.lfx-stagger > *:nth-child(6)  { animation-delay: 200ms; }
+.lfx-stagger > *:nth-child(7)  { animation-delay: 240ms; }
+.lfx-stagger > *:nth-child(8)  { animation-delay: 280ms; }
+.lfx-stagger > *:nth-child(n+9){ animation-delay: 320ms; }
+
+/* §18. 骨架屏（统一规范） */
+.lfx-skel {
+  position: relative;
+  overflow: hidden;
+  background: var(--lfx-skeleton-1);
+  border-radius: 8px;
+}
+.lfx-skel::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--lfx-skeleton-2) 50%,
+    transparent 100%);
+  animation: lfx-shimmer 1.4s ease-in-out infinite;
+  transform: translateX(-100%);
+}
+@keyframes lfx-shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* §19. 交互反馈（按压 + hover 卡片 + Icon morph） */
+button:not(:disabled),
+.lfx-btn,
+[role="button"]:not(.no-tap),
+a.btn {
+  transition: transform var(--lfx-d-fast) var(--lfx-ease),
+              box-shadow var(--lfx-d-fast) var(--lfx-ease),
+              background-color var(--lfx-d-fast) var(--lfx-ease),
+              color var(--lfx-d-fast) var(--lfx-ease);
+}
+button:not(:disabled):active,
+.lfx-btn:active,
+[role="button"]:not(.no-tap):active,
+a.btn:active { transform: scale(0.97); }
+
+@media (hover: hover) {
+  .lfx-card-hover {
+    transition: transform var(--lfx-d-base) var(--lfx-ease),
+                box-shadow var(--lfx-d-base) var(--lfx-ease),
+                border-color var(--lfx-d-base) var(--lfx-ease);
+  }
+  .lfx-card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.22),
+                0 0 0 1px rgba(196,162,101,0.28);
+  }
+  .lfx-icon-hover .material-symbols-outlined,
+  button:hover .material-symbols-outlined {
+    transition: transform var(--lfx-d-fast) var(--lfx-ease),
+                font-variation-settings var(--lfx-d-base) var(--lfx-ease);
+  }
+  .lfx-icon-hover:hover .material-symbols-outlined,
+  button.lfx-icon-hover:hover .material-symbols-outlined { transform: scale(1.08); }
+}
+
+/* 底导图标 FILL morph */
+nav a .material-symbols-outlined,
+nav a.active .material-symbols-outlined,
+nav a:has(.active) .material-symbols-outlined {
+  transition: font-variation-settings var(--lfx-d-base) var(--lfx-ease),
+              color var(--lfx-d-base) var(--lfx-ease);
+}
+
+/* 链接下划线 expand（替代旧 lfx-link-sub 静态下划线） */
+.lfx-link-sub {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--lfx-d-base) var(--lfx-ease),
+              color var(--lfx-d-fast) var(--lfx-ease);
+  padding-bottom: 2px;
+}
+.lfx-link-sub:hover { background-size: 100% 1px; }
+
+/* §20. 数据 / 状态 */
+/* 进度条 fill */
+.lfx-progress { position: relative; overflow: hidden; }
+.lfx-progress > .lfx-progress-fill,
+[data-progress] > [data-progress-fill] {
+  transition: width 800ms var(--lfx-ease);
+}
+
+/* 红点改金色 pulse（红色违反语义纪律） */
+.lfx-dot-pulse {
+  position: relative;
+  display: inline-block;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #c4a265;
+}
+.lfx-dot-pulse::before {
+  content: '';
+  position: absolute; inset: -4px;
+  border-radius: 50%;
+  background: rgba(196,162,101,0.55);
+  animation: lfx-pulse 2s ease-out infinite;
+  z-index: -1;
+}
+@keyframes lfx-pulse {
+  0%   { transform: scale(0.6); opacity: 0.85; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* 主题切换平滑 */
+body, body > * {
+  transition: background-color var(--lfx-d-base) var(--lfx-ease),
+              color var(--lfx-d-base) var(--lfx-ease),
+              border-color var(--lfx-d-base) var(--lfx-ease);
+}
+
+/* §21. 微动效：图片淡入 / Caret / Tab indicator */
+img.lfx-fade-img {
+  opacity: 0;
+  transition: opacity var(--lfx-d-base) var(--lfx-ease);
+}
+img.lfx-fade-img.is-loaded { opacity: 1; }
+
+.lfx-caret,
+[data-caret] {
+  transition: transform var(--lfx-d-base) var(--lfx-ease);
+  display: inline-block;
+}
+.lfx-caret.is-open,
+[data-caret].is-open,
+[aria-expanded="true"] .lfx-caret,
+[aria-expanded="true"] [data-caret] { transform: rotate(180deg); }
+
+/* Tab indicator 平滑过渡 */
+.lfx-tab-indicator,
+[data-tab-indicator] {
+  transition: transform var(--lfx-d-base) var(--lfx-ease),
+              width var(--lfx-d-base) var(--lfx-ease),
+              left var(--lfx-d-base) var(--lfx-ease);
+}
+
+/* §22. Modal 动效曲线对齐（Toast 已有自己的 in/out 动画，不覆盖避免 transform 冲突） */
+.lfx-modal-mask { animation: lfx-fadeIn var(--lfx-d-fast) var(--lfx-ease) both; }
+.lfx-modal-box  { animation: lfx-scaleIn var(--lfx-d-base) var(--lfx-ease) both; }
+
+/* Logo 字母呼吸（克制版，可选启用） */
+.lfx-logo-letter {
+  display: inline-block;
+  animation: lfx-fadeIn var(--lfx-d-slow) var(--lfx-ease) both;
+}
+.lfx-logo-letter:nth-child(1){ animation-delay: 0ms; }
+.lfx-logo-letter:nth-child(2){ animation-delay: 60ms; }
+.lfx-logo-letter:nth-child(3){ animation-delay: 120ms; }
+.lfx-logo-letter:nth-child(4){ animation-delay: 180ms; }
+.lfx-logo-letter:nth-child(5){ animation-delay: 240ms; }
+
+/* ════════════════════════════════════════════════════════════
+   §23  全局自动化层 —— 17 页零埋点自动获得动效
+   ════════════════════════════════════════════════════════════ */
+
+/* §23.1 .cd 卡片全局 hover 抬升（移动端不触发，desktop 才有反应） */
+@media (hover: hover) and (pointer: fine) {
+  .cd {
+    transition: background var(--lfx-d-base) var(--lfx-ease),
+                border-color var(--lfx-d-base) var(--lfx-ease),
+                transform var(--lfx-d-base) var(--lfx-ease),
+                box-shadow var(--lfx-d-base) var(--lfx-ease) !important;
+    will-change: transform;
+  }
+  .cd:hover {
+    transform: translateY(-2px);
+    border-color: rgba(196,162,101,0.28);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.22),
+                0 0 0 1px rgba(196,162,101,0.18);
+  }
+  body.light .cd:hover {
+    border-color: rgba(160,128,64,0.32);
+    box-shadow: 0 10px 26px rgba(160,128,64,0.12),
+                0 0 0 1px rgba(160,128,64,0.22);
+  }
+  /* 避免双重 hover 内嵌卡片重叠抬升 */
+  .cd .cd:hover { transform: none; box-shadow: none; }
+}
+
+/* §23.2 移动端按压反馈（手指点 .cd 也有微缩反馈，但不残留） */
+@media (hover: none) {
+  .cd { transition: transform var(--lfx-d-fast) var(--lfx-ease), background var(--lfx-d-base) var(--lfx-ease); }
+  .cd:active { transform: scale(0.985); }
+}
+
+/* §23.3 main 直接子元素自动 stagger 入场（无需埋点） */
+main > * {
+  animation: lfx-riseIn var(--lfx-d-base) var(--lfx-ease) both;
+}
+main > *:nth-child(1)  { animation-delay: 30ms; }
+main > *:nth-child(2)  { animation-delay: 80ms; }
+main > *:nth-child(3)  { animation-delay: 130ms; }
+main > *:nth-child(4)  { animation-delay: 180ms; }
+main > *:nth-child(5)  { animation-delay: 230ms; }
+main > *:nth-child(6)  { animation-delay: 280ms; }
+main > *:nth-child(7)  { animation-delay: 320ms; }
+main > *:nth-child(8)  { animation-delay: 360ms; }
+main > *:nth-child(9)  { animation-delay: 400ms; }
+main > *:nth-child(n+10){ animation-delay: 440ms; }
+
+/* fixed 定位的 header/底导/Toast 不参与 stagger */
+header[class*="fixed"], nav[class*="fixed"], .lfx-toast, .lfx-modal-mask,
+[class*="fixed top-"], [class*="fixed bottom-"] {
+  animation: none !important;
+}
+
+/* §23.4 Tab/Subtab 切换面板切入也用 ease */
+.subtab-panel, [data-subpanel], [data-tab-panel], [role="tabpanel"] {
+  transition: opacity var(--lfx-d-base) var(--lfx-ease);
+}
+
+/* §23.5 列表项 hover 微亮（仅 desktop） */
+@media (hover: hover) and (pointer: fine) {
+  a, [role="link"] {
+    transition: opacity var(--lfx-d-fast) var(--lfx-ease),
+                color var(--lfx-d-fast) var(--lfx-ease);
+  }
+}
+
+/* §23.6 全局 hover 内嵌图片轻微 zoom（克制 1.02） */
+@media (hover: hover) and (pointer: fine) {
+  .lfx-card-hover img,
+  .cd a:hover img,
+  a:hover > img {
+    transition: transform var(--lfx-d-slow) var(--lfx-ease);
+    transform: scale(1.02);
+  }
+}
+
+/* §23.7 PK 数字进度条（条目展现时金色填充） */
+.pk-bar, [data-pk-bar] {
+  position: relative;
+  overflow: hidden;
+}
+.pk-bar > i, [data-pk-bar] > i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #c4a265, #d4b275);
+  transition: width 800ms var(--lfx-ease);
+  width: 0;
+}
+.pk-bar.is-in > i, [data-pk-bar].is-in > i { /* JS 加 .is-in 时填充 */ }
+
+/* ════════════════════════════════════════════════════════════
+   §24  移动端 a11y 兜底层 —— 矩阵测试发现的小字/小触控统一治理
+   场景：6 机型 × 6 页面 全量截图测试发现
+   - 小字 9-10px（Tailwind 任意值 text-[0.5*rem] / text-[0.6*rem]）
+   - 小触控区 <40×40（顶部图标 arrow_back/notifications、tab chip）
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  /* §24.1 强制最小可读字号 11px：覆盖 Tailwind 任意值 text-[.5rem]/[.5625rem]/[.625rem]/[.6875rem]
+     CSS class selector 中 [、]、. 必须用 \ escape；HTML 中实际有"无前导0"和"带前导0"两种写法 */
+  .text-\[\.5rem\],
+  .text-\[\.5625rem\],
+  .text-\[\.625rem\],
+  .text-\[\.6875rem\],
+  .text-\[0\.5rem\],
+  .text-\[0\.5625rem\],
+  .text-\[0\.625rem\],
+  .text-\[0\.6875rem\],
+  .text-\[10px\],
+  .text-\[11px\],
+  .text-\[9px\] {
+    font-size: 0.6875rem !important; /* 11px */
+    line-height: 1.45 !important;
+  }
+
+  /* §24.2 顶部 fixed header 图标/按钮触控区 ≥40×40（iOS HIG 最小，奢侈品克制不到 44） */
+  header a,
+  header button,
+  header[class*="fixed"] a,
+  header[class*="fixed"] button {
+    min-width: 40px;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* logo 链接保持自然宽（不强制 40） */
+  header a:has(h1),
+  header a:has(.font-h.text-2xl),
+  header a.lfx-logo {
+    min-width: 0;
+    justify-content: flex-start;
+  }
+
+  /* §24.3 底部 fixed nav 子项触控（路演底导单元 button/a 都涵盖） */
+  nav[class*="fixed"] a,
+  nav[class*="fixed"] button,
+  nav[class*="bottom-"] a,
+  nav[class*="bottom-"] button {
+    min-width: 56px;
+    min-height: 56px;
+  }
+
+  /* §24.4 圆角 chip / pill / tab 按钮：高度 32 + 宽度 36 起步 */
+  button[class*="rounded-pill"],
+  button[class*="rounded-full"],
+  a[class*="rounded-pill"],
+  a[class*="rounded-full"] {
+    min-width: 36px;
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* §24.4b "立即注册"等 lfx-link-sub 表单链接（无 rounded 类）单独提到 ≥40×24 */
+  a.lfx-link-sub {
+    min-height: 28px;
+    padding: 6px 8px !important;
+    font-size: 0.6875rem !important;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* §24.5 小操作按钮 +备货 / +加购 / 周|月 顶部 tab：高度提到 36（关键交易操作） */
+  button.text-xs,
+  a.text-xs,
+  button.text-\[\.5rem\],
+  button.text-\[\.5625rem\],
+  button.text-\[\.625rem\],
+  button.text-\[\.6875rem\],
+  button.text-\[0\.5rem\],
+  button.text-\[0\.5625rem\],
+  button.text-\[0\.625rem\],
+  button.text-\[0\.6875rem\] {
+    min-height: 36px;
+  }
+  /* 但内联 underline 链接不强加高度（如"立即注册"在登录页内文中） */
+  a.text-xs[class*="underline"] {
+    min-height: 0;
+  }
+
+  /* §24.6 表单内联链接（如"立即注册"）独立提到 11px + 加点击 padding */
+  a.text-xs.font-medium,
+  a.lfx-link-sub {
+    padding: 6px 4px;
+    font-size: 0.6875rem !important;
+  }
+
+  /* §24.7 表单错误提示 .text-red 可保留 10px（红色已醒目），但仍提到 11px 更友好 */
+  /* 已被 §24.1 命中 */
+}
+
+/* §24.8 桌面端不影响（保留原视觉层次） */
+@media (min-width: 641px) {
+  /* 装饰副标（如 entry 页 Province Agent/Dealer 英文）保留小字层次 */
+}

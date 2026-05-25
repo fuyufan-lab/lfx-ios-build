@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<link rel="preconnect" href="https://fonts.googleapis.cn"/>
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin/>
+<link rel="preconnect" href="https://cdn.tailwindcss.com"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>老鳳祥 · 通知中心</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.cn/css2?family=Manrope:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.cn/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<script src="shared.js"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{
+'bg':'#1a1714','card':'#242019','card-hi':'#2e2920',
+'gold':'#c4a265','gold-d':'#8a7d65','gold-b':'#d4b275',
+'tx':'#e8e0d4','tx2':'#9a9080','tx3':'#6a6055',
+'bdr':'rgba(196,162,101,0.08)','bdr2':'rgba(196,162,101,0.18)',
+'red':'#c45a42'
+},fontFamily:{"h":["Manrope"],"b":["Manrope"],"l":["Inter"]},borderRadius:{"c":"12px","pill":"9999px","full":"9999px"}}}}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}
+body{background:#1a1714;color:#e8e0d4;min-height:max(884px,100dvh);font-weight:300;overflow-x:hidden;overflow-y:auto;transition:background .5s,color .4s}
+body.light{background:#faf8f4;color:#2a2418}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 40% at 50% 15%,rgba(196,162,101,0.12) 0%,transparent 60%),radial-gradient(ellipse 50% 30% at 80% 60%,rgba(196,162,101,0.06) 0%,transparent 50%);pointer-events:none;z-index:0}
+body.light::before{background:radial-gradient(ellipse 80% 40% at 50% 15%,rgba(196,162,101,0.15) 0%,transparent 60%),radial-gradient(ellipse 50% 30% at 20% 70%,rgba(196,162,101,0.08) 0%,transparent 50%)}
+.glass{background:rgba(26,23,20,0.82);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+body.light .glass{background:rgba(250,248,244,0.92)}
+.cd{background:#242019;border:1px solid rgba(196,162,101,0.06);border-radius:12px;transition:background .4s,border-color .4s}
+body.light .cd{background:#fff;border-color:rgba(196,162,101,0.15)}
+.cd-h{background:#2e2920;border:1px solid rgba(196,162,101,0.12);border-radius:12px}
+body.light .cd-h{background:#f5f0e6;border-color:rgba(196,162,101,0.2)}
+.sec-label{font-family:'Inter',sans-serif;font-size:.6875rem;letter-spacing:.15em;text-transform:uppercase;color:#c4a265;font-weight:500}
+body.light .sec-label{color:#a08040}
+.notif-card{transition:all .2s}
+.notif-card:active{background:#2e2920}
+body.light .notif-card:active{background:#f5f0e6}
+.notif-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border-radius:12px}
+@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+main{animation:fu .5s cubic-bezier(.23,1,.32,1)}
+::-webkit-scrollbar{display:none}*{scrollbar-width:none;-ms-overflow-style:none}
+</style>
+<script defer src="mobile-preview-frame.js"></script>
+</head>
+<body class="font-b">
+
+<header class="fixed top-0 w-full z-50 glass">
+  <div class="flex justify-between items-center w-full px-5 py-4">
+    <a href="#" id="backBtn" onclick="if(this.getAttribute('href')==='#'){event.preventDefault();history.length>1?history.back():location.href='入口页.html';}" class="material-symbols-outlined text-gold text-xl active:scale-90 transition-transform">arrow_back</a>
+    <span class="text-base font-light tracking-[0.15em]" style="font-family:Georgia,serif">老鳳祥</span>
+    <span class="w-6"></span>
+  </div>
+</header>
+
+<main class="pt-24 pb-32 px-5 max-w-md mx-auto relative z-10">
+
+  <section class="mb-6 flex justify-between items-center">
+    <div>
+      <h1 class="font-h text-2xl font-extralight tracking-tight">消息中心</h1>
+      <p class="text-xs text-tx2 font-light mt-1 inline-flex items-center gap-2"><span class="lfx-dot-pulse" id="lfxUnreadDot"></span><span id="lfxUnreadHint">3 条未读通知</span></p>
+    </div>
+    <button id="lfxMarkAllRead" class="text-[.625rem] text-gold border border-gold/30 px-3 py-1.5 rounded-pill hover:bg-gold/10 transition-colors active:scale-95">全部已读</button>
+  </section>
+
+  <div id="lfxNotifList" class="space-y-3"></div>
+  <div id="lfxNotifEmpty" class="hidden text-center text-tx3 text-sm py-12 font-light">暂无通知</div>
+
+</main>
+
+<script>
+(function() {
+  var backBtn = document.getElementById('backBtn');
+  var allowed = {
+    '省代总部': '省代总部.html',
+    '经销商老板': '经销商老板.html',
+    '店长': '店长.html',
+    '店员首页': '店员首页.html',
+    '店员我的': '店员我的.html',
+    '入口页': '入口页.html'
+  };
+  var from = new URLSearchParams(location.search).get('from') || '';
+  var target = allowed[from] || '入口页.html';
+  // 兼容旧链接：referrer 兜底
+  if (!allowed[from]) {
+    var ref = document.referrer || '';
+    for (var key in allowed) {
+      if (ref.indexOf(key) !== -1) { target = allowed[key]; break; }
+    }
+  }
+  backBtn.href = target;
+})();
+
+// Theme
+var LC={'bg':'#faf8f4','card':'#ffffff','card-hi':'#f5f0e6','gold':'#a08040','gold-d':'#8a7040','gold-b':'#b09050','tx':'#2a2418','tx2':'#5a5040','tx3':'#8a7d65','bdr':'rgba(196,162,101,0.12)','bdr2':'rgba(196,162,101,0.25)','red':'#c45a42'};
+var DC={'bg':'#1a1714','card':'#242019','card-hi':'#2e2920','gold':'#c4a265','gold-d':'#8a7d65','gold-b':'#d4b275','tx':'#e8e0d4','tx2':'#9a9080','tx3':'#6a6055','bdr':'rgba(196,162,101,0.08)','bdr2':'rgba(196,162,101,0.18)','red':'#c45a42'};
+function setTheme(t){document.body.classList.toggle('light',t==='light');localStorage.setItem('lfx-theme',t);var c=t==='light'?LC:DC;Object.keys(c).forEach(k=>{document.documentElement.style.setProperty('--'+k,c[k])})}
+var tp=new URLSearchParams(location.search).get('theme');
+var _t=tp||localStorage.getItem('lfx-theme')||'dark';
+if(_t==='light')setTheme('light');
+window.addEventListener('message',function(e){if(e.data&&e.data.type==='theme')setTheme(e.data.theme)});
+
+// ============ 通知列表渲染 + 标已读 ============
+(function(){
+  if (!window.LFX || !LFX.Store) return;
+  var list = document.getElementById('lfxNotifList');
+  var empty = document.getElementById('lfxNotifEmpty');
+  var hint = document.getElementById('lfxUnreadHint');
+  var dot = document.getElementById('lfxUnreadDot');
+  var markAllBtn = document.getElementById('lfxMarkAllRead');
+
+  var TYPE_ICONS = {
+    system:  { icon:'campaign',  bg:'bg-card-hi', tag:'系统通知' },
+    review:  { icon:'verified',  bg:'bg-gold/10', tag:'待审通知' },
+    approve: { icon:'task_alt',  bg:'bg-gold/10', tag:'审核通过' },
+    reject:  { icon:'cancel',    bg:'bg-card-hi', tag:'审核未通过' },
+    sales:   { icon:'trending_up', bg:'bg-gold/10', tag:'销售提醒' },
+    interact:{ icon:'favorite',  bg:'bg-gold/10', tag:'互动提醒' }
+  };
+
+  function timeAgo(t){
+    if (window.LFX && LFX.timeAgo) return LFX.timeAgo(t);
+    var s = Math.floor((Date.now()-t)/1000);
+    if (s<60) return '刚刚';
+    if (s<3600) return Math.floor(s/60)+'分钟前';
+    if (s<86400) return Math.floor(s/3600)+'小时前';
+    return Math.floor(s/86400)+'天前';
+  }
+
+  function escape(str){ return String(str||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  function render(){
+    var items = LFX.Store.getNotifications().slice().sort(function(a,b){ return b.createdAt - a.createdAt; });
+    var unread = items.filter(function(n){ return !n.read; }).length;
+    if (hint) hint.textContent = unread > 0 ? (unread + ' 条未读通知') : '已全部读完';
+    if (dot) dot.style.opacity = unread > 0 ? '1' : '0.3';
+    if (markAllBtn) markAllBtn.style.display = unread > 0 ? '' : 'none';
+
+    if (items.length === 0){
+      list.innerHTML = '';
+      empty.classList.remove('hidden');
+      return;
+    }
+    empty.classList.add('hidden');
+
+    list.innerHTML = items.map(function(n){
+      var meta = TYPE_ICONS[n.type] || TYPE_ICONS.system;
+      var unreadCls = n.read ? 'opacity-60' : '';
+      var dotHtml = n.read ? '' : '<span class="ml-2 w-1.5 h-1.5 rounded-full bg-gold inline-block flex-shrink-0"></span>';
+      return '<div class="cd p-4 notif-card cursor-pointer ' + unreadCls + '" data-nid="' + n.id + '" data-link="' + escape(n.link||'') + '">' +
+        '<div class="flex items-start gap-3">' +
+          '<div class="notif-icon ' + meta.bg + '"><span class="material-symbols-outlined text-gold">' + meta.icon + '</span></div>' +
+          '<div class="flex-1 min-w-0">' +
+            '<div class="flex justify-between items-start">' +
+              '<span class="font-l text-[.625rem] text-gold tracking-wider uppercase">' + (n.title ? escape(n.title) : meta.tag) + '</span>' +
+              '<span class="flex items-center"><span class="text-[.625rem] text-tx3 whitespace-nowrap ml-2">' + timeAgo(n.createdAt) + '</span>' + dotHtml + '</span>' +
+            '</div>' +
+            '<p class="text-sm mt-1.5 leading-relaxed">' + escape(n.content) + '</p>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    list.querySelectorAll('[data-nid]').forEach(function(el){
+      el.addEventListener('click', function(){
+        var id = parseInt(el.dataset.nid, 10);
+        LFX.Store.markRead(id);
+        var link = el.dataset.link;
+        if (link && link !== '通知中心.html'){
+          setTimeout(function(){ location.href = link; }, 200);
+        }
+      });
+    });
+  }
+  render();
+  if (markAllBtn){
+    markAllBtn.addEventListener('click', function(){
+      LFX.Store.markAllRead();
+      LFX.toast && LFX.toast('已全部标为已读');
+    });
+  }
+  LFX.Store.on(function(evt){
+    if (evt === 'notif-read' || evt === 'notif-read-all' || evt === 'sync' || evt === 'publish' || evt === 'approve' || evt === 'reject') render();
+  });
+})();
+
+/* ── 内容池：活动通知 ── */
+(function loadPoolActivity() {
+  var u = LFX && LFX.Store ? LFX.Store.getUser() : null;
+  var phone = u && u.phone ? u.phone : '';
+  if (!phone) return;
+
+  function tFmt(ts) {
+    if (!ts) return '';
+    var d = new Date(ts);
+    var n = Date.now();
+    var diff = (n - d.getTime()) / 1000;
+    if (diff < 60) return '刚刚';
+    if (diff < 3600) return Math.floor(diff / 60) + '分钟前';
+    if (diff < 86400) return Math.floor(diff / 3600) + '小时前';
+    return (d.getMonth() + 1) + '月' + d.getDate() + '日';
+  }
+
+  function esc2(s) {
+    return String(s || '').replace(/[&<>"']/g, function(c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function renderPoolItems(items) {
+    var listEl = document.getElementById('lfxNotifList');
+    if (!listEl) return;
+    if (!items || !items.length) return;
+
+    var poolHTML = items.map(function(it) {
+      var isClaimed = it.status === 'claimed';
+      var iconName = isClaimed ? 'bookmark_add' : 'check_circle';
+      var iconBg = isClaimed ? 'rgba(196,162,101,0.1)' : 'rgba(106,154,90,0.1)';
+      var iconColor = isClaimed ? '#c4a265' : '#6a9a5a';
+      var timeStr = tFmt(isClaimed ? it.claimed_at : it.published_at);
+      var title = isClaimed
+        ? '你已领取「' + esc2(it.title || '未命名') + '」'
+        : '「' + esc2(it.title || '未命名') + '」已发布成功';
+      var clickAttr = isClaimed
+        ? 'onclick="location.href=\'店员首页.html?pool=' + it.id + '\'" style="cursor:pointer"'
+        : '';
+
+      return '<div class="cd notif-card" ' + clickAttr + '>' +
+        '<div class="flex items-start gap-3 p-3.5">' +
+          '<div class="notif-icon shrink-0" style="background:' + iconBg + '">' +
+            '<span class="material-symbols-outlined" style="color:' + iconColor + ';font-size:18px">' + iconName + '</span>' +
+          '</div>' +
+          '<div class="flex-1 min-w-0">' +
+            '<p class="text-sm font-light leading-relaxed">' + title + '</p>' +
+            '<p class="text-[0.5625rem] text-tx3 mt-0.5">' + timeStr + '</p>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    // 追加到现有通知之前（顶部插入）
+    listEl.insertAdjacentHTML('afterbegin', poolHTML);
+
+    // 隐藏空状态（池通知已存在）
+    var empty = document.getElementById('lfxNotifEmpty');
+    if (empty) empty.classList.add('hidden');
+
+    // 更新未读计数
+    var hint = document.getElementById('lfxUnreadHint');
+    if (hint) {
+      var claimedCount = items.filter(function(it) { return it.status === 'claimed'; }).length;
+      if (claimedCount > 0) hint.textContent = claimedCount + ' 条待处理';
+    }
+  }
+
+  fetch('/pool-api/activity?phone=' + encodeURIComponent(phone) + '&limit=10')
+    .then(function(r) { return r.json(); })
+    .then(function(items) {
+      if (items && items.length && !items.error) {
+        renderPoolItems(items);
+      }
+    })
+    .catch(function() { /* 静默失败，不影响现有通知 */ });
+})();
+</script>
+</body></html>

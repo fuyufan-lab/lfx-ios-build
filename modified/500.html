@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<link rel="preconnect" href="https://fonts.googleapis.cn"/>
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin/>
+<link rel="preconnect" href="https://cdn.tailwindcss.com"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>老鳳祥 · 服务暂不可用</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.cn/css2?family=Manrope:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.cn/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<script src="shared.js"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{
+'bg':'#1a1714','card':'#242019','card-hi':'#2e2920',
+'gold':'#c4a265','gold-d':'#8a7d65','gold-b':'#d4b275',
+'tx':'#e8e0d4','tx2':'#9a9080','tx3':'#6a6055',
+'bdr2':'rgba(196,162,101,0.18)'
+},fontFamily:{"h":["Manrope"],"b":["Manrope"],"l":["Inter"]},borderRadius:{"c":"12px","pill":"9999px"}}}}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 200,'GRAD' 0,'opsz' 24}
+body{background:#1a1714;color:#e8e0d4;min-height:100dvh;font-weight:300;transition:background .5s,color .4s}
+body.light{background:#faf8f4;color:#2a2418}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 40% at 50% 15%,rgba(196,162,101,0.12) 0%,transparent 60%);pointer-events:none;z-index:0}
+body.light::before{background:radial-gradient(ellipse 80% 40% at 50% 15%,rgba(196,162,101,0.16) 0%,transparent 60%)}
+.code{font-family:'Manrope',sans-serif;font-weight:100;font-size:96px;letter-spacing:0.02em;line-height:1;background:linear-gradient(135deg,#c4a265 0%,#d4b275 50%,#a08040 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.divider{width:48px;height:1px;background:linear-gradient(90deg,transparent,#c4a265,transparent);margin:20px auto 24px}
+::-webkit-scrollbar{display:none}*{scrollbar-width:none}
+</style>
+</head>
+<body class="font-b flex items-center justify-center px-6">
+
+<main class="relative z-10 text-center max-w-sm w-full">
+  <div class="mb-2">
+    <span class="lfx-logo text-base">老鳳祥</span>
+  </div>
+  <p class="text-[0.625rem] text-tx3 tracking-[0.3em] uppercase mb-12">Lao Feng Xiang</p>
+
+  <div class="code">500</div>
+  <div class="divider"></div>
+  <h1 class="font-h text-xl font-extralight tracking-tight mb-3">服务暂不可用</h1>
+  <p class="text-sm text-tx2 leading-relaxed mb-10 px-4">服务器暂时无法处理请求。<br/>我们已收到通知，请稍后再试。</p>
+
+  <div class="flex flex-col gap-3">
+    <a href="javascript:location.reload()" class="block py-3 rounded-pill text-sm tracking-[0.12em]" style="background:#c4a265;color:#1a1714">重新加载</a>
+    <a href="入口页.html" class="block py-3 rounded-pill text-sm tracking-[0.12em] border border-bdr2 text-tx2">返回首页</a>
+  </div>
+</main>
+
+</body></html>

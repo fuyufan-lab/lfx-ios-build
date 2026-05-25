@@ -1,0 +1,142 @@
+name: iOS Build (Capacitor)
+
+# 触发: 推到 main / mobile-ios 分支, 或手动触发
+on:
+  push:
+    branches: [main, mobile-ios]
+    paths:
+      - 'modified/**'
+      - 'mobile/capacitor-ios/**'
+      - 'mobile/scripts/**'
+      - '.github/workflows/ios-build.yml'
+  workflow_dispatch:
+    inputs:
+      build_type:
+        description: '构建类型 (development / ad-hoc / app-store)'
+        required: true
+        default: 'development'
+        type: choice
+        options:
+          - development
+          - ad-hoc
+          - app-store
+
+jobs:
+  build-ios:
+    runs-on: macos-14
+    timeout-minutes: 40
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: mobile/capacitor-ios/package-lock.json
+
+      - name: Show Xcode version
+        run: |
+          xcodebuild -version
+          xcrun simctl list runtimes
+
+      - name: Sync Web assets (modified -> capacitor-ios/www)
+        run: node mobile/scripts/sync-web.js ios
+
+      - name: Install dependencies
+        working-directory: mobile/capacitor-ios
+        run: npm ci || npm install
+
+      - name: Add iOS platform if missing
+        working-directory: mobile/capacitor-ios
+        run: |
+          if [ ! -d "ios" ]; then
+            npx cap add ios
+          fi
+
+      - name: Capacitor sync
+        working-directory: mobile/capacitor-ios
+        run: npx cap sync ios
+
+      - name: Install CocoaPods
+        working-directory: mobile/capacitor-ios/ios/App
+        run: pod install --repo-update
+
+      # ========== 签名配置 ==========
+      # 开发证书自动签名 (默认, 不需要 secrets)
+      - name: Build (unsigned simulator/development)
+        if: ${{ github.event.inputs.build_type != 'app-store' && github.event.inputs.build_type != 'ad-hoc' }}
+        working-directory: mobile/capacitor-ios/ios/App
+        run: |
+          xcodebuild \
+            -workspace App.xcworkspace \
+            -scheme App \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      # AppStore / AdHoc 签名构建 (需要 secrets)
+      - name: Import signing certificate
+        if: ${{ github.event.inputs.build_type == 'app-store' || github.event.inputs.build_type == 'ad-hoc' }}
+        env:
+          BUILD_CERTIFICATE_BASE64: ${{ secrets.IOS_DIST_CERT_P12_BASE64 }}
+          P12_PASSWORD:             ${{ secrets.IOS_DIST_CERT_PASSWORD }}
+          KEYCHAIN_PASSWORD:        ${{ secrets.IOS_KEYCHAIN_PASSWORD }}
+        run: |
+          CERT_PATH=$RUNNER_TEMP/cert.p12
+          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+          echo "$BUILD_CERTIFICATE_BASE64" | base64 -d > $CERT_PATH
+          security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+          security import $CERT_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+          security list-keychain -d user -s $KEYCHAIN_PATH
+
+      - name: Import provisioning profile
+        if: ${{ github.event.inputs.build_type == 'app-store' || github.event.inputs.build_type == 'ad-hoc' }}
+        env:
+          PROFILE_BASE64: ${{ secrets.IOS_PROVISION_PROFILE_BASE64 }}
+        run: |
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          echo "$PROFILE_BASE64" | base64 -d > ~/Library/MobileDevice/Provisioning\ Profiles/lfx.mobileprovision
+
+      - name: Archive & Export ipa
+        if: ${{ github.event.inputs.build_type == 'app-store' || github.event.inputs.build_type == 'ad-hoc' }}
+        working-directory: mobile/capacitor-ios/ios/App
+        run: |
+          # 替换 ExportOptions.plist 中的占位
+          sed -i '' "s/YOUR_TEAM_ID/${{ secrets.IOS_TEAM_ID }}/g" ../../ExportOptions.plist
+          sed -i '' "s|<string>development</string>|<string>${{ github.event.inputs.build_type }}</string>|g" ../../ExportOptions.plist
+
+          xcodebuild \
+            -workspace App.xcworkspace \
+            -scheme App \
+            -configuration Release \
+            -archivePath build/App.xcarchive \
+            -destination 'generic/platform=iOS' \
+            archive
+
+          xcodebuild -exportArchive \
+            -archivePath build/App.xcarchive \
+            -exportPath build \
+            -exportOptionsPlist ../../ExportOptions.plist
+
+      - name: Upload artifact (ipa)
+        if: ${{ github.event.inputs.build_type == 'app-store' || github.event.inputs.build_type == 'ad-hoc' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lfx-ios-${{ github.event.inputs.build_type }}-${{ github.run_number }}
+          path: mobile/capacitor-ios/ios/App/build/*.ipa
+          retention-days: 30
+
+      - name: Upload artifact (xcarchive, for debug)
+        if: ${{ failure() && (github.event.inputs.build_type == 'app-store' || github.event.inputs.build_type == 'ad-hoc') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lfx-ios-xcarchive-${{ github.run_number }}
+          path: mobile/capacitor-ios/ios/App/build/App.xcarchive
+          retention-days: 7

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<link rel="preconnect" href="https://fonts.googleapis.cn"/>
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin/>
+<link rel="preconnect" href="https://cdn.tailwindcss.com"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>老鳳祥 · 内容分发运营平台</title>
+<link rel="manifest" href="manifest.json"/>
+<link rel="icon" href="icons/icon-192.png"/>
+<link rel="apple-touch-icon" href="icons/icon-192.png"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="apple-mobile-web-app-title" content="老鳳祥LFX"/>
+<meta name="theme-color" content="#1a1714"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.cn/css2?family=Manrope:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.cn/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<script src="shared.js"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{
+'bg':'#1a1714','card':'#242019','card-hi':'#2e2920',
+'gold':'#c4a265','gold-d':'#8a7d65','gold-b':'#d4b275',
+'tx':'#e8e0d4','tx2':'#9a9080','tx3':'#6a6055',
+'bdr':'rgba(196,162,101,0.08)','bdr2':'rgba(196,162,101,0.18)',
+'red':'#c45a42'
+},fontFamily:{"h":["Manrope"],"b":["Manrope"],"l":["Inter"]},borderRadius:{"c":"12px","pill":"9999px","full":"9999px"}}}}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}
+body{background:#1a1714;color:#e8e0d4;min-height:max(884px,100dvh);font-weight:300;overflow-x:hidden;overflow-y:auto;transition:background .5s,color .4s}
+body.light{background:#faf8f4;color:#2a2418}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 40% at 50% 15%,rgba(196,162,101,0.12) 0%,transparent 60%),radial-gradient(ellipse 50% 30% at 80% 60%,rgba(196,162,101,0.06) 0%,transparent 50%);pointer-events:none;z-index:0}
+body.light::before{background:radial-gradient(ellipse 80% 40% at 50% 15%,rgba(196,162,101,0.15) 0%,transparent 60%),radial-gradient(ellipse 50% 30% at 20% 70%,rgba(196,162,101,0.08) 0%,transparent 50%)}
+.glass{background:rgba(26,23,20,0.82);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+body.light .glass{background:rgba(250,248,244,0.92)}
+.cd{background:#242019;border:1px solid rgba(196,162,101,0.06);border-radius:12px;transition:background .4s,border-color .4s}
+body.light .cd{background:#fff;border-color:rgba(196,162,101,0.15)}
+.cd-h{background:#2e2920;border:1px solid rgba(196,162,101,0.12);border-radius:12px}
+body.light .cd-h{background:#f5f0e6;border-color:rgba(196,162,101,0.2)}
+.sec-label{font-family:'Inter',sans-serif;font-size:.6875rem;letter-spacing:.15em;text-transform:uppercase;color:#c4a265;font-weight:500}
+body.light .sec-label{color:#a08040}
+.role-card{transition:transform .2s,box-shadow .2s}
+.role-card:active{transform:scale(0.98)}
+@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+main{animation:fu .5s cubic-bezier(.23,1,.32,1)}
+::-webkit-scrollbar{display:none}*{scrollbar-width:none;-ms-overflow-style:none}
+
+/* 亮色主题下 inline 暗色渐变 → 浅金渐变 */
+body.light [style*="linear-gradient(135deg,#2a2418 0%,#3a3020 50%,#4a3828 100%)"]{
+  background:linear-gradient(135deg,#e8d8b0 0%,#f0e4c8 50%,#f5eed8 100%) !important;
+  color:#3a2818 !important;
+}
+body.light [style*="linear-gradient(135deg,#2a2418 0%,#3a3020 50%,#4a3828 100%)"] *{
+  color:#3a2818 !important;
+}
+</style>
+<script defer src="mobile-preview-frame.js"></script>
+</head>
+<body class="font-b">
+
+<header class="fixed top-0 w-full z-50 glass">
+  <div class="flex justify-between items-center w-full px-6 py-5">
+    <span class="w-8"></span>
+    <span class="text-lg font-light tracking-[0.15em]" style="font-family:Georgia,serif">老鳳祥</span>
+    <a href="通知中心.html?from=入口页" class="w-8 flex justify-end relative" id="lfxBellLink" aria-label="通知中心">
+      <span class="material-symbols-outlined text-tx2" style="font-size:22px">notifications</span>
+      <span data-lfx-badge="notif" class="absolute -top-1 -right-1 min-w-[16px] h-4 px-1 rounded-full bg-gold text-bg text-[9px] font-medium flex items-center justify-center" style="display:none"></span>
+    </a>
+  </div>
+</header>
+
+<main class="pt-28 pb-12 px-5 max-w-md mx-auto relative z-10">
+
+  <section class="text-center mb-10">
+    <p class="sec-label mb-4">Lao Feng Xiang</p>
+    <h1 class="font-h text-3xl font-extralight tracking-tight leading-tight">内容分发运营平台</h1>
+    <p class="text-sm text-tx2 font-light mt-3 leading-relaxed">请选择您的身份，进入专属工作台</p>
+  </section>
+
+  <section class="space-y-4">
+    <!-- 省代/总部 -->
+    <a href="省代总部.html?role=province" class="role-card block cd p-6">
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-gold text-3xl">monitoring</span>
+        <div class="flex-1">
+          <span class="font-l text-[.625rem] tracking-[.2em] uppercase text-gold/60">Province Agent</span>
+          <h2 class="font-h text-xl font-extralight mt-1 mb-1">我是省代 / 分公司</h2>
+          <p class="text-xs text-tx2 font-light">区域数据监测 · 爆款商机 · 内容管理</p>
+        </div>
+        <span class="material-symbols-outlined text-tx3 mt-1">arrow_forward</span>
+      </div>
+    </a>
+    <!-- 总部 -->
+    <a href="省代总部.html?role=headquarters" class="role-card block cd p-6">
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-gold text-3xl">domain</span>
+        <div class="flex-1">
+          <span class="font-l text-[.625rem] tracking-[.2em] uppercase text-gold/60">Headquarters</span>
+          <h2 class="font-h text-xl font-extralight mt-1 mb-1">我是总部</h2>
+          <p class="text-xs text-tx2 font-light">全国发布量 · 爆款商机 · 各省排名</p>
+        </div>
+        <span class="material-symbols-outlined text-tx3 mt-1">arrow_forward</span>
+      </div>
+    </a>
+    <!-- 经销商老板 -->
+    <a href="经销商老板.html" class="role-card block cd p-6">
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-gold text-3xl">store</span>
+        <div class="flex-1">
+          <span class="font-l text-[.625rem] tracking-[.2em] uppercase text-gold/60">Dealer</span>
+          <h2 class="font-h text-xl font-extralight mt-1 mb-1">我是经销商老板</h2>
+          <p class="text-xs text-tx2 font-light">员工授权 · 发布排行 · 爆款商机 · 一键发布</p>
+        </div>
+        <span class="material-symbols-outlined text-tx3 mt-1">arrow_forward</span>
+      </div>
+    </a>
+    <!-- 店长 -->
+    <a href="店长.html" class="role-card block cd p-6">
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-gold text-3xl">supervisor_account</span>
+        <div class="flex-1">
+          <span class="font-l text-[.625rem] tracking-[.2em] uppercase text-gold/60">Manager</span>
+          <h2 class="font-h text-xl font-extralight mt-1 mb-1">我是店长</h2>
+          <p class="text-xs text-tx2 font-light">发布量PK · 爆款热榜 · 内容发布</p>
+        </div>
+        <span class="material-symbols-outlined text-tx3 mt-1">arrow_forward</span>
+      </div>
+    </a>
+    <!-- 店员 -->
+    <a href="店员首页.html" class="role-card block cd p-6">
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-gold text-3xl">person</span>
+        <div class="flex-1">
+          <span class="font-l text-[.625rem] tracking-[.2em] uppercase text-gold/60">Staff</span>
+          <h2 class="font-h text-xl font-extralight mt-1 mb-1">我是店员</h2>
+          <p class="text-xs text-tx2 font-light">选款 · 编辑 · 发布 · 我的业绩</p>
+        </div>
+        <span class="material-symbols-outlined text-tx3 mt-1">arrow_forward</span>
+      </div>
+    </a>
+  </section>
+
+  <div class="mt-10 pt-6 border-t border-bdr text-center">
+    <a href="下载.html" class="inline-flex items-center gap-2 text-[.625rem] text-tx3 hover:text-gold transition-colors">
+      <span class="material-symbols-outlined text-sm">download</span>下载 App 到手机
+    </a>
+  </div>
+</main>
+
+<script>
+// Theme
+var LC={'bg':'#faf8f4','card':'#ffffff','card-hi':'#f5f0e6','gold':'#a08040','gold-d':'#8a7040','gold-b':'#b09050','tx':'#2a2418','tx2':'#5a5040','tx3':'#8a7d65','bdr':'rgba(196,162,101,0.12)','bdr2':'rgba(196,162,101,0.25)','red':'#c45a42'};
+var DC={'bg':'#1a1714','card':'#242019','card-hi':'#2e2920','gold':'#c4a265','gold-d':'#8a7d65','gold-b':'#d4b275','tx':'#e8e0d4','tx2':'#9a9080','tx3':'#6a6055','bdr':'rgba(196,162,101,0.08)','bdr2':'rgba(196,162,101,0.18)','red':'#c45a42'};
+function setTheme(t){document.body.classList.toggle('light',t==='light');localStorage.setItem('lfx-theme',t);var c=t==='light'?LC:DC;Object.keys(c).forEach(k=>{document.documentElement.style.setProperty('--'+k,c[k])})}
+var tp=new URLSearchParams(location.search).get('theme');
+var _t=tp||localStorage.getItem('lfx-theme')||'dark';
+if(_t==='light')setTheme('light');
+window.addEventListener('message',function(e){if(e.data&&e.data.type==='theme')setTheme(e.data.theme)});
+
+// ============ 角色切换 + 持久化 ============
+(function(){
+  if (!window.LFX || !LFX.Store) return;
+  var ROLE_BY_HREF = {
+    '省代总部.html': 'agent',
+    '经销商老板.html': 'dealer',
+    '店长.html':       'manager',
+    '店员首页.html':   'staff',
+    '店员我的.html':   'staff'
+  };
+  document.querySelectorAll('a.role-card').forEach(function(a){
+    a.addEventListener('click', function(){
+      var href = a.getAttribute('href') || '';
+      var key = decodeURIComponent(href.split('?')[0].split('#')[0]);
+      var role = ROLE_BY_HREF[key];
+      // 总部用 hq 角色（href 也是省代总部.html?role=headquarters）
+      if (href.indexOf('role=headquarters') >= 0) role = 'hq';
+      if (!LFX.Store.isLogged()){
+        // 未登录 → 跳转登录页，登录后回跳目标页
+        var from = encodeURIComponent(href);
+        location.href = '登录页.html?from=' + from;
+        return;
+      } else {
+        if (role) LFX.Store.setRole(role);
+      }
+    });
+  });
+  // 显示当前用户信息（如果已登录）
+  var u = LFX.Store.getUser();
+  if (u){
+    var hint = document.querySelector('main section.text-center p.text-sm');
+    if (hint) hint.textContent = '欢迎回来 · ' + (u.name || u.phone) + '，请选择您要进入的工作台';
+  }
+})();
+</script>
+</body></html>

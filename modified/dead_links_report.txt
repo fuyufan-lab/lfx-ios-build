@@ -1,0 +1,54 @@
+﻿鎵弿 18 涓?HTML 椤甸潰
+
+## 鎬昏锛堟瘡涓枃浠剁殑鎸夐挳/閾炬帴鍒嗙被锛?
+
+file                     total  ok    click  jsbind  anchor  submit  data   DEAD   #href 
+----------------------------------------------------------------------------------------------------
+404.html                 2      2     0      0       0       0       0      0      0     
+500.html                 2      2     0      0       0       0       0      0      0     
+index.html               4      4     0      0       0       0       0      0      0     
+preview-multi.html       3      0     3      0       0       0       0      0      0     
+浜у搧.html                  6      5     0      0       0       0       0      1      0      <<<
+鍏ュ彛椤?html                 6      6     0      0       0       0       0      0      0     
+鍙戝竷鍘嗗彶.html                5      2     3      0       0       0       0      0      0     
+鍙戝竷鎴愬姛.html                2      2     0      0       0       0       0      0      0     
+搴楀憳鎴戠殑.html                12     7     5      0       0       0       0      0      0     
+搴楀憳棣栭〉.html                8      5     0      3       0       0       0      0      0     
+搴楅暱.html                  13     3     6      0       0       0       0      4      0      <<<
+蹇樿瀵嗙爜.html                6      1     1      4       0       0       0      0      0     
+娉ㄥ唽椤?html                 17     2     11     4       0       0       0      0      0     
+鐖嗘鍐呭.html                20     5     11     0       0       0       3      1      0      <<<
+鐧诲綍椤?html                 8      3     1      4       0       0       0      0      0     
+鐪佷唬鎬婚儴.html                17     3     13     0       0       0       0      1      0      <<<
+缁忛攢鍟嗚€佹澘.html               17     3     7      0       0       0       0      7      0      <<<
+閫氱煡涓績.html                1      0     0      0       0       0       0      0      1      <<<
+
+## 姝婚摼/鍗犱綅娓呭崟锛?5 澶勶級
+
+
+### 浜у搧.html
+  L176  <button> [DEAD] '鍔犺浇鏇村浜у搧' cls=px-12 py-4 border border-gold/20 text-gold font-l 
+
+### 搴楅暱.html
+  L97   <button> [DEAD] '鏌ョ湅璇︽儏' cls=mt-4 px-4 py-2 border border-white/30 text-[.625re
+  L127  <button> [DEAD] '+鍔犺喘' cls=px-3 py-1.5 text-[.5625rem] border border-gold/20 
+  L133  <button> [DEAD] '+鍔犺喘' cls=px-3 py-1.5 text-[.5625rem] border border-gold/20 
+  L139  <button> [DEAD] '+鍔犺喘' cls=px-3 py-1.5 text-[.5625rem] border border-gold/20 
+
+### 鐖嗘鍐呭.html
+  L158  <button> [DEAD] '鏌ョ湅璇︽儏' cls=mt-4 px-5 py-2 border border-bdr2 text-[0.625rem] 
+
+### 鐪佷唬鎬婚儴.html
+  L233  <button> [DEAD] '鏌ョ湅璇︽儏' cls=mt-4 px-4 py-2 border border-white/30 text-[.625re
+
+### 缁忛攢鍟嗚€佹澘.html
+  L102  <button> [DEAD] '+澶囪揣' cls=px-3 py-1.5 text-[.5625rem] border border-gold/20 
+  L107  <button> [DEAD] '+澶囪揣' cls=px-3 py-1.5 text-[.5625rem] border border-gold/20 
+  L119  <button> [DEAD] '+鍔犺喘' cls=px-3 py-1.5 text-[.5625rem] border border-gold/20 
+  L124  <button> [DEAD] '+鍔犺喘' cls=px-3 py-1.5 text-[.5625rem] border border-gold/20 
+  L129  <button> [DEAD] '+鍔犺喘' cls=px-3 py-1.5 text-[.5625rem] border border-gold/20 
+  L222  <button> [DEAD] '鍛? cls=text-[.5625rem] px-2 py-0.5 bg-gold text-bg font-l
+  L223  <button> [DEAD] '鏈? cls=text-[.5625rem] px-2 py-0.5 border border-gold/20 
+
+### 閫氱煡涓績.html
+  L54   <a> [placeholder-href] 'arrow_back' cls=material-symbols-outlined text-gold text-xl active

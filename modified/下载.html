@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>老鳳祥 · 下载应用</title>
+<link rel="manifest" href="manifest.json"/>
+<link rel="icon" href="icons/icon-192.png"/>
+<link rel="apple-touch-icon" href="icons/icon-192.png"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="apple-mobile-web-app-title" content="老鳳祥LFX"/>
+<meta name="theme-color" content="#1a1714"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.cn/css2?family=Manrope:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.cn/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<script src="shared.js"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{
+'bg':'#1a1714','card':'#242019','card-hi':'#2e2920',
+'gold':'#c4a265','gold-d':'#8a7d65','gold-b':'#d4b275',
+'tx':'#e8e0d4','tx2':'#9a9080','tx3':'#6a6055',
+'bdr':'rgba(196,162,101,0.08)','bdr2':'rgba(196,162,101,0.18)',
+'red':'#c45a42'
+},fontFamily:{"h":["Manrope"],"b":["Manrope"],"l":["Inter"]},borderRadius:{"c":"12px","pill":"9999px"}}}}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}
+body{background:#1a1714;color:#e8e0d4;min-height:100dvh;font-weight:300;overflow-x:hidden;overflow-y:auto}
+body.light{background:#faf8f4;color:#2a2418}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 40% at 50% 15%,rgba(196,162,101,0.12) 0%,transparent 60%),radial-gradient(ellipse 50% 30% at 80% 60%,rgba(196,162,101,0.06) 0%,transparent 50%);pointer-events:none;z-index:0}
+.glass{background:rgba(26,23,20,0.82);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.cd{background:#242019;border:1px solid rgba(196,162,101,0.06);border-radius:12px}
+body.light .cd{background:#fff;border-color:rgba(196,162,101,0.15)}
+.sec-label{font-family:'Inter',sans-serif;font-size:.6875rem;letter-spacing:.15em;text-transform:uppercase;color:#c4a265;font-weight:500}
+#qrcode-unified canvas,#qrcode-unified img{width:180px!important;height:180px!important}
+@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+main{animation:fu .5s cubic-bezier(.23,1,.32,1)}
+::-webkit-scrollbar{display:none}*{scrollbar-width:none;-ms-overflow-style:none}
+.copy-toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#c4a265;color:#1a1714;padding:10px 24px;border-radius:9999px;font-size:13px;z-index:999;animation:fu .3s ease-out}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+</head>
+<body class="font-b">
+
+<header class="fixed top-0 w-full z-50 glass">
+  <div class="flex justify-between items-center w-full px-5 py-4">
+    <a href="入口页.html" class="material-symbols-outlined text-gold text-xl">arrow_back</a>
+    <span class="text-base font-light tracking-[0.15em]" style="font-family:Georgia,serif">老鳳祥</span>
+    <span class="w-8"></span>
+  </div>
+</header>
+
+<main class="pt-28 pb-32 px-5 max-w-md mx-auto relative z-10">
+
+  <section class="text-center mb-8">
+    <p class="sec-label mb-4">DOWNLOAD</p>
+    <h1 class="font-h text-2xl font-extralight tracking-tight">下载应用</h1>
+    <p class="text-xs text-tx2 font-light mt-2 leading-relaxed">一个码，全平台自动适配</p>
+  </section>
+
+  <!-- 统一 QR 码 -->
+  <div class="cd p-6 mb-6 text-center">
+    <p class="sec-label mb-3">扫码安装</p>
+    <div id="qrcode-unified" class="inline-block mb-3"></div>
+    <p class="text-[.625rem] text-tx3">微信/浏览器扫码 → 自动识别您的设备</p>
+    <div class="flex items-center justify-center gap-3 mt-4">
+      <span class="inline-flex items-center gap-1 text-[.5625rem] text-tx3"><span class="w-2 h-2 rounded-full" style="background:#61dc84"></span>Android</span>
+      <span class="inline-flex items-center gap-1 text-[.5625rem] text-tx3"><span class="w-2 h-2 rounded-full" style="background:#007aff"></span>iOS</span>
+      <span class="inline-flex items-center gap-1 text-[.5625rem] text-tx3"><span class="w-2 h-2 rounded-full" style="background:#ff6700"></span>鸿蒙</span>
+    </div>
+  </div>
+
+  <!-- PWA 安装提示 -->
+  <div class="cd p-5 mb-5 text-center" id="pwaPrompt" style="display:none">
+    <span class="material-symbols-outlined text-gold text-3xl mb-2">download</span>
+    <p class="text-sm font-medium mb-1" id="pwaTitle">快速安装到桌面</p>
+    <p class="text-xs text-tx2 mb-3" id="pwaDesc">无需下载应用商店，直接添加到主屏幕</p>
+    <button class="px-6 py-2.5 bg-gold text-bg text-sm font-l rounded-pill active:scale-95 transition-transform" id="pwaInstallBtn">
+      添加到主屏幕
+    </button>
+  </div>
+
+  <!-- Android -->
+  <div class="cd p-5 mb-4 platform-card" id="card-android">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(61,220,132,0.12)">
+        <span class="text-2xl">🤖</span>
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-medium">Android 版</p>
+        <p class="text-[.625rem] text-tx2 mt-0.5">Android 7.0+ · 约 3.9 MB · 扫码直接下载安装</p>
+        <div class="flex gap-2 mt-3">
+          <a href="app/LFX-Android.apk" class="flex-1 text-center py-2.5 bg-gold text-bg text-[.6875rem] font-l rounded-pill active:scale-95 transition-transform" id="androidDl">
+            <span class="material-symbols-outlined align-middle text-sm mr-1">download</span>下载 APK
+          </a>
+        </div>
+        <p class="text-[.5rem] text-tx3 mt-2">或扫码上方统一二维码，自动识别下载</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- iOS → itms-services 一键安装 -->
+  <div class="cd p-5 mb-4 platform-card" id="card-ios">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(0,122,255,0.12)">
+        <span class="text-2xl">🍎</span>
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-medium">iOS 版</p>
+        <p class="text-[.625rem] text-tx2 mt-0.5">iOS 14+ · Safari 打开 → 点按即弹出系统安装对话框</p>
+        <div class="flex gap-2 mt-3">
+          <a href="itms-services://?action=download-manifest&url=https://yh.xiaofenhe.com/lfx-preview/manifest.plist" class="flex-1 text-center py-2.5 bg-gold text-bg text-[.6875rem] font-l rounded-pill active:scale-95 transition-transform no-underline" id="iosDl">
+            <span class="material-symbols-outlined align-middle text-sm mr-1">download</span>一键安装
+          </a>
+        </div>
+        <p class="text-[.5rem] text-tx3 mt-2">Safari 中点击 → 弹出安装对话框 → 确认即装。非 Safari 浏览器请用上方统一码扫码</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 鸿蒙 → 直接下载 HAP -->
+  <div class="cd p-5 mb-4 platform-card" id="card-harmonyos">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(255,103,0,0.12)">
+        <span class="text-2xl">🔷</span>
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-medium">鸿蒙 NEXT 版</p>
+        <p class="text-[.625rem] text-tx2 mt-0.5">HarmonyOS 5.0+ · 下载 HAP → 点击即安装</p>
+        <div class="flex gap-2 mt-3">
+          <a href="app/LFX-HarmonyOS.hap" class="flex-1 text-center py-2.5 bg-gold text-bg text-[.6875rem] font-l rounded-pill active:scale-95 transition-transform no-underline" id="hmDl">
+            <span class="material-symbols-outlined align-middle text-sm mr-1">download</span>下载安装
+          </a>
+        </div>
+        <p class="text-[.5rem] text-tx3 mt-2">下载完成后点击 HAP 文件 → 系统弹出安装向导 → 一键完成</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="text-center mt-8 pb-4">
+    <a href="入口页.html" class="text-[.625rem] text-tx3 hover:text-gold transition-colors">← 返回首页</a>
+    <p class="text-[.5625rem] text-tx3/40 mt-3">LFX Content Operations Platform</p>
+  </div>
+
+</main>
+
+<script>
+// ===== 统一 QR 码（一个码自动分流） =====
+var UNIFIED_QR_URL = 'https://yh.xiaofenhe.com/lfx-preview/install.html';
+
+(function initUnifiedQR(){
+  var container = document.getElementById('qrcode-unified');
+  if (!container) return;
+  new QRCode(container, {
+    text: UNIFIED_QR_URL,
+    width: 180,
+    height: 180,
+    colorDark: '#c4a265',
+    colorLight: '#242019',
+    correctLevel: QRCode.CorrectLevel.M
+  });
+})();
+
+// ===== Hash 路由：DOM 就绪后高亮对应平台卡片 =====
+document.addEventListener('DOMContentLoaded', function(){
+  var hash = location.hash.replace('#','').split('?')[0];
+  if (!hash) return;
+  var card = document.getElementById('card-' + hash);
+  if (!card) return;
+  // 用 setProperty + important 确保覆盖 CSS 类样式
+  card.style.setProperty('border-color', 'rgba(196,162,101,0.5)', 'important');
+  card.style.setProperty('box-shadow', '0 0 24px rgba(196,162,101,0.1)', 'important');
+  // 滚动到位
+  setTimeout(function(){ card.scrollIntoView({behavior:'smooth',block:'center'}); }, 500);
+});
+
+// ===== PWA 安装 =====
+(function(){
+  var deferredPrompt = null;
+  var promptEl = document.getElementById('pwaPrompt');
+  var installBtn = document.getElementById('pwaInstallBtn');
+  
+  window.addEventListener('beforeinstallprompt', function(e) {
+    e.preventDefault();
+    deferredPrompt = e;
+    promptEl.style.display = 'block';
+    
+    // 检测平台
+    var ua = navigator.userAgent;
+    var isIOS = /iPad|iPhone|iPod/.test(ua);
+    var isAndroid = /Android/.test(ua);
+    
+    if (isIOS) {
+      document.getElementById('pwaTitle').textContent = '添加到主屏幕';
+      document.getElementById('pwaDesc').textContent = '点击下方分享按钮 → 添加到主屏幕';
+      installBtn.textContent = '查看教程';
+    } else if (isAndroid) {
+      document.getElementById('pwaTitle').textContent = '一键安装到桌面';
+      document.getElementById('pwaDesc').textContent = '无需下载应用商店，直接添加到主屏幕使用';
+    }
+  });
+  
+  if (installBtn) {
+    installBtn.addEventListener('click', function() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(function(result) {
+          promptEl.style.display = 'none';
+          deferredPrompt = null;
+        });
+      } else if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        // iOS 教学弹窗
+        var toast = document.createElement('div');
+        toast.className = 'copy-toast';
+        toast.textContent = '点击 Safari 底部 ↑ 分享按钮 → 添加到主屏幕';
+        document.body.appendChild(toast);
+        setTimeout(function(){ toast.remove(); }, 4000);
+      }
+    });
+  }
+
+  // 已安装则隐藏
+  if (window.matchMedia('(display-mode: standalone)').matches) {
+    promptEl.style.display = 'none';
+  }
+})();
+
+// ===== 下载链接智能处理 =====
+(function(){
+  var ua = navigator.userAgent;
+  var isAndroid = /Android/.test(ua);
+  var isIOS = /iPad|iPhone|iPod/.test(ua);
+  var isHarmonyOS = /HarmonyOS|OpenHarmony/.test(ua);
+  
+  if (isAndroid) {
+    var el = document.getElementById('androidDl');
+    if (el) { el.style.background = '#d4b275'; el.style.fontWeight = '600'; }
+  }
+  if (isIOS) {
+    var el = document.getElementById('iosDl');
+    if (el) { el.style.background = '#d4b275'; el.style.fontWeight = '600'; }
+  }
+  if (isHarmonyOS) {
+    var el = document.getElementById('hmDl');
+    if (el) { el.style.background = '#d4b275'; el.style.fontWeight = '600'; }
+  }
+})();
+
+// Theme
+var LC={'bg':'#faf8f4','card':'#ffffff','card-hi':'#f5f0e6','gold':'#a08040','gold-d':'#8a7040','gold-b':'#b09050','tx':'#2a2418','tx2':'#5a5040','tx3':'#8a7d65','bdr':'rgba(196,162,101,0.12)','bdr2':'rgba(196,162,101,0.25)','red':'#c45a42'};
+var DC={'bg':'#1a1714','card':'#242019','card-hi':'#2e2920','gold':'#c4a265','gold-d':'#8a7d65','gold-b':'#d4b275','tx':'#e8e0d4','tx2':'#9a9080','tx3':'#6a6055','bdr':'rgba(196,162,101,0.08)','bdr2':'rgba(196,162,101,0.18)','red':'#c45a42'};
+function setTheme(t){document.body.classList.toggle('light',t==='light');localStorage.setItem('lfx-theme',t)}
+var tp=new URLSearchParams(location.search).get('theme');
+var _t=tp||localStorage.getItem('lfx-theme')||'dark';
+if(_t==='light')setTheme('light');
+</script>
+</body></html>

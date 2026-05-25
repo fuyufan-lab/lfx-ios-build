@@ -1,0 +1,45 @@
+name: HarmonyOS NEXT Build (HAP)
+
+# 注：HarmonyOS 没有 GitHub Actions 官方 runner 镜像。
+# 本 workflow 仅在 self-hosted runner（自己装 DevEco Studio CLI）上有效。
+# 标签机器需要：HarmonyOS SDK + hvigor + 鸿蒙签名证书。
+#
+# 大多数情况下，鸿蒙包请直接在 Windows 本机的 DevEco Studio 里 Build → Build Hap，
+# 不要依赖此 workflow（除非你有自托管 runner）。
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_mode:
+        description: '构建模式 (debug / release)'
+        required: true
+        default: 'debug'
+        type: choice
+        options:
+          - debug
+          - release
+
+jobs:
+  build-harmony:
+    runs-on: [self-hosted, harmonyos]
+    if: ${{ false }}  # 默认禁用; 配好 self-hosted runner 后改成 true
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Sync Web assets to rawfile
+        run: node mobile/scripts/sync-web.js harmony
+
+      - name: Hvigor build
+        working-directory: mobile/harmony-next
+        run: |
+          hvigorw clean
+          hvigorw assembleHap --mode module -p product=default -p buildMode=${{ github.event.inputs.build_mode }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: lfx-harmony-${{ github.event.inputs.build_mode }}-${{ github.run_number }}
+          path: mobile/harmony-next/entry/build/default/outputs/default/*.hap

@@ -1,0 +1,166 @@
+﻿杈撳嚭鐩綍: c:\Users\WZ\Desktop\鐝犲疂鍐呭绯荤粺\modified\screenshots
+
+缁勫悎: 6 鏈哄瀷 x 6 椤甸潰 = 36
+
+== iphone-se ==
+  [iphone-se/entry] OK 375x1015 ok sf=0 st=0
+  [iphone-se/login] OK 375x884 ok sf=0 st=1
+  [iphone-se/dealer] OK 375x997 ok sf=0 st=2
+  [iphone-se/hq] OK 375x1225 ok sf=0 st=5
+  [iphone-se/notice] OK 375x884 ok sf=0 st=0
+  [iphone-se/history] OK 375x980 ok sf=0 st=3
+== iphone-13-mini ==
+  [iphone-13-mini/entry] OK 375x1015 ok sf=0 st=0
+  [iphone-13-mini/login] OK 375x884 ok sf=0 st=1
+  [iphone-13-mini/dealer] OK 375x997 ok sf=0 st=2
+  [iphone-13-mini/hq] OK 375x1225 ok sf=0 st=5
+  [iphone-13-mini/notice] OK 375x884 ok sf=0 st=0
+  [iphone-13-mini/history] OK 375x980 ok sf=0 st=3
+== iphone-14 ==
+  [iphone-14/entry] OK 390x1015 ok sf=0 st=0
+  [iphone-14/login] OK 390x884 ok sf=0 st=1
+  [iphone-14/dealer] OK 390x997 ok sf=0 st=2
+  [iphone-14/hq] OK 390x1209 ok sf=0 st=5
+  [iphone-14/notice] OK 390x884 ok sf=0 st=0
+  [iphone-14/history] OK 390x980 ok sf=0 st=3
+== iphone-14-pro-max ==
+  [iphone-14-pro-max/entry] OK 430x999 ok sf=0 st=0
+  [iphone-14-pro-max/login] OK 430x932 ok sf=0 st=1
+  [iphone-14-pro-max/dealer] OK 430x997 ok sf=0 st=2
+  [iphone-14-pro-max/hq] OK 430x1209 ok sf=0 st=5
+  [iphone-14-pro-max/notice] OK 430x932 ok sf=0 st=0
+  [iphone-14-pro-max/history] OK 430x980 ok sf=0 st=3
+== galaxy-s20 ==
+  [galaxy-s20/entry] OK 360x1015 ok sf=0 st=0
+  [galaxy-s20/login] OK 360x884 ok sf=0 st=1
+  [galaxy-s20/dealer] OK 360x997 ok sf=0 st=2
+  [galaxy-s20/hq] OK 360x1225 ok sf=0 st=5
+  [galaxy-s20/notice] OK 360x884 ok sf=0 st=0
+  [galaxy-s20/history] OK 360x980 ok sf=0 st=3
+== pixel-7 ==
+  [pixel-7/entry] OK 412x999 ok sf=0 st=0
+  [pixel-7/login] OK 412x915 ok sf=0 st=1
+  [pixel-7/dealer] OK 412x997 ok sf=0 st=2
+  [pixel-7/hq] OK 412x1209 ok sf=0 st=5
+  [pixel-7/notice] OK 412x915 ok sf=0 st=0
+  [pixel-7/history] OK 412x980 ok sf=0 st=3
+
+璇︾粏 JSON: c:\Users\WZ\Desktop\鐝犲疂鍐呭绯荤粺\modified\matrix_test_report.json
+
+姹囨€? ok=36 fail=0
+
+## 鑷姩妫€娴嬭〃
+
+| device | page | viewport | scroll | overflow | smallFont | smallTouch | fixed |
+|---|---|---|---|---|---|---|---|
+| iphone-se | entry | 375x667 | 375x1015 | ok | 0 | 0 | 1 |
+| iphone-se | login | 375x667 | 375x884 | ok | 0 | 1 | 0 |
+| iphone-se | dealer | 375x667 | 375x997 | ok | 0 | 2 | 2 |
+| iphone-se | hq | 375x667 | 375x1225 | ok | 0 | 5 | 2 |
+| iphone-se | notice | 375x667 | 375x884 | ok | 0 | 0 | 1 |
+| iphone-se | history | 375x667 | 375x980 | ok | 0 | 3 | 1 |
+| iphone-13-mini | entry | 375x812 | 375x1015 | ok | 0 | 0 | 1 |
+| iphone-13-mini | login | 375x812 | 375x884 | ok | 0 | 1 | 0 |
+| iphone-13-mini | dealer | 375x812 | 375x997 | ok | 0 | 2 | 2 |
+| iphone-13-mini | hq | 375x812 | 375x1225 | ok | 0 | 5 | 2 |
+| iphone-13-mini | notice | 375x812 | 375x884 | ok | 0 | 0 | 1 |
+| iphone-13-mini | history | 375x812 | 375x980 | ok | 0 | 3 | 1 |
+| iphone-14 | entry | 390x844 | 390x1015 | ok | 0 | 0 | 1 |
+| iphone-14 | login | 390x844 | 390x884 | ok | 0 | 1 | 0 |
+| iphone-14 | dealer | 390x844 | 390x997 | ok | 0 | 2 | 2 |
+| iphone-14 | hq | 390x844 | 390x1209 | ok | 0 | 5 | 2 |
+| iphone-14 | notice | 390x844 | 390x884 | ok | 0 | 0 | 1 |
+| iphone-14 | history | 390x844 | 390x980 | ok | 0 | 3 | 1 |
+| iphone-14-pro-max | entry | 430x932 | 430x999 | ok | 0 | 0 | 1 |
+| iphone-14-pro-max | login | 430x932 | 430x932 | ok | 0 | 1 | 0 |
+| iphone-14-pro-max | dealer | 430x932 | 430x997 | ok | 0 | 2 | 2 |
+| iphone-14-pro-max | hq | 430x932 | 430x1209 | ok | 0 | 5 | 2 |
+| iphone-14-pro-max | notice | 430x932 | 430x932 | ok | 0 | 0 | 1 |
+| iphone-14-pro-max | history | 430x932 | 430x980 | ok | 0 | 3 | 1 |
+| galaxy-s20 | entry | 360x800 | 360x1015 | ok | 0 | 0 | 1 |
+| galaxy-s20 | login | 360x800 | 360x884 | ok | 0 | 1 | 0 |
+| galaxy-s20 | dealer | 360x800 | 360x997 | ok | 0 | 2 | 2 |
+| galaxy-s20 | hq | 360x800 | 360x1225 | ok | 0 | 5 | 2 |
+| galaxy-s20 | notice | 360x800 | 360x884 | ok | 0 | 0 | 1 |
+| galaxy-s20 | history | 360x800 | 360x980 | ok | 0 | 3 | 1 |
+| pixel-7 | entry | 412x915 | 412x999 | ok | 0 | 0 | 1 |
+| pixel-7 | login | 412x915 | 412x915 | ok | 0 | 1 | 0 |
+| pixel-7 | dealer | 412x915 | 412x997 | ok | 0 | 2 | 2 |
+| pixel-7 | hq | 412x915 | 412x1209 | ok | 0 | 5 | 2 |
+| pixel-7 | notice | 412x915 | 412x915 | ok | 0 | 0 | 1 |
+| pixel-7 | history | 412x915 | 412x980 | ok | 0 | 3 | 1 |
+
+## 闂娓呭崟
+
+
+### iphone-se / login
+- [MAJOR] 灏忚Е鎺?1 涓? 60x28:'绔嬪嵆娉ㄥ唽'
+
+### iphone-se / dealer
+- [MAJOR] 灏忚Е鎺?2 涓? 55x32:'+澶囪揣', 55x32:'+鍔犺喘'
+
+### iphone-se / hq
+- [MAJOR] 灏忚Е鎺?5 涓? 36x32:'鍛?, 36x32:'鏈?, 82x36:'鍗曞搧鏁版嵁'
+
+### iphone-se / history
+- [MAJOR] 灏忚Е鎺?3 涓? 69x31:'鍏ㄩ儴 9', 79x31:'灏忕孩涔?3', 68x31:'鎶栭煶 3'
+
+### iphone-13-mini / login
+- [MAJOR] 灏忚Е鎺?1 涓? 60x28:'绔嬪嵆娉ㄥ唽'
+
+### iphone-13-mini / dealer
+- [MAJOR] 灏忚Е鎺?2 涓? 55x32:'+澶囪揣', 55x32:'+鍔犺喘'
+
+### iphone-13-mini / hq
+- [MAJOR] 灏忚Е鎺?5 涓? 36x32:'鍛?, 36x32:'鏈?, 82x36:'鍗曞搧鏁版嵁'
+
+### iphone-13-mini / history
+- [MAJOR] 灏忚Е鎺?3 涓? 69x31:'鍏ㄩ儴 9', 79x31:'灏忕孩涔?3', 68x31:'鎶栭煶 3'
+
+### iphone-14 / login
+- [MAJOR] 灏忚Е鎺?1 涓? 60x28:'绔嬪嵆娉ㄥ唽'
+
+### iphone-14 / dealer
+- [MAJOR] 灏忚Е鎺?2 涓? 55x32:'+澶囪揣', 55x32:'+鍔犺喘'
+
+### iphone-14 / hq
+- [MAJOR] 灏忚Е鎺?5 涓? 36x32:'鍛?, 36x32:'鏈?, 82x36:'鍗曞搧鏁版嵁'
+
+### iphone-14 / history
+- [MAJOR] 灏忚Е鎺?3 涓? 69x31:'鍏ㄩ儴 9', 79x31:'灏忕孩涔?3', 68x31:'鎶栭煶 3'
+
+### iphone-14-pro-max / login
+- [MAJOR] 灏忚Е鎺?1 涓? 60x28:'绔嬪嵆娉ㄥ唽'
+
+### iphone-14-pro-max / dealer
+- [MAJOR] 灏忚Е鎺?2 涓? 55x32:'+澶囪揣', 55x32:'+鍔犺喘'
+
+### iphone-14-pro-max / hq
+- [MAJOR] 灏忚Е鎺?5 涓? 36x32:'鍛?, 36x32:'鏈?, 82x36:'鍗曞搧鏁版嵁'
+
+### iphone-14-pro-max / history
+- [MAJOR] 灏忚Е鎺?3 涓? 69x31:'鍏ㄩ儴 9', 79x31:'灏忕孩涔?3', 68x31:'鎶栭煶 3'
+
+### galaxy-s20 / login
+- [MAJOR] 灏忚Е鎺?1 涓? 60x28:'绔嬪嵆娉ㄥ唽'
+
+### galaxy-s20 / dealer
+- [MAJOR] 灏忚Е鎺?2 涓? 55x32:'+澶囪揣', 55x32:'+鍔犺喘'
+
+### galaxy-s20 / hq
+- [MAJOR] 灏忚Е鎺?5 涓? 36x32:'鍛?, 36x32:'鏈?, 82x36:'鍗曞搧鏁版嵁'
+
+### galaxy-s20 / history
+- [MAJOR] 灏忚Е鎺?3 涓? 69x31:'鍏ㄩ儴 9', 79x31:'灏忕孩涔?3', 68x31:'鎶栭煶 3'
+
+### pixel-7 / login
+- [MAJOR] 灏忚Е鎺?1 涓? 60x28:'绔嬪嵆娉ㄥ唽'
+
+### pixel-7 / dealer
+- [MAJOR] 灏忚Е鎺?2 涓? 55x32:'+澶囪揣', 55x32:'+鍔犺喘'
+
+### pixel-7 / hq
+- [MAJOR] 灏忚Е鎺?5 涓? 36x32:'鍛?, 36x32:'鏈?, 82x36:'鍗曞搧鏁版嵁'
+
+### pixel-7 / history
+- [MAJOR] 灏忚Е鎺?3 涓? 69x31:'鍏ㄩ儴 9', 79x31:'灏忕孩涔?3', 68x31:'鎶栭煶 3'

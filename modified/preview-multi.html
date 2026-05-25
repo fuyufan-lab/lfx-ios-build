@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>老凤祥</title>
+<style>
+:root {
+  --phone-w: 350px;
+  --phone-h: calc(100vh - 120px);
+  --gold: #c4a265;
+  --text: #e8dcc8;
+  --muted: #8a7d65;
+  --bg1: #1a1508; --bg2: #261e0e; --bg3: #2e2412;
+  --phone-bg: #0e0c08;
+  --screen-bg: #1a1714;
+}
+/* ─── LIGHT THEME ─── */
+body.light {
+  --gold: #a08040;
+  --text: #3a3020;
+  --muted: #8a7d65;
+  --bg1: #faf8f4; --bg2: #f5f0e8; --bg3: #ede6d8;
+  --phone-bg: #f0ebe0;
+  --screen-bg: #faf8f4;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { height: 100%; overflow: hidden; }
+body {
+  height: 100vh;
+  font-family: "Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  color: var(--text);
+  background: linear-gradient(160deg, var(--bg1) 0%, var(--bg2) 40%, var(--bg3) 65%, var(--bg1) 100%);
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  user-select: none;
+  transition: background .6s ease, color .4s ease;
+}
+
+/* ambient glow */
+body::before {
+  content: ''; position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 45% at 50% 50%, rgba(196,162,101,0.055) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 50% 90%, rgba(196,162,101,0.04) 0%, transparent 50%);
+  pointer-events: none; z-index: 0;
+}
+body.light::before {
+  background:
+    radial-gradient(ellipse 60% 45% at 50% 50%, rgba(196,162,101,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 50% 10%, rgba(196,162,101,0.06) 0%, transparent 50%);
+}
+
+/* ─── brand ─── */
+.brand-top {
+  position: fixed; top: 24px; left: 50%; transform: translateX(-50%);
+  z-index: 20;
+  font-size: 0.625rem; font-weight: 200; letter-spacing: 0.3em;
+  color: var(--muted); text-transform: uppercase; opacity: 0.6;
+}
+.brand-top span { color: var(--gold); font-weight: 300; }
+
+/* ─── stage ─── */
+.stage {
+  display: flex; align-items: center; justify-content: center;
+  gap: 72px; position: relative; z-index: 5;
+  width: 100%; height: 100vh;
+}
+
+/* ─── phone column ─── */
+.phone-col {
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  transition: opacity .5s cubic-bezier(.23,1,.32,1), filter .5s ease;
+  cursor: pointer;
+}
+.phone-col.active { opacity: 1; filter: brightness(1); cursor: default; }
+.phone-col.dim { opacity: 0.22; filter: brightness(0.6); }
+.phone-col.dim:hover { opacity: 0.45; filter: brightness(0.8); }
+
+/* ─── phone frame ─── */
+.phone {
+  position: relative;
+  width: var(--phone-w); height: var(--phone-h);
+  border-radius: 42px;
+  background: var(--phone-bg);
+  border: 1.5px solid rgba(196,162,101,0.08);
+  padding: 6px;
+  overflow: hidden;
+  transition: border-color .5s ease, box-shadow .5s ease, background .6s ease;
+}
+.phone-col.active .phone {
+  border-color: rgba(196,162,101,0.18);
+  box-shadow:
+    0 40px 100px rgba(0,0,0,0.5),
+    0 0 80px rgba(196,162,101,0.06);
+}
+.phone-col.dim .phone {
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+/* tiny camera dot */
+.cam-dot {
+  position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+  width: 8px; height: 8px; border-radius: 50%; z-index: 2;
+  background: #1a1816;
+  box-shadow: inset 0 0 2px rgba(196,162,101,0.1);
+}
+
+/* screen */
+.screen {
+  width: 100%; height: 100%;
+  border-radius: 38px; overflow: hidden; background: var(--screen-bg);
+}
+.screen iframe {
+  width: 100%; height: 100%; border: 0; display: block; background: var(--screen-bg);
+}
+/* active: allow scroll; dim: block all events so click passes to parent */
+.phone-col.active .screen iframe { pointer-events: auto; }
+.phone-col.dim .screen iframe { pointer-events: none; }
+
+/* label */
+.tag {
+  font-size: 1.75rem; letter-spacing: 0.12em; color: var(--muted);
+  font-weight: 200;
+  transition: color .4s ease;
+}
+.phone-col.active .tag { color: var(--gold); opacity: 0.8; }
+.phone-col.dim .tag { opacity: 0.4; }
+
+/* ─── dots ─── */
+.dots {
+  position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 10px; z-index: 20;
+}
+.dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--muted); opacity: 0.25;
+  transition: all .4s ease; cursor: pointer;
+}
+.dot.on { opacity: 1; background: var(--gold); width: 20px; border-radius: 3px; }
+
+/* ─── arrows ─── */
+.arrow {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  z-index: 20; width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(196,162,101,0.08); border-radius: 50%;
+  color: var(--muted); font-size: 16px;
+  cursor: pointer; opacity: 0.3;
+  transition: all .3s ease; background: transparent;
+}
+.arrow:hover { opacity: 0.7; border-color: rgba(196,162,101,0.2); }
+.arrow.l { left: 24px; }
+.arrow.r { right: 24px; }
+.arrow.off { opacity: 0.08; pointer-events: none; }
+
+/* ─── footer ─── */
+.brand-bottom {
+  position: fixed; bottom: 24px; right: 32px; z-index: 20;
+  font-size: 0.5rem; font-weight: 200; letter-spacing: 0.3em;
+  color: var(--muted); text-transform: uppercase; opacity: 0.25;
+}
+
+/* ─── theme toggle ─── */
+.theme-btn {
+  position: fixed; top: 24px; right: 32px; z-index: 30;
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid rgba(196,162,101,0.15);
+  background: rgba(196,162,101,0.06);
+  color: var(--gold); font-size: 18px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all .3s ease;
+  backdrop-filter: blur(12px);
+}
+.theme-btn:hover { background: rgba(196,162,101,0.15); border-color: rgba(196,162,101,0.3); }
+body.light .ambient-dark { display: none; }
+body:not(.light) .ambient-light { display: none; }
+body.light .cam-dot { background: #d4c8b0; }
+body.light .phone-col.active .phone {
+  box-shadow: 0 30px 80px rgba(0,0,0,0.1), 0 0 60px rgba(196,162,101,0.08);
+}
+body.light .phone-col.dim .phone { box-shadow: 0 15px 40px rgba(0,0,0,0.06); }
+
+/* ─── responsive ─── */
+@media (max-width: 1200px) {
+  :root { --phone-w: 310px; }
+  .stage { gap: 42px; }
+}
+@media (max-width: 1000px) {
+  :root { --phone-w: 270px; }
+  .stage { gap: 30px; }
+  .phone { border-radius: 34px; padding: 5px; }
+  .screen { border-radius: 30px; }
+  .tag { font-size: 1.25rem; }
+}
+@media (max-width: 860px) {
+  :root { --phone-w: 320px; }
+  .phone-col.dim { display: none; }
+  .stage { gap: 0; }
+}
+@media (max-width: 480px) {
+  :root { --phone-w: min(320px, 92vw); }
+  .brand-top { top: 14px; font-size: 0.5625rem; }
+  .arrow { display: none; }
+  .tag { font-size: 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="brand-top"><span>老凤祥</span> · <span id="roleName">店员</span></div>
+<button class="theme-btn" id="themeBtn" onclick="toggleTheme()" title="切换主题">&#9788;</button>
+
+<button class="arrow l" id="aL" onclick="go(-1)">&#8592;</button>
+<button class="arrow r" id="aR" onclick="go(1)">&#8594;</button>
+
+<section class="stage" id="stage"></section>
+
+<div class="dots" id="dots"></div>
+<div class="brand-bottom">Content Operations Platform</div>
+
+<script>
+(function(){
+  var ROLES = {
+    clerk: { name:'店员', views:[
+      {label:'商机',src:'爆款内容.html'},
+      {label:'发布',src:'店员首页.html'},
+      {label:'我的',src:'店员我的.html'}
+    ]},
+    manager: { name:'店长', views:[
+      {label:'商机',src:'店长.html#opportunity'},
+      {label:'数据',src:'店长.html#data'},
+      {label:'我的',src:'店长.html#mine'}
+    ]},
+    dealer: { name:'经销商', views:[
+      {label:'商机',src:'经销商老板.html#opportunity'},
+      {label:'数据',src:'经销商老板.html#data'},
+      {label:'我的',src:'经销商老板.html#mine'}
+    ]},
+    headquarters: { name:'总部', views:[
+      {label:'数据',src:'省代总部.html#data'},
+      {label:'商机',src:'省代总部.html#opportunity'},
+      {label:'我的',src:'省代总部.html#mine'}
+    ]}
+  };
+
+  var p = new URLSearchParams(location.search);
+  var role = p.get('role') || 'clerk';
+  var cfg = ROLES[role] || ROLES.clerk;
+  var cur = 0, views = cfg.views;
+  var cols = [], dots = [];
+
+  document.title = cfg.name + ' · 老凤祥';
+  document.getElementById('roleName').textContent = cfg.name;
+
+  var theme = localStorage.getItem('lfx-theme') || 'dark';
+  if (theme === 'light') { document.body.classList.add('light'); document.getElementById('themeBtn').innerHTML = '&#9789;'; }
+
+  // Build once — never destroy iframes
+  function init() {
+    var stage = document.getElementById('stage');
+    var dotsEl = document.getElementById('dots');
+
+    views.forEach(function(v, i) {
+      var col = document.createElement('div');
+      col.className = 'phone-col ' + (i === 0 ? 'active' : 'dim');
+      var sep = v.src.indexOf('?') >= 0 ? '&' : '?';
+      var cacheBust = '&v=' + Date.now();
+      col.innerHTML =
+        '<div class="phone">' +
+          '<div class="cam-dot"></div>' +
+          '<div class="screen"><iframe src="' + v.src + sep + 'theme=' + theme + cacheBust + '"></iframe></div>' +
+        '</div>' +
+        '<div class="tag">' + v.label + '</div>';
+      col.addEventListener('click', function(){ jump(i); });
+      // Hook scroll when iframe loads
+      col.querySelector('iframe').addEventListener('load', function(){ hookIframeScroll(); });
+      stage.appendChild(col);
+      cols.push(col);
+
+      var d = document.createElement('div');
+      d.className = 'dot' + (i === 0 ? ' on' : '');
+      d.addEventListener('click', function(){ jump(i); });
+      dotsEl.appendChild(d);
+      dots.push(d);
+    });
+
+    updateArrows();
+  }
+
+  // Only toggle classes — no DOM rebuild
+  function jump(i) {
+    if (i < 0 || i >= views.length || i === cur) return;
+    cols[cur].className = 'phone-col dim';
+    dots[cur].className = 'dot';
+    cur = i;
+    cols[cur].className = 'phone-col active';
+    dots[cur].className = 'dot on';
+    updateArrows();
+    scrollIframe = null; // reset so hookIframeScroll re-hooks
+    hookIframeScroll();
+  }
+
+  function updateArrows() {
+    document.getElementById('aL').className = 'arrow l' + (cur === 0 ? ' off' : '');
+    document.getElementById('aR').className = 'arrow r' + (cur === views.length - 1 ? ' off' : '');
+  }
+
+  window.go = function(d){ jump(cur + d); };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') jump(cur - 1);
+    if (e.key === 'ArrowRight') jump(cur + 1);
+  });
+
+  init();
+
+  // Forward wheel events into active iframe for scrolling
+  // (wheel events inside an iframe do NOT bubble to parent)
+  var scrollIframe = null;
+  function hookIframeScroll() {
+    var iframe = document.querySelector('.phone-col.active .screen iframe');
+    if (!iframe || iframe === scrollIframe) return;
+    scrollIframe = iframe;
+    try {
+      var iDoc = iframe.contentDocument || iframe.contentWindow.document;
+      iDoc.addEventListener('wheel', function(e) {
+        var el = iDoc.scrollingElement || iDoc.documentElement;
+        el.scrollTop += e.deltaY;
+        e.preventDefault();
+      }, { passive: false });
+    } catch(ex) {}
+  }
+  // Hook on load and on view switch
+  document.getElementById('stage').addEventListener('wheel', function(e) {
+    var activeIframe = document.querySelector('.phone-col.active .screen iframe');
+    if (!activeIframe) return;
+    try {
+      var doc = activeIframe.contentDocument || activeIframe.contentWindow.document;
+      var el = doc.scrollingElement || doc.documentElement;
+      el.scrollTop += e.deltaY;
+      e.preventDefault();
+    } catch(ex) {}
+  }, { passive: false });
+
+  // ─── Theme Toggle ───
+  window.toggleTheme = function() {
+    theme = theme === 'dark' ? 'light' : 'dark';
+    document.body.classList.toggle('light', theme === 'light');
+    document.getElementById('themeBtn').innerHTML = theme === 'light' ? '&#9789;' : '&#9788;';
+    localStorage.setItem('lfx-theme', theme);
+    // Notify all iframes
+    var iframes = document.querySelectorAll('.screen iframe');
+    iframes.forEach(function(f) {
+      try { f.contentWindow.postMessage({ type: 'theme', theme: theme }, '*'); } catch(ex) {}
+    });
+  };
+})();
+</script>
+
+</body>
+</html>
