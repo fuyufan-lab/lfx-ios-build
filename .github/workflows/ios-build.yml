@@ -120,11 +120,10 @@ jobs:
           
           if [ -n "$CERT_UUID" ] && [ "$CERT_UUID" != "" ]; then
             echo "Signing with certificate: $CERT_UUID"
-            # 手动签名
-            codesign --force --sign "$CERT_UUID" \
-              --entitlements ios/App/App/App.entitlements \
-              --timestamp=none \
-              "$APP_PATH" || echo "Codesign failed, continuing unsigned"
+            # 先签名所有 embedded frameworks
+            find "$APP_PATH" -name "*.framework" -exec codesign --force --sign "$CERT_UUID" --timestamp=none {} \; 2>/dev/null || true
+            # 签名 App
+            codesign --force --sign "$CERT_UUID" --timestamp=none "$APP_PATH" 2>&1 || echo "Codesign failed, continuing unsigned"
           else
             echo "No certificate UUID, skipping signing"
           fi
