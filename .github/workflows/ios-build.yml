@@ -76,16 +76,20 @@ jobs:
       - name: Get Certificate UUID
         id: cert
         run: |
-          # 查找 iPhone Developer 证书的 UUID
-          CERT_UUID=$(security find-identity -v -p codesigning build.keychain 2>&1 | grep "iPhone" | head -1 | sed 's/[^"]*"\([^"]*\)".*/\1/' || echo "")
+          # 查找证书的 UUID（匹配 Apple Development 或 iPhone Developer）
+          CERT_INFO=$(security find-identity -v -p codesigning build.keychain 2>&1)
+          echo "--- All identities ---"
+          echo "$CERT_INFO"
+          
+          # 提取第一个有效证书的 UUID
+          CERT_UUID=$(echo "$CERT_INFO" | grep -E '(iPhone Developer|Apple Development)' | head -1 | awk '{print $2}')
+          
           if [ -z "$CERT_UUID" ]; then
-            echo "Warning: No certificate found, using default signing"
-            CERT_UUID="iPhone Developer"
+            echo "Warning: No certificate found, using ad-hoc signing"
+            CERT_UUID=""
           fi
           echo "uuid=$CERT_UUID" >> $GITHUB_OUTPUT
           echo "Certificate UUID: $CERT_UUID"
-          echo "--- All identities ---"
-          security find-identity -v -p codesigning build.keychain 2>&1 || true
 
       - name: Install CocoaPods
         run: |
