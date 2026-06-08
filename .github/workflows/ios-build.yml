@@ -104,53 +104,38 @@ jobs:
       - name: Build Archive
         run: |
           cd ios/App
+          # 先用无签名方式构建（快速）
           xcodebuild -workspace App.xcworkspace \
             -scheme App \
             -sdk iphoneos \
             -configuration Release \
             -archivePath /tmp/LFX.xcarchive \
-            CODE_SIGN_IDENTITY="${{ steps.cert.outputs.uuid }}" \
-            DEVELOPMENT_TEAM=${{ secrets.IOS_TEAM_ID }} \
-            CODE_SIGN_STYLE=Manual \
-            PROVISIONING_PROFILE_SPECIFIER="" \
-            GCC_WARN_ABOUT_MISSING_PROVISIONING_PROFILE=YES \
-            archive || true
-          
-          # 如果签名归档失败，用无签名方式
-          if [ ! -d /tmp/LFX.xcarchive ]; then
-            echo "Signed build failed, falling back to unsigned"
-            xcodebuild -workspace App.xcworkspace \
-              -scheme App \
-              -sdk iphoneos \
-              -configuration Release \
-              -archivePath /tmp/LFX.xcarchive \
-              CODE_SIGNING_ALLOWED=NO \
-              archive
-          fi
+            CODE_SIGNING_ALLOWED=NO \
+            archive
 
-      - name: Export IPA
+      - name: Sign App and Create IPA
         run: |
-          if [ -d /tmp/LFX.xcarchive/Products/Applications/App.app ]; then
-            mkdir -p /tmp/LFX-export/Payload
-            cp -r /tmp/LFX.xcarchive/Products/Applications/App.app /tmp/LFX-export/Payload/
-            cd /tmp/LFX-export
-            zip -r -q LFX-iOS.ipa Payload
-            echo "✅ IPA created (unsigned)"
+          APP_PATH="/tmp/LFX.xcarchive/Products/Applications/App.app"
+          CERT_UUID="${{ steps.cert.outputs.uuid }}"
+          
+          if [ -n "$CERT_UUID" ] && [ "$CERT_UUID" != "" ]; then
+            echo "Signing with certificate: $CERT_UUID"
+            # 手动签名
+            codesign --force --sign "$CERT_UUID" \
+              --entitlements ios/App/App/App.entitlements \
+              --timestamp=none \
+              "$APP_PATH" || echo "Codesign failed, continuing unsigned"
           else
-            xcodebuild -exportArchive \
-              -archivePath /tmp/LFX.xcarchive \
-              -exportPath /tmp/LFX-export \
-              -exportOptionsPlist ExportOptions.plist \
-              CODE_SIGN_IDENTITY="${{ steps.cert.outputs.uuid }}" \
-              || echo "Export failed, trying unsigned"
-            
-            if [ ! -f /tmp/LFX-export/*.ipa ]; then
-              mkdir -p /tmp/LFX-export/Payload
-              cp -r /tmp/LFX.xcarchive/Products/Applications/App.app /tmp/LFX-export/Payload/
-              cd /tmp/LFX-export
-              zip -r -q LFX-iOS.ipa Payload
-            fi
+            echo "No certificate UUID, skipping signing"
           fi
+          
+          # 打包 IPA
+          mkdir -p /tmp/LFX-export/Payload
+          cp -r "$APP_PATH" /tmp/LFX-export/Payload/
+          cd /tmp/LFX-export
+          zip -r -q LFX-iOS.ipa Payload
+          echo "✅ IPA created"
+          ls -lh LFX-iOS.ipa
 
       - name: Upload IPA artifact
         uses: actions/upload-artifact@v4
