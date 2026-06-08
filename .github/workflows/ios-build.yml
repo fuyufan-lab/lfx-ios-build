@@ -91,15 +91,18 @@ jobs:
             -sdk iphoneos \
             -configuration Release \
             -archivePath /tmp/LFX.xcarchive \
-            CODE_SIGNING_ALLOWED=NO \
+            -allowProvisioningUpdates \
+            CODE_SIGN_STYLE=Automatic \
+            DEVELOPMENT_TEAM=${{ secrets.IOS_TEAM_ID }} \
             archive
 
-      - name: Create Unsigned IPA
+      - name: Export IPA
         run: |
-          mkdir -p /tmp/LFX-export/Payload
-          cp -r /tmp/LFX.xcarchive/Products/Applications/App.app /tmp/LFX-export/Payload/
-          cd /tmp/LFX-export
-          zip -r LFX-iOS.ipa Payload
+          xcodebuild -exportArchive \
+            -archivePath /tmp/LFX.xcarchive \
+            -exportPath /tmp/LFX-export \
+            -exportOptionsPlist ExportOptions.plist \
+            -allowProvisioningUpdates
 
       - name: Upload IPA artifact
         uses: actions/upload-artifact@v4
