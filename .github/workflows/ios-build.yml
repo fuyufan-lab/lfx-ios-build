@@ -32,8 +32,26 @@ jobs:
       - name: Install npm dependencies
         run: npm install
 
-      - name: Capacitor Sync
-        run: npx cap sync ios
+      - name: Create www directory
+        run: |
+          mkdir -p www
+          # 创建最小化的 index.html，加载远程内容
+          cat > www/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>LFX 珠宝内容</title>
+            <script>
+              window.location.href = 'https://yh.xiaofenhe.com/lfx-preview/入口页.html';
+            </script>
+          </head>
+          <body>
+            <p>加载中...</p>
+          </body>
+          </html>
+          EOF
 
       - name: Setup Xcode
         uses: maxim-lobanov/setup-xcode@v1
